@@ -4,7 +4,7 @@
 
 //•|════════════════════════════|•      //
 
-require('./settings')
+require('./config.js')
 const { default: JimbruOfficalConnect, WASocket, DisconnectReason, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto, delay, jidNormalizedUser, makeWALegacySocket, useSingleFileLegacyAuthState, DEFAULT_CONNECTION_CONFIG, DEFAULT_LEGACY_CONNECTION_CONFIG } = require("@adiwajshing/baileys")
 const fs = require('fs')
 const path = require('path')
@@ -17,9 +17,7 @@ const FileType = require('file-type')
 const { Boom } = require('@hapi/boom')
 const { MakeSession } = require('./lib/waconnect/auth')
 const PhoneNumber = require('awesome-phonenumber')
-const { Collection, Simple, Store } = require("./lib")
 const { exec, spawn, execSync } = require("child_process")
-const config = JSON.parse(fs.readFileSync('./config.json'))
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
 // Jimbru session
