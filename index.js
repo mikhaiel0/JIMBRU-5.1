@@ -20,6 +20,12 @@ const PhoneNumber = require('awesome-phonenumber')
 const { exec, spawn, execSync } = require("child_process")
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const figlet = require('figlet')
+const {
+    color
+} = require('./lib/color')
+//require("http").createServer((_, res) => res.end("Hello World!")).listen(8080)
+
 // Jimbru session
 global.authFile ='./auth.json'
 if(!fs.existsSync('./auth.json')){
