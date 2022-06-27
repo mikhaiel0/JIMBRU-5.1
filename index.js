@@ -164,7 +164,7 @@ JimbruOffical.ev.on('group-participants.update', async (anu) => {
                 const time = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	            const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 	            
-                let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "919544846609-1628086590@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'Jimbru', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 body = `
 		◈ ʜᴇʏ 👋 @${Name.split("@")[0]},
 		
@@ -207,7 +207,7 @@ JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                                 const time = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	                        const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 	        let Name = num
-                    let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                    let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "919544846609-1628086590@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'Jimbru', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                     body = `
 		    ◈ @${Name.split("@")[0]}
 		    
@@ -581,7 +581,7 @@ JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         return waMessage
     }
 
-//sendlistmsg by xeon
+//sendlistmsg
         JimbruOffical.sendListMsg = (jid, text = '', footer = '', title = '' , butText = '', sects = [], quoted) => {
         let sections = sects
         var listMes = {
@@ -645,7 +645,7 @@ JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         }
 
     }
-    //send5butgif by xeon
+    //send5butgif
         JimbruOffical.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], options = {}) =>{
         let message = await prepareWAMessageMedia({ video: gif, gifPlayback: true }, { upload: JimbruOffical.waUploadToServer })
         var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
@@ -660,7 +660,7 @@ JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             }), options)
             JimbruOffical.relayMessage(jid, template.message, { messageId: template.key.id })
     }
-    //send5butvid by xeon
+    //send5butvid
         JimbruOffical.send5ButVid = async (jid , text = '' , footer = '', vid, but = [], options = {}) =>{
         let message = await prepareWAMessageMedia({ video: vid }, { upload: JimbruOffical.waUploadToServer })
         var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
