@@ -2938,7 +2938,566 @@ let { chat, fromMe, id, isBaileys } = m.quoted
 if (!isBaileys) return replay('The message was not sent by a bot!')
 JimbruOffical.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
 }
-		
+/*		
+case 'vote': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (m.chat in vote) return replay(`_There are still votes in this chat!_\n\n*${prefix}deletevote* - to delete vote sesssion`)
+if (!args.join(" ")) return replay(`Enter Reason for Vote, Example: *${prefix + command} ${global.ownername} is handsome or not, vote!*`)
+replay(`Voting starts!\n\n*${prefix}upvote* - to upvote\n*${prefix}devote* - for not\n*${prefix}checkvote* - to check the vote\n*${prefix}deletevote* - to delete vote`)
+vote[m.chat] = [args.join(" "), [], []]
+await sleep(1000)
+upvote = vote[m.chat][1]
+devote = vote[m.chat][2]
+            await JimbruOffical.relayWAMessage(generateWAMessageFromContent(m.chat, {
+                        "listMessage":  {
+                        "title": ``,
+                        "description": `${'```'}${teks1}${'```'}`,
+                        "buttonText": `CHOOSE`,
+                        "listType": "SINGLE_SELECT",
+                        "sections": [
+                            { title: 'CHOOSE',
+                                "rows": [
+                                    {
+                                        "title": teks2,
+                                        "rowId": perf+`upvote`
+                                    }, {
+                                       "title": teks3,
+                                       "rowId": perf+`devote`
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                 }, { quoted: false}),{waitForAck: true}
+)
+  
+	    }
+            break
+               case perf+'appvote': {
+            if (!m.isGroup) throw hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
+            if (!(m.chat in vote)) throw false
+            isVote = vote[m.chat][1].concat(vote[m.chat][2])
+            wasVote = isVote.includes(m.sender)
+            if (wasVote) throw hisoka.sendMessage(m.chat, { text : '```Already Voted```'})
+            vote[m.chat][1].push(m.sender)
+            menvote = vote[m.chat][1].concat(vote[m.chat][2])
+            
+            hisoka.sendMessage(m.chat, { text : `${await hisoka.getName(m.sender)} ${'```'}Voted${'```'}`})
+	    }
+             break
+                case perf+'dawnvote': {
+            if (!m.isGroup) hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
+            if (!(m.chat in vote)) throw false
+            isVote = vote[m.chat][1].concat(vote[m.chat][2])
+            wasVote = isVote.includes(m.sender)
+            if (wasVote) throw hisoka.sendMessage(m.chat, { text : '```Already Voted```'})
+            vote[m.chat][2].push(m.sender)
+            menvote = vote[m.chat][1].concat(vote[m.chat][2])
+            hisoka.sendMessage(m.chat, { text : `${await hisoka.getName(m.sender)} ${'```'}Voted${'```'}`})
+	}
+            break
+                 
+case perf+'voteresult':
+if (!m.isGroup) throw hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
+if (!(m.chat in vote)) hisoka.sendMessage(m.chat, { text : '```No Vote in this Chat\nTry ```'+ perf +'```Vote reason,yes,no```'})
+teks_vote = `${vote[m.chat][0]}
+${vote[m.chat][3]} => ${appvote.length}
+${vote[m.chat][4]} => ${dawnvote.length}`
+hisoka.sendMessage(m.chat, { text : teks_vote}, m)
+break
+		case perf+'deletevote': case perf+'delvote': {
+            if (!m.isGroup) throw hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
+            if (!(m.chat in vote)) throw `_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`
+            delete vote[m.chat]
+            hisoka.sendMessage(m.chat, { text : '```Done```'})
+	    }
+            break
 
-
-
+*/
+break
+case 'listpc': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
+let teks = `     「 Personal Chat List 」\n\nThere are ${anu.length} users using bot in personal chat`
+for (let i of anu) {
+ teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
+}
+JimbruOffical.sendTextWithMentions(m.chat, teks, m)
+}
+break
+case 'listgc': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+let teks = `     「 Group Chat 」\n\nThere are ${anu.length} users using bot in group chat`
+for (let i of anu) {
+ let metadata = await JimbruOffical.groupMetadata(i)
+ if (metadata.owner === "undefined") {
+ loldd = false
+ } else {
+ loldd = metadata.owner
+ }
+ teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
+}
+JimbruOffical.sendTextWithMentions(m.chat, teks, m)
+}
+break
+case 'afk': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let user = global.db.users[m.sender]
+user.afkTime = + new Date
+user.afkReason = args.join(" ")
+replay(`${m.pushName} has gone afk\nReason : ${args.join(" ") ? args.join(" ") : ''}`)
+}
+break
+case 'addcmd': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.quoted) return replay('Reply Message!')
+if (!m.quoted.fileSha256) return replay('SHA256 Hash Missing')
+if (!args.join(" ")) return replay(`For What Command?`)
+let hash = m.quoted.fileSha256.toString('base64')
+if (global.db.sticker[hash] && global.db.sticker[hash].locked) return replay('You have no permission to change this sticker command')
+global.db.sticker[hash] = {
+text,
+mentionedJid: m.mentionedJid,
+creator: m.sender,
+at: + new Date,
+locked: false,
+}
+replay(mess.success)
+}
+break
+case 'delcmd': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let hash = m.quoted.fileSha256.toString('base64')
+if (!hash) return replay(`No hashes`)
+if (global.db.sticker[hash] && global.db.sticker[hash].locked) return replay('You have no permission to delete this sticker command')
+delete global.db.sticker[hash]
+replay(mess.success)
+}
+break
+case 'listcmd': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let teks = `
+*Hash List*
+Info: *bold* hash is Locked
+${Object.entries(global.db.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
+`.trim()
+JimbruOffical.sendText(m.chat, teks, m, { mentions: Object.values(global.db.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
+}
+break
+case 'lockcmd': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!m.quoted) return replay('Reply Message!')
+if (!m.quoted.fileSha256) return replay('SHA256 Hash Missing')
+let hash = m.quoted.fileSha256.toString('base64')
+if (!(hash in global.db.sticker)) return replay('Hash not found in database')
+global.db.sticker[hash].locked = !/^un/i.test(command)
+replay(mess.success)
+}
+break
+case 'addmsg': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.quoted) return replay(`Reply message you want to save in database`)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} file name`)
+let msgs = global.db.database
+if (text.toLowerCase() in msgs) return replay(`'${args.join(" ")}' has been saved in the message list`)
+msgs[text.toLowerCase()] = quoted.fakeObj
+replay(`Successfully added message in message list as '${args.join(" ")}'
+    
+Access with ${prefix}getmsg ${args.join(" ")}
+View list of messages with ${prefix}listmsg`)
+}
+break
+case 'getmsg': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (!args.join(" ")) return replay(`Example : ${prefix + command} file name\n\nView message list with ${prefix}listmsg`)
+let msgs = global.db.database
+if (!(text.toLowerCase() in msgs)) return replay(`'${args.join(" ")}' not listed in the message list`)
+JimbruOffical.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+}
+break
+case 'listmsg': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
+let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
+let teks = '「 LIST DATABASE 」\n\n'
+for (let i of seplit) {
+teks += `⬡ *Name :* ${i.nama}\n⬡ *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
+}
+replay(teks)
+}
+break		
+case 'delmsg': case 'deletemsg': {
+	        let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
+	        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' not listed in the message list`)
+		delete msgs[text.toLowerCase()]
+                fs.writeFileSync('./src/database.json', JSON.stringify(msgs))
+		reply(`Deleted successfully '${text}' from the message list`)
+            }
+	    break
+case 'fliptext': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (args.length < 1) return replay(`Example:\n${prefix}fliptext ${ownername}`)
+quere = args.join(" ")
+flipe = quere.split('').reverse().join('')
+replay(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
+}
+break
+case 'toletter': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!Number(args[0])) return replay(`Example:\n${prefix}toletter 956`)
+try {
+quere = args.join(" ")
+convertes = await toHur(quere)
+replay(`\`\`\`「 ALPHABET 」\`\`\`\n*•> Number :*\n${quere}\n*•> Alphabet :*\n${convertes}`)
+} catch {
+replay(`Error!`)
+}
+}
+break
+	case 'github':
+anu = await fetchJson(`https://api.github.com/users/${q}/following`)
+teks = `*Following Github: ${q}\n\n`
+buffer = await getBuffer(anu[0].avatar_url)
+	teks = `*Username:* ${anu.login}\n*Link:* ${anu.html_url}\n                            \n`
+JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:teks}, {quoted:m})
+break	
+case 'welcome': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (welcm) return replay('Already activated')
+wlcm.push(from)
+replay('Success in turning on the welcome/left msg in this group')
+} else if (args[0] === "off") {
+if (!welcm) return replay('Already deactivated')
+let off = wlcm.indexOf(from)
+wlcm.splice(off, 1)
+replay('Success in turning off welcome/left msg in this group')
+} else {
+  let buttonswlcm = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonswlcm, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+    case 'autoreply': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (Autoreply) return replay('Already activated')
+autorep.push(from)
+replay('Success in turning on the autoreply in this group')
+} else if (args[0] === "off") {
+if (!Autoreply) return replay('Already deactivated')
+let off = autorep.indexOf(from)
+autorep.splice(off, 1)
+replay('Success in turning off autoreply in this group')
+} else {
+  let buttonswlcm = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonswlcm, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+case 'autorevoke': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (GcRvk) return replay('Already activated')
+gcrevoke.push(from)
+replay('Success in turning on autorevoke in this group')
+} else if (args[0] === "off") {
+if (!GcRvk) return replay('Already deactivated')
+let off = wlcm.indexOf(from)
+gcrevoke.splice(off, 1)
+replay('Success in turning off autorevoke in this group')
+} else {
+  let buttonsrvk = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsrvk, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+case 'autosticker':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return reply(mess.botAdmin)
+if (!isAdmins && !isCreator) return reply(mess.admin)
+if (args.length < 1) return reply('type auto sticker on to enable\ntype auto sticker off to disable')
+if (args[0]  === 'on'){
+if (isAutoSticker) return reply(`Already activated`)
+autosticker.push(from)
+fs.writeFileSync('./database/autosticker.json', JSON.stringify(autosticker))
+reply('autosticker activated')
+} else if (args[0] === 'off'){
+let anu = autosticker.indexOf(from)
+autosticker.splice(anu, 1)
+fs.writeFileSync('./database/autosticker.json', JSON.stringify(autosticker))
+reply('auto sticker deactivated')
+}
+break
+case 'autostickerpc':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (args.length < 1) return reply('type autosticker on to activate\ntype autosticker off to disable')
+if (args[0]  === 'on'){
+if (isAutoStick) return reply(`Already activated`)
+_autostick.push(from)
+fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
+reply('autosticker pc activated')
+} else if (args[0] === 'disable'){
+let anu = autosticker.indexOf(from)
+_autostick.splice(anu, 1)
+fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
+reply('autosticker pc deactivated')
+}
+break
+case 'rentbot':
+if (!q) return reply(`Use :\n*${prefix}sewa* add/del time`)
+if (args[0] === 'add'){
+_sewa.addSewaGroup(from, args[1], sewa)
+reply(`Success`)
+} else if (args[0].toLowerCase() === 'del'){
+sewa.splice(_sewa.getSewaPosition(from, sewa), 1)
+fs.writeFileSync('./database/sewa.json', JSON.stringify(sewa))
+reply(mess.success)
+} else {
+reply(`Use :\n*${prefix}sewa* add/del time`)}
+break
+case 'rentlist': 
+case 'rentallist':
+let txtnyee = `Rental List\nAmount : ${sewa.length}\n\n`
+for (let i of sewa){
+let cekvippsewa = ms(i.expired - Date.now())
+txtnyee += `*ID :* ${i.id} \n*Expire :* ${cekvippsewa.days} day(s) ${cekvippsewa.hours} hour(s) ${cekvippsewa.minutes} minute(s) ${cekvipp.seconds} second(s)\n\n`
+}
+reply(txtnyee)
+break
+case 'rentcheck':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isSewa) return reply(`This group is not listed on the rentbot list. Type ${prefix}rentbot for more information`)
+let cekvipsewa = ms(_sewa.getSewaExpired(from, sewa) - Date.now())
+let sewanya = `*「 RENT EXPIRE 」*\n\n➸ *ID*: ${from}\n➸ *Expired :* ${cekvipsewa.days} day(s) ${cekvipsewa.hours} hour(s) ${cekvipsewa.minutes} minute(s)`
+reply(sewanya)
+break
+case 'antilinkgc': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLink) return replay('Already activated')
+ntilink.push(from)
+replay('Success in turning on group chat antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLink) return replay('Already deactivated')
+let off = ntilink.indexOf(from)
+ntilink.splice(off, 1)
+replay('Success in turning off group chat antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+case 'antilinkyt': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkYoutubeVid) return replay('Already activated')
+ntilinkytvid.push(from)
+replay('Success in turning on youtube video antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube video link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkYoutubeVid) return replay('Already deactivated')
+let off = ntilinkytvid.indexOf(from)
+ntilinkytvid.splice(off, 1)
+replay('Success in turning off youtube video antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break	
+   case 'antilinkytch': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkYoutubeChannel) return replay('Already activated')
+ntilinkytch.push(from)
+replay('Success in turning on youtube channel antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube channel link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkYoutubeChannel) return replay('Already deactivated')
+let off = ntilinkytch.indexOf(from)
+ntilinkytch.splice(off, 1)
+replay('Success in turning off youtube channel antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break	
+case 'antilinkig': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkInstagram) return replay('Already activated')
+ntilinkig.push(from)
+replay('Success in turning on instagram antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the instagram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkInstagram) return replay('Already deactivated')
+let off = ntilinkig.indexOf(from)
+ntilinkig.splice(off, 1)
+replay('Success in turning off instagram antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break	
+   case 'antilinkfb': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkFacebook) return replay('Already activated')
+ntilinkfb.push(from)
+replay('Success in turning on facebook antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the facebook link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkFacebook) return replay('Already deactivated')
+let off = ntilinkfb.indexOf(from)
+ntilinkfb.splice(off, 1)
+replay('Success in turning off facebook antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+          case 'antilinktg': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkTelegram) return replay('Already activated')
+ntilinktg.push(from)
+replay('Success in turning on telegram antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the telegram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkTelegram) return replay('Already deactivated')
+let off = ntilinkig.indexOf(from)
+ntilinkig.splice(off, 1)
+replay('Success in turning off telegram antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break		
