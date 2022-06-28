@@ -768,7 +768,7 @@ jawaban = tebaklagu[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Song 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebaklagu[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
 
 if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -777,7 +777,7 @@ jawaban = tebakgambar[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebakgambar[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
 
 if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -786,7 +786,7 @@ jawaban = tebakkata[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebakkata[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
 
 if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -797,7 +797,7 @@ if (budy.toLowerCase() == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess saying', buttonText: { displayText: 'Guess The Saying' }, type: 1 }], `🎮 Guess The Saying 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete caklontong[m.sender.split('@')[0]]
 delete caklontong_desk[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
 
 if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -806,7 +806,7 @@ jawaban = tebakkalimat[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebakkalimat[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
 
 if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -815,7 +815,7 @@ jawaban = tebaklirik[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebaklirik[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
 
 if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -824,7 +824,7 @@ jawaban = tebaktebakan[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'riddles', buttonText: { displayText: 'Riddles' }, type: 1 }], `🎮 Riddles 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebaktebakan[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
 
 if (('family100'+m.chat in _family100) && isCmd) {
@@ -953,9 +953,9 @@ if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = kuismath[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await reply(`🎮 Math Quiz  🎮\n\nCorrect Answer 🎉\n\nWant to play again? send ${prefix}math mode`)
+await reply(`🎮 ᴍᴀᴛʜs ǫᴜɪᴢ 🎮\n\nCᴏʀʀᴇᴄᴛ Aɴsᴡᴇʀ 🎉\n\nWᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ᴀɢᴀɪɴ ? sᴇɴᴅ ${prefix}math mode`)
 delete kuismath[m.sender.split('@')[0]]
-} else reply('*Wrong answer!*')
+} else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
 }
     
 //TicTacToe
@@ -974,10 +974,10 @@ if (!isSurrender) return !0
 }
 if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
 reply({
-'-3': 'Game has ended',
-'-2': 'Invalid',
-'-1': 'Invalid Position',
-0: 'Invalid Position',
+'-3': 'ɢᴀᴍᴇ ᴇɴᴅᴇᴅ',
+'-2': 'ɪɴᴠᴀʟɪᴅ',
+'-1': 'ɪɴᴠᴀʟɪᴅ ᴘᴏsɪᴛɪᴏɴ',
+0: 'ɪɴᴠᴀʟɪᴅ ᴘᴏsɪᴛɪᴏɴ',
 }[ok])
 return !0
 }
@@ -1003,7 +1003,7 @@ room.game._currentTurn = m.sender === room.game.playerX
 isWin = true
 }
 let winner = isSurrender ? room.game.currentTurn : room.game.winner
-let str = `     「 Tictactoe Game 」
+let str = `      ✵ ᴛɪᴄᴛᴀᴄᴛᴏᴇ ✵ 
 Room ID: ${room.id}
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
