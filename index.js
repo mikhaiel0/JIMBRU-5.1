@@ -36,7 +36,7 @@ const { state, saveState } = useSingleFileAuthState(`./auth.json`)
 global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 // MEMORY STORE 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
-// DATABASE
+/* DATABASE
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
@@ -58,7 +58,7 @@ global.db.data = {
 if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
   }, 30 * 1000)
-// 
+*/ 
 async function startJimbruOffical() {
 console.log(color(figlet.textSync('JIMBRU-MD', {
 	   font: 'Pagga',
