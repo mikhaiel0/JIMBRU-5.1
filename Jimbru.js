@@ -4654,31 +4654,31 @@ case 'audio': {
       let audio = await toAudio(media, 'mp4')
       JimbruOffical.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
       }
-break
+  break
 case 'mp3': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
-if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
-if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
-reply(mess.wait)
-let media = await quoted.download()
-let { toAudio } = require('./lib/converter')
-let audio = await toAudio(media, 'mp4')
-JimbruOffical.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${JimbruOffical.user.name} (${m.id}).mp3`}, { quoted : m })
-}
+      if (isBan) return reply(mess.ban)	 			
+      if (isBanChat) return reply(mess.banChat)
+      if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+      if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+      if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+      reply(mess.wait)
+      let media = await quoted.download()
+      let { toAudio } = require('./lib/converter')
+      let audio = await toAudio(media, 'mp4')
+      JimbruOffical.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${JimbruOffical.user.name} (${m.id}).mp3`}, { quoted : m })
+      }
 break
 case 'tovn': case 'voice': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-if (!m.quoted) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-reply(mess.wait)
-let media = await quoted.download()
-let { toPTT } = require('./lib/converter')
-let audio = await toPTT(media, 'mp4')
-JimbruOffical.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
-}
+      if (isBan) return reply(mess.ban)	 			
+      if (isBanChat) return reply(mess.banChat)
+      if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
+      if (!m.quoted) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
+      reply(mess.wait)
+      let media = await quoted.download()
+      let { toPTT } = require('./lib/converter')
+      let audio = await toPTT(media, 'mp4')
+      JimbruOffical.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+      }
       break
 case 'gif': {
       if (isBan) return reply(mess.ban)	 			
@@ -4713,7 +4713,258 @@ case 'antiviewonce' : {
               await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
               }
       break	
-	
+case 'lovesticker' :{
+	         	if (isBan) return reply(mess.ban)
+	             if (isBanChat) return reply(mess.banChat)
+                 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
+                 var wifegerak = ano.split('\n')
+                 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+                 encmedia = await JimbruOffical.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+                 await fs.unlinkSync(encmedia)
+                 }
+           break
+case 'gurasticker' : {
+	         	if (isBan) return reply(mess.ban)
+	             if (isBanChat) return reply(mess.banChat)
+                 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
+                 var wifegerak = ano.split('\n')
+                 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+                 encmedia = await JimbruOffical.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+                 await fs.unlinkSync(encmedia)
+                  }
+          break
+case 'dogesticker' : {
+	         	if (isBan) return reply(mess.ban)
+	             if (isBanChat) return reply(mess.banChat)
+                 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
+                 var wifegerak = ano.split('\n')
+                 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+                 encmedia = await JimbruOffical.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+                 await fs.unlinkSync(encmedia)
+                 }
+         break 
+case 'patricksticker' : {
+	         	if (isBan) return reply(mess.ban)
+	             if (isBanChat) return reply(mess.banChat)
+                 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
+                 var wifegerak = ano.split('\n')
+                 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+                 encmedia = await JimbruOffical.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+                 await fs.unlinkSync(encmedia)
+                 }
+         break
+case 'loveshortstory':{
+	            if (isBan) return reply(mess.ban)	 			
+                if (isBanChat) return reply(mess.banChat)
+                let cerpe = await cerpen(`Cinta segitiga`)
+                reply(`${themeemoji} _*Title :*_ ${cerpe.title}\n${themeemoji} _*Author :*_ ${cerpe.author}\n${themeemoji} _*Category :*_ ${cerpe.kategori}\n${themeemoji} _*Pass Moderation :*_ ${cerpe.lolos}\n${themeemoji} _*Story :*_\n${cerpe.cerita}`)
+                }
+        break
+case 'friendshipshortstory':{
+	            if (isBan) return reply(mess.ban)	 			
+                if (isBanChat) return reply(mess.banChat)
+                let cerpe = await cerpen(`persahabatan`)
+                reply(`${themeemoji} _*Title :*_ ${cerpe.title}\n${themeemoji} _*Author :*_ ${cerpe.author}\n${themeemoji} _*Category :*_ ${cerpe.kategori}\n${themeemoji} _*Pass Moderation :*_ ${cerpe.lolos}\n${themeemoji} _*Story :*_\n${cerpe.cerita}`)
+                }
+        break
+case 'url': {
+                if (isBan) return reply(mess.ban)	 			
+                if (isBanChat) return reply(mess.banChat)
+                reply(mess.wait)
+                let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+                let media = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+                if (/image/.test(mime)) {
+                let anu = await TelegraPh(media)
+                reply(util.format(anu))
+                } else if (!/image/.test(mime)) {
+                let anu = await UploadFileUgu(media)
+                reply(util.format(anu))
+                }
+                await fs.unlinkSync(media)
+                }
+       break
+case 'quoted': {
+                if (isBan) return reply(mess.ban)	 			
+                if (isBanChat) return reply(mess.banChat)
+                if (!m.quoted) return replay('Reply Message!!')
+                let wokwol = await JimbruOffical.serializeM(await m.getQuotedObj())
+                if (!wokwol.quoted) return replay('The message you replied to does not contain a reply')
+                await wokwol.quoted.copyNForward(m.chat, true)
+                }
+        break
+case 'getname': {
+                if (isBan) return reply(mess.ban)	 			
+                if (isBanChat) return reply(mess.banChat)
+                if (qtod === "true") {
+                namenye = await JimbruOffical.getName(m.quoted.sender)
+                replay(namenye)
+                } else if (qtod === "false") {
+               JimbruOffical.sendMessage(from, {text:"Reply person"}, {quoted:m})
+               }
+               }
+       break
+case 'getpp': {
+               if (isBan) return reply(mess.ban)	 			
+               if (isBanChat) return reply(mess.banChat)
+               if (qtod === "true") {
+               try {
+               pporg = await JimbruOffical.profilePictureUrl(m.quoted.sender, 'image')
+               } catch {
+               pporg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+               }
+              JimbruOffical.sendMessage(m.chat, { image : { url : pporg }, caption:`Done!` }, { quoted : m })
+               } else if (qtod === "false") {
+               try {
+               pporgs = await JimbruOffical.profilePictureUrl(from, 'image')
+               } catch {
+               pporgs = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+               }
+              JimbruOffical.sendMessage(m.chat, { image : { url : pporgs }, caption:`Done!` }, { quoted : m })
+               }
+               }
+       break
+case 'owner' : {
+              JimbruOffical.sendContact(m.chat, global.owner, m)
+               }
+       break
+case 'translate': case 'trt': {
+               if (isBan) return reply(mess.ban)
+               if (!args.join(" ")) return replay("The text?")
+               tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
+               Infoo = tes.info
+               Detek = tes.translate
+               replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
+               }
+       break
+case 'image': {
+               if (isBan) return reply(mess.ban)	 			
+               if (isBanChat) return reply(mess.banChat)
+               if (!args[0]) return reply("What picture are you looking for??")
+               let gis = require('g-i-s')
+               gis(args.join(" "), async (error, result) => {
+               n = result
+               images = n[Math.floor(Math.random() * n.length)].url
+               let buttons = [
+               {buttonId: `gimage ${args.join(" ")}`, buttonText: {displayText: 'Next Image 👀'}, type: 1}
+                ]
+                let buttonMessage = {
+                image: { url: images },
+                caption: `*| MADE BY JIMBRU |*
+
+                ${global.themeemoji} Query : ${text}
+                ${global.themeemoji} Media Url : ${images}`,
+                footer: `${global.botname}`,
+                buttons: buttons,
+                headerType: 4,
+                contextInfo:{externalAdReply:{
+                title:`${global.ownername}`,
+                body:`${global.watermark}`,
+                thumbnail: log0,
+                mediaType:2,
+                mediaUrl: `${global.website}`,
+                sourceUrl: `{global.website}`
+                }}
+                }
+               JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+                })
+                }
+         break
+case 'google': {
+               if (isBan) return reply(mess.ban)	 			
+               if (isBanChat) return reply(mess.banChat)
+               if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} apa arti cinta`)
+               let google = require('google-it')
+               google({'query': args.join(" ")}).then(res => {
+               let teks = `Google Search From : ${text}\n\n`
+               for (let g of res) {
+               teks += `${global.themeemoji} *Title* : ${g.title}\n`
+               teks += `${global.themeemoji} *Description* : ${g.snippet}\n`
+               teks += `${global.themeemoji} *Link* : ${g.link}\n\n────────────────────────\n\n`
+               } 
+              reply(teks)
+              })
+              }
+      break
+case 'igstory' : {
+             if (isBan) return reply(mess.ban)	 			
+             if (isBanChat) return reply(mess.banChat)
+             if (!args[0]) return reply(`Example :\n${prefix + command} josephxeon13`)
+             try {
+             hx.igstory(args[0]).then(async(resed) => {
+             ini_anu = []
+             anu_list = []
+             textbv = `*| INSTAGRAM STORY |*\n\n${global.themeemoji} Username : ${resed.user.username ? resed.user.name : "undefined"}\n${global.themeemoji} Followers : ${resed.user.followers}`
+             urut = 1
+             for (let i = 0; i < resed.medias.length; i++) {
+             ini_anu.push({
+           "type": resed.medias[i].fileType,
+           "url": resed.medias[i].url
+            })
+            }
+            ilod = 1
+            for (let i of ini_anu) {
+            anu_list.push({buttonId: `ig ${i.type} ${i.url}`, buttonText: {displayText: `Media ${ilod++}`}, type: 1})
+            }
+           textbv += `\n\n_Select the media below to download_`
+               let buttons = anu_list
+               let buttonMessage = {
+               image:logo,
+               jpegThumbnail:thum,
+              caption: textbv,
+              footer: `${global.botname}`,
+              buttons: buttons,
+              headerType: 4
+              }
+            JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
+             })
+             } catch (err) {
+             reply(String(err))
+             }
+             }
+break
+case 'igs2': case 'igstory2': case 'instagramstory2': {
+if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(`Where is the username?\nExample: ${prefix}igstory josephxeon13`)
+                let urlnya = text
+	            hx.igstory(urlnya)
+	            .then(async(result) => {
+		        var halo = 0		
+	            JimbruOffical.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM STORY 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Media :* ${result.medias.length}\n*${themeemoji} Bio :* ${result.user.biography}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
+		        for(let i of result.medias) {
+			    if(i.url.includes('mp4')){
+				let link = await getBuffer(i.url)
+                JimbruOffical.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m }) 
+                } else {
+                    let link = await getBuffer(i.url)
+                  JimbruOffical.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m })                  
+                }
+            }
+            }).catch((err) => reply(`Sorry username ${text} was not found or maybe he/she has no story uploaded in her id`))
+            }	
+			break
+			case 'ig2': case 'igdl2': case 'instagram2': {
+               if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(`Where is the link bro`)
+                if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(`The link you provided is not a instagram link`)             
+                let urlnya = text
+	            hx.igdl(urlnya)
+	            .then(async(result) => {	  
+	            var halo = 0		
+	            JimbruOffical.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM DOWNLOADER 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Jumlah Media :* ${result.medias.length}\n*${themeemoji} Url :* ${text}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
+		        for(let i of result.medias) {		
+		        if(i.url.includes('mp4')){		           			    				
+				let link = await getBuffer(i.url)
+                JimbruOffical.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Instagram ${i.type}*` }, { quoted: m })
+                } else {
+                let link = await getBuffer(i.url)
+                JimbruOffical.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Instagram ${i.type}*` }, { quoted: m })                      
+               }
+              }
+            }).catch((err) => reply(mess.error))
+            }		
+			break	
 	
 	
 	
