@@ -1314,20 +1314,1631 @@ JimbruOffical.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.k
         	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/doc.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
                         }
                      }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+break
+case 'menuxxx':
+case 'helpxxx':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+JimbruOffical.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
+let buttonmenu = [
+        	{ urlButton: { displayText: `YouTube`, url : `${website}` } },
+            { urlButton: { displayText: `Script`, url: `${botscript}` } },
+            { quickReplyButton: { displayText: `All Menu`, id: 'allmenu'} },
+            { quickReplyButton: { displayText: `List Menu`, id: 'command'} },
+            { quickReplyButton: { displayText: `Owner`, id: 'owner'} }
+        	]
+        	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
+        	break
+case 'sc': case 'script': case 'donate': case 'sourcecode': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.website}\nGitHub: ${global.botscript}\n\n ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ꜰᴏᴜɴᴅ ᴀɴʏᴛʜɪɴɢ ᴜꜱᴇꜰᴜʟ ᴀɴᴅ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ꜱᴜᴘᴘᴏʀᴛ ᴍᴇ ᴛʜᴇɴ ʙᴜʏ ᴍᴇ ᴀ ᴄᴏꜰꜰᴇᴇ  ʙᴜʏ ᴍᴇ ᴀ ᴄᴏꜰꜰᴇᴇ ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄᴏɴᴛʀɪʙᴜᴛᴇ ꜰᴇᴇʟ ꜰʀᴇᴇ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ !  ᴀɴᴅ ᴍᴀɴʏ ᴛʜᴀɴᴋꜱ ɪɴ ᴀᴅᴠᴀɴᴄᴇ.  ꜰᴏʀ ᴀꜱ ᴡᴇ ᴡᴇʟʟ ᴋɴᴏᴡ`
+let buttons = [
+{buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
+]
+let buttonMessage = {
+image: thum,
+jpegThumbnail: logo,
+caption: teks,
+footer: `${botname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:"I deserve something for my hardwork",
+body: "Click to donate", 
+thumbnail: fs.readFileSync("Media/theme/Jimbru.jpg"),
+mediaType:1,
+mediaUrl: 'https://telegra.ph/file/ddaca390b13a4246bf1ef.jpg',
+sourceUrl: "https://telegra.ph/file/ddaca390b13a4246bf1ef.jpg"
+}}
+}
+JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+}    
+//ban chat
+ case 'banchat': {
+ if (isBan) return reply(mess.ban)	 			
+if (!isCreator) return replay(mess.owner)
+if (args[0] === "on") {
+if (isBanChat) return replay('Already Banned')
+banchat.push(from)
+replay('Success in banning the group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nThe bot has been disabled in this group, now no one will able to use the bot in this group!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!isBanChat) return replay('Already Unbanned')
+let off = banchat.indexOf(from)
+banchat.splice(off, 1)
+replay('Success in unbanning the group')
+} else {
+  let buttonsntnsfw = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'Ban' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Unban' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nBan to Ban\nUnban to unban`, `${global.botname}`, m)
+  }
+  }
+  break		
+case 'botgroups':
+case 'botgroup':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(` Don't forget to join yeah!
+*GROUP*
+https://chat.whatsapp.com/BuYtj7IRcd2E2EaBftF9fC`)
+break
+case 'getsxvdxcmd': {
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+JimbruOffical.sendMessage(from, {sticker:{url:"https://github.com/Mikhaiel/Media/blob/main/stickers/menu.webp"}}, {quoted:m})
+JimbruOffical.sendMessage(from, {sticker:{url:"https://github.com/Mikhaiel/Media/blob/main/stickers/groupopen.webp"}}, {quoted:m})
+JimbruOffical.sendMessage(from, {sticker:{url:"https://github.com/Mikhaiel/Media/blob/main/stickers/groupclose.webp"}}, {quoted:m})
+}    
+break
+//logo maker
+case 'hoorror':{
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/horror-blood-text-effect-online-883.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+  case 'whitebear':{
+  	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'thunder2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-thunder-text-effect-online-881.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'blackpink':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-blackpink-logo-style-online-1001.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'neon':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/neon-light-text-effect-online-882.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'matrix2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/matrix-style-text-effect-online-884.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'sky':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'joker':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-logo-joker-online-934.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'magma':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-a-magma-hot-text-effect-online-1030.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'sand':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/sand-writing-text-effect-online-990.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'pencil':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-a-sketch-text-effect-online-1044.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'graffiti':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'metallic':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-a-metallic-text-effect-free-online-1041.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'steel':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/steel-text-effect-online-921.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'harrypotter':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-harry-potter-text-effect-online-1025.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'underwater':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/3d-underwater-text-effect-generator-online-1013.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'luxury':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/3d-luxury-gold-text-effect-online-1003.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'glue2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'fabric':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/fabric-text-effect-online-964.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'neonlight':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/neon-light-glitch-text-generator-online-1063.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'lava':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/lava-text-effect-online-914.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'toxic':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/toxic-text-effect-online-901.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'ancient':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'christmas2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/sparkles-merry-christmas-text-effect-1054.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'sci_fi':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'rainbow':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+     let link = `https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html`
+     let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'classic':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/video-game-classic-8-bit-text-effect-1037.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'watercolor2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'halloween2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-a-spooky-halloween-text-effect-online-1046.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'halloweenfire':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/halloween-fire-text-effect-940.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'writing':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/sand-writing-text-effect-online-990.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'foggy':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/write-text-on-foggy-window-online-free-1015.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'marvel':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'skeleton2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'sketch':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-a-sketch-text-effect-online-1044.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'wonderful':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'cool':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'collwall':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'multicolor2':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'batman':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/make-a-batman-logo-online-free-1066.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'juice':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let link = `https://textpro.me/fruit-juice-text-effect-861.html`
+let anui = await textpro(link, q)
+     reply(`Wait a moment while making the logo about 1 minute`) 
+     console.log(anui)
+    JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+}
+   break
+case 'pornhub':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
+reply(mess.wait)
+  inilogo4 = args.join(" ")
+inilogo9 = args.join(" ")
+   var logo4 = inilogo4.split('|')[0]
+var logo9 = inilogo9.split('|')[1]
+    let anu = await textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
+console.log(anu)
+JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+}
+break
+case 'retro':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
+reply(mess.wait)
+  inilogo4 = args.join(" ")
+inilogo9 = args.join(" ")
+   var logo4 = inilogo4.split('|')[0]
+var logo9 = inilogo9.split('|')[1]
+    let anu = await textpro("https://textpro.me/create-3d-retro-text-effect-online-free-1065.html", [`${logo4}`,`${logo9}`])
+console.log(anu)
+JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+}
+break
+case 'horror':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
+reply(mess.wait)
+  inilogo4 = args.join(" ")
+inilogo9 = args.join(" ")
+   var logo4 = inilogo4.split('|')[0]
+var logo9 = inilogo9.split('|')[1]
+    let anu = await textpro("https://textpro.me/create-a-cinematic-horror-text-effect-1045.html", [`${logo4}`,`${logo9}`])
+console.log(anu)
+JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+}
+break
+case '8bit':{
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
+reply(mess.wait)
+  inilogo4 = args.join(" ")
+inilogo9 = args.join(" ")
+   var logo4 = inilogo4.split('|')[0]
+var logo9 = inilogo9.split('|')[1]
+    let anu = await textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [`${logo4}`,`${logo9}`])
+console.log(anu)
+JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+}
+break
+case 'textmaker': {
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (args.length < 1) return reply(`Example :\n${prefix + command} <name>`)
+if (args[0] === 'glitch') {
+if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]} ${ownername}`)
+let teds = await thiccysapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [args[1]])
+JimbruOffical.sendMessage(from, {image:{url:teds}, caption:"Here you go!"}, {quoted:m})
+} else if (args[0] === 'glow') {
+if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]} ${ownername}`)
+let teds = await thiccysapi.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", [args[1]])
+JimbruOffical.sendMessage(from, {image:{url:teds}, caption:"Here you go!"}, {quoted:m})
+} else {
+reply(`*Text Maker List :*\n•> glitch\n•> glow`)
+}
+}
+break
+// user limit
+             case 'userlimit':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+{      
+   let txt = `「 *ALL USER LIMIT* 」\n\n`
+     for (let i of _limit){
+     txt += `➸ *ID :* @${i.id.split("@")[0]}\n➸ *Limit* : ${i.limit}\n`
+     }
+    reply(txt)       
+  }
+ break	
+//h     
+case 'ringtone': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+		if (!args.join(" ")) return reply(`Example:\n${prefix + command} black over`)
+        let { ringtone } = require('./lib/scraper')
+		let anu = await ringtone(text)
+		let result = anu[Math.floor(Math.random() * anu.length)]
+		JimbruOffical.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+	    }
+	    break
+case 'film':
+if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	reply(mess.wait)
+if (!q) return reply(`What film you wanna search?\nExample: ${prefix}film Spiderman`)
+xeonkey.Film(q)
+    .then(data => {console.log(data)
+    let krl = `*❒「  Film ${q} 」*\n*🌿 Author* : ${data[0].author}\n\n`
+			    for (let i of data) {
+                krl += (`\n────────────────────\n\n *📍Title :* ${i.judul}\n *📟 Quality :* ${i.quality}\n *🖥️ Type : ${i.type}*\n *⌛ Uploaded :* ${i.upload}\n *🌍 Source :* ${i.link}`)
+                }
+               JimbruOffical.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
+});
+break
+case 'wallpaper': case 'animewallpaper': case 'anime': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+                if (!args.join(" ")) return reply("What picture are you looking for??")
+		let { wallpaper } = require('./lib/scraper')
+                anu = await wallpaper(args)
+                result = anu[Math.floor(Math.random() * anu.length)]
+		let buttons = [
+                    {buttonId: `.wallpaper ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: result.image[0] },
+                    caption: `Title : ${result.title}\nCategory : ${result.type}\nDetail : ${result.source}\nMedia Url : ${result.image[2] || result.image[1] || result.image[0]}`,
+                    footer: `${botname}`,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+case 'wikimedia': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+                if (!args.join(" ")) return reply("What picture are you looking for??")
+		let { wikimedia } = require('./lib/scraper')
+                anu = await wikimedia(args)
+                result = anu[Math.floor(Math.random() * anu.length)]
+                let buttons = [
+                    {buttonId: `wikimedia ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: result.image },
+                    caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.image}`,
+                    footer: `${botname}`,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+case 'quotes':case 'qoutesimage':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+				   let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
+				   reply(mess.wait)
+				  JimbruOffical.sendMessage(m.chat, { image: { url: cok }, caption: 'Done' }, { quoted: m })
+				  break
+            case 'quotesanime': case 'quoteanime': {
+		let { quotesAnime } = require('./lib/scraper')
+                let anu = await quotesAnime()
+                result = anu[Math.floor(Math.random() * anu.length)]
+                let buttons = [
+                    {buttonId: `quotesanime`, buttonText: {displayText: 'Next'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: `~_${result.quotes}_\n\nBy '${result.karakter}', ${result.anime}\n\n- ${result.up_at}`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 2
+                }
+                JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break		
+case 'animestory': { 
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+await fetchJson(`https://api.jikan.moe/v4/anime?q=${q}`)
+.then((res) =>{
+console.log(res)   
+let sections = []   
+  for (let i of res.data) {
+  const list = {title: `${i.title}`,
+  rows: [
+	    {
+	     title: `${i.title}\n\n`, 
+	     rowId: `${prefix}animesearch ${i.mal_id}`,
+	     description: `${i.synopsis}`
+	    }, 
+	    ]
+     }
+     sections.push(list)   
+     }
+  const sendm =  JimbruOffical.sendMessage(
+      from, 
+      {
+       text: "Anime Search",
+       footer: botname,
+       title: ownername,
+       buttonText: "Click and see search results➡",
+       sections
+      }, { quoted : m }
+    )  
+})
+}    
+break
+case 'group setting':{
+            	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+                    let sections = []
+                    let com = [`group open`,`leveling on`,`autosticker on`,`welcome on`,`antilinkgc on`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autorevoke on`,`autoreply on`]
+                    let comm = [`group close`,`leveling off`,`autosticker off`,`welcome off`,`antilinkgc off`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autorevoke on`,`autoreply on`]
+                    let listnya = [`Group open/close`,`Leveling on/off`,`Auto-Sticker on/off`,`Welcome/Left on/off`,`Antilink Group on/off`,`Antilink Telegram on/off`,`Antilink Tiktok on/off`,`Antilink Youtube Channel on/off`,`Antilink Youtube Video on/off`,`Antilink Instagram on/off`,`Antilink Facebook on/off`,`Antilink Twitter on/off`,`Antilink All on/off`,`Anti Wame on/off`,`Anti Toxic on/off`,`Anti Virus on/off`,`Auto Revoke on/off`,`Auto Reply on/off`]
+                    let suruh = [`Enable`, `Disable`]
+                    let fiturname = [`Group`,`Leveling`,`Auto Sticker`,`Welcome`,`Antilink Group`,`Antilink Telegram`,`Antilink Tiktok`,`Antilink Youtube Channel`,`Antilink Youtube Video`,`Antilink Instagram`,`Antilink Facebook`,`Antilink Twitter`,`Antilink All`,`Anti Wame`,`Anti Toxic`,`Anti Virus`,`Auto Revoke`,`Auto Reply`]
+                    let startnum = 0; let startnu = 0; let startn = 0;let start = 0
+                    let startnumm = 1
+                    for (let x of com) {
+                        const yy = {title: `${listnya[startnum++]}`,
+                    rows: [
+                       {
+                        title: `${suruh[0]}`,
+                        description: `Activate ${fiturname[startnu++]}`,
+                        rowId: `${prefix}${x}`
+                      },{
+                        title: `${suruh[1]}`,
+                        description: `Deactivate ${fiturname[startn++]}`,
+                        rowId: `${prefix}${comm[start++]}`
+                      }
+                    ]
+                   }
+                        sections.push(yy)
+                    }
+                    const sendm =  JimbruOffical.sendMessage(
+      from, 
+      {
+       text: "Group Settings",
+       footer: botname,
+       title: "Set your group settings here......",
+       buttonText: "Click Button",
+       sections
+      }, { quoted : m }
+    )  
+}    
+break
+case'glitch3':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text|text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case '3dbox':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
+    `${q}`,])
+.then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.catch((err) => console.log(err));
+break
+
+
+case 'waterdrop':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+ maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
+     `${q}`,])
+    .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+    .catch((err) => console.log(err));
+     break
+
+
+case 'lion2':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+  if(!q) return reply(`Use ${prefix + command} text`)
+  reply(mess.wait)
+  maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
+      `${q}`,])
+     .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+     .catch((err) => console.log(err));
+     break
+
+
+case 'papercut':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+      if(!q) return reply(`Use ${prefix + command} text`)
+      reply(mess.wait)
+      maker.textpro("https://textpro.me/create-art-paper-cut-text-effect-online-1022.html", [
+`${q}`,])
+         .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .catch((err) => console.log(err));
+         break
+
+
+case 'transformer':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+      if(!q) return reply(`Use ${prefix + command} text`)
+      reply(mess.wait)
+      maker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
+`${q}`,])
+.then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.catch((err) => console.log(err));
+break
+   
+
+case 'harrypot':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+       if(!q) return reply(`Use ${prefix + command} text|text`)
+       reply(mess.wait)
+       teks1 = q.split("|")[0]
+       teks2 = q.split("|")[1]
+       maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
+ `${teks1}`,`${teks2}`])
+ .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+ .catch((err) => console.log(err));
+ break
+
+
+case 'neondevil':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+      if(!q) return reply(`Use ${prefix + command} text`)
+      reply(mess.wait)
+      maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
+`${q}`,])
+         .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .catch((err) => console.log(err));
+         break
+
+
+case '3dstone':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+case '3davengers':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+case 'thunder':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   
+
+case 'window':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   case 'blackpinkneon':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-neon-light-blackpink-logo-text-effect-online-1081.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'graffiti':
+   case 'grafiti':
+      if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text|text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
 
 
 
+case 'pornhub2':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'blackpink2':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'glitch':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'glitch2':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text|text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'glitch3':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text|text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case '3dspace':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text|text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'lion':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text|text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case '3dneon':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'neon':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/neon-text-effect-online-879.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'greenneon':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   
+   
+  
+case 'bokeh':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   
+   
+
+case 'holographic':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'bear':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+case 'wolf':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+
+
+case 'joker':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+
+case 'dropwater2':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   
+   case 'summertime':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-a-summer-neon-light-text-effect-online-1076.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'neonlight2':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'thewall':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   
+case 'natural':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break 
+
+case 'carbon':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'pencil':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
+    `${q}`,])
+  .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+ 
+case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas':
+case 'deepsea': case 'scifi': case 'rainbow2': case 'waterpipe': case 'spooky': 
+case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': 
+case 'transformer': case 'berry': case 'thunder': case '.': case '3dstone2': 
+case 'neonlight': case 'glitch': case 'harrypotter': case 'brokenglass': case 'papercut': 
+case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 'graffitibike':
+ case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood': 
+case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
+case 'lava': case 'rock': case 'bloodglas': case 'halloween': case 'darkgold': case 'joker': case 'wicker':
+ case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': {
+             if (!q) return reply(`Example : ${prefix + command} ${global.ownername}`) 
+                if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+             reply(mess.wait)
+             let link
+             if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
+             if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
+             if (/3dchristmas/.test(command)) link = 'https://textpro.me/3d-christmas-text-effect-by-name-1055.html'
+             if (/sparklechristmas/.test(command)) link = 'https://textpro.me/sparkles-merry-christmas-text-effect-1054.html'
+             if (/deepsea/.test(command)) link = 'https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html'
+             if (/scifi/.test(command)) link = 'https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html'
+             if (/rainbow/.test(command)) link = 'https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html'
+             if (/waterpipe/.test(command)) link = 'https://textpro.me/create-3d-water-pipe-text-effects-online-1048.html'
+             if (/spooky/.test(command)) link = 'https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html'
+             if (/pencil/.test(command)) link = 'https://textpro.me/create-a-sketch-text-effect-online-1044.html'
+             if (/circuit/.test(command)) link = 'https://textpro.me/create-blue-circuit-style-text-effect-online-1043.html'
+             if (/discovery/.test(command)) link = 'https://textpro.me/create-space-text-effects-online-free-1042.html'
+             if (/metalic/.test(command)) link = 'https://textpro.me/creat-glossy-metalic-text-effect-free-online-1040.html'
+             if (/fiction/.test(command)) link = 'https://textpro.me/create-science-fiction-text-effect-online-free-1038.html'
+             if (/demon/.test(command)) link = 'https://textpro.me/create-green-horror-style-text-effect-online-1036.html'
+             if (/transformer/.test(command)) link = 'https://textpro.me/create-a-transformer-text-effect-online-1035.html'
+             if (/berry/.test(command)) link = 'https://textpro.me/create-berry-text-effect-online-free-1033.html'
+             if (/thunder/.test(command)) link = 'https://textpro.me/online-thunder-text-effect-generator-1031.html'
+             if (/magma/.test(command)) link = 'https://textpro.me/create-a-magma-hot-text-effect-online-1030.html'
+             if (/3dstone2/.test(command)) link = 'https://textpro.me/create-a-3d-stone-text-effect-online-for-free-1073.html'
+             if (/neonlight/.test(command)) link = 'https://textpro.me/create-3d-neon-light-text-effect-online-1028.html'
+             if (/glitch/.test(command)) link = 'https://textpro.me/create-impressive-glitch-text-effects-online-1027.html'
+             if (/harrypotter/.test(command)) link = 'https://textpro.me/create-harry-potter-text-effect-online-1025.html'
+             if (/brokenglass/.test(command)) link = 'https://textpro.me/broken-glass-text-effect-free-online-1023.html'
+             if (/papercut/.test(command)) link = 'https://textpro.me/create-art-paper-cut-text-effect-online-1022.html'
+             if (/watercolor/.test(command)) link = 'https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html'
+             if (/multicolor/.test(command)) link = 'https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html'
+             if (/neondevil/.test(command)) link = 'https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html'
+             if (/underwater/.test(command)) link = 'https://textpro.me/3d-underwater-text-effect-generator-online-1013.html'
+             if (/graffitibike/.test(command)) link = 'https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html'
+             if (/snow/.test(command)) link = 'https://textpro.me/create-snow-text-effects-for-winter-holidays-1005.html'
+             if (/cloud/.test(command)) link = 'https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html'
+             if (/honey/.test(command)) link = 'https://textpro.me/honey-text-effect-868.html'
+             if (/ice/.test(command)) link = 'https://textpro.me/ice-cold-text-effect-862.html'
+             if (/fruitjuice/.test(command)) link = 'https://textpro.me/fruit-juice-text-effect-861.html'
+             if (/biscuit/.test(command)) link = 'https://textpro.me/biscuit-text-effect-858.html'
+             if (/wood/.test(command)) link = 'https://textpro.me/wood-text-effect-856.html'
+             if (/chocolate/.test(command)) link = 'https://textpro.me/chocolate-cake-text-effect-890.html'
+             if (/strawberry/.test(command)) link = 'https://textpro.me/strawberry-text-effect-online-889.html'
+             if (/matrix/.test(command)) link = 'https://textpro.me/matrix-style-text-effect-online-884.html'
+             if (/blood/.test(command)) link = 'https://textpro.me/horror-blood-text-effect-online-883.html'
+             if (/dropwater/.test(command)) link = 'https://textpro.me/dropwater-text-effect-872.html'
+             if (/toxic/.test(command)) link = 'https://textpro.me/toxic-text-effect-online-901.html'
+             if (/lava/.test(command)) link = 'https://textpro.me/lava-text-effect-online-914.html'
+             if (/rock/.test(command)) link = 'https://textpro.me/rock-text-effect-online-915.html'
+             if (/bloodglas/.test(command)) link = 'https://textpro.me/blood-text-on-the-frosted-glass-941.html'
+             if (/halloween/.test(command)) link = 'https://textpro.me/halloween-fire-text-effect-940.html'
+             if (/darkgold/.test(command)) link = 'https://textpro.me/metal-dark-gold-text-effect-online-939.html'
+             if (/joker/.test(command)) link = 'https://textpro.me/create-logo-joker-online-934.html'
+             if (/wicker/.test(command)) link = 'https://textpro.me/wicker-text-effect-online-932.html'
+             if (/firework/.test(command)) link = 'https://textpro.me/firework-sparkle-text-effect-930.html'
+             if (/skeleton/.test(command)) link = 'https://textpro.me/skeleton-text-effect-online-929.html'
+             if (/blackpink/.test(command)) link = 'https://textpro.me/create-blackpink-logo-style-online-1001.html'
+             if (/sand/.test(command)) link = 'https://textpro.me/write-in-sand-summer-beach-free-online-991.html'
+             if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html'
+             if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
+                if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'           
+             let anu = await maker.textpro(link, q)
+                JimbruOffical.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname}` }, { quoted: m })
+             }
+             break
+case 'emojimix': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!q) reply(`*Example :* ${prefix + command} 😇+😁`)
+let [emoji1, emoji2] = q.split`+`
+let kuntuh = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
+for (let res of kuntuh.results) {
+let encmedia = await JimbruOffical.sendImageAsSticker(from, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+await fs.unlinkSync(encmedia)
+}
+}
+break
+case 'getcase':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (m.isGroup) reply(mess.private)
+if (!isCreator) return reply(mess.owner)
+const getCase = (cases) => {
+return "case"+`'${cases}'`+fs.readFileSync("Jimbru.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
+}
+replay(`${getCase(q)}`)
+break
+case 'textmaker2': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (args.length < 1) return reply(`Example :\n${prefix + command} <name>`)
+if (args[0] === 'glitch') {
+if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]} ${global.ownername}`)
+let teds = await thiccysapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [args[1]])
+JimbruOffical.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
+} else if (args[0] === 'glow') {
+if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]} ${global.ownername}`)
+let teds = await thiccysapi.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", [args[1]])
+JimbruOffical.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
+} else {
+reply(`*Text Maker List :*\n•> glitch\n•> glow`)
+}
+}
+break
+case 'emoji': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return reply('Where is the emoji?')
+emoji.get(args.join(" ")).then(async(emoji) => {
+let mese = await JimbruOffical.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Made by ${global.botname}`}, {quoted:m})
+await JimbruOffical.sendMessage(from, {text:"reply #s to this image to make sticker"}, {quoted:mese})
+})
+}
+break
+case 'areaoftriangle':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (!q) return reply(`to find the result of the area of ​​a triangle\nUse ${prefix}areaoftriangle side1 side 2 side 3\nexample: ${prefix}areaoftriangle 1 2 7`)
+if (!isInventoryLimit){ addInventoriLimit(m.sender) }
+try {
+const luasseg = bdr.datar.luas.segitiga(args[0], args[1], false)
+const caraluas = bdr.datar.luas.segitiga(args[0], args[1], true)
+reply(`*Results:* ${luasseg}\n${caraluas}`)
+} catch (err) {
+reply('The format of the message is wrong')
+}
+break
+case 'perimeteroftriangle':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (!q) return reply(`To find the result of the perimeter of a triangle\nUse ${prefix}perimeteroftriangle side1 side2 side3\nExample: ${prefix}perimeteroftriangle 32 10 8`)
+     if (!isInventoryLimit){ addInventoriLimit(m.sender) }
+     if (isLimit < 1) return reply("Your limit has run out ಥ╭╮ಥ, please buy by #buy limit _amount_")
+     kurangLimit(m.sender, 1)
+     reply(`One limit is used ಥ‿ಥ\nYour remaining limit : ${getLimit(m.sender)}`)
+try {
+const kelsegitiga = bdr.datar.keliling.segitiga(args[0], args[1], args[2], false)
+const carakel = bdr.datar.keliling.segitiga(args[0], args[1], args[2], true)
+reply(`*Results:* ${kelsegitiga}\n*Formula:* ${carakel}`)
+} catch (err) {
+reply('The format of the message is wrong')
+}
+break
+case 'areaofsquare':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (!q) return reply(`To find the result of the area of ​​a square\nUse ${prefix}areaofsquare number\nExample: ${prefix}areaofsquare 32`)
+try {
+const luaspersegi = bdr.datar.luas.persegi(q, false)
+const luaspersegis = bdr.datar.luas.persegi(q, true)
+reply(`*Results:* ${luaspersegi}\n*Formula:* ${luaspersegis}`) 
+} catch (err) {
+reply('The format of the message is wrong') 
+}
+break
+case 'pythagoras':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (!q) return reply(`To find the Pythagorean result\nUse ${prefix}pythagoras option number1 number2\nExample: ${prefix}pythagoras crooked 8 6`) 
+try {
+const pytha = bdr.rdb.pythagoras(args[0], args[1], args[2], false)
+const rumuspytha = bdr.rdb.pythagoras(args[0], args[1], args[2], true)
+reply(`*Results:* ${pytha}\n*Formula:* ${rumuspytha}`) 
+} catch (err) {
+reply('The format of the message is wrong') 
+}
+break
+case 'multiply':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (!q) return reply(`To find the result of multiplication\nUse ${prefix}multiply multiplication number multiplication number\nExample: ${prefix}multiply 5 15`) 
+try {
+const perkal = bdr.rdb.perkalian(args[0], args[1])
+reply(`*Results:* ${perkal}\n*Formula:* ${rumusperkal}`) 
+} catch (err) {
+reply('The format of the message is wrong') 
+}
+break
+case 'perimeterofsquare':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (!q) return reply(`To find the result of the perimeter of a square\nUse ${prefix}perimeterofsquare number\nExample: ${prefix}perimeterofsquare 78`)
+try {
+const persegi = bdr.datar.keliling.persegi(q, false)
+const caraPersegi = bdr.datar.keliling.persegi(q, true)
+reply(`*Results:* ${persegi}\n*Formula:* ${caraPersegi}`) 
+} catch (err) {
+reply('The format of the message is wrong') 
+}
+break
+case 'square':
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (!q) return reply(`To find a Squared Result\nUse ${prefix}square number\nExample: ${prefix}square 6`) 
+try {
+const kuadrat = bdr.rdb.kuadrat(q)
+reply(`*Results:* ${kuadrat}`) 
+} catch (err) {
+reply('The format of the message is wrong') 
+}
+break
+case 'cubic':
+if (!q) return reply(`Untuk mencari sebuah Hasil Kubik\nUse ${prefix}cubic number\nExample: ${prefix}cubic 9`) 
+try {
+const kubik = bdr.rdb.kubik(q)
+reply(`*Results:* ${kubik}`) 
+} catch (err) {
+reply('The format of the message is wrong') 
+}
+break
+case 'family100': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if ('family100'+m.chat in _family100) {
+replay('There are still unfinished sessions!')
+throw false
+}
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+let random = anu[Math.floor(Math.random() * anu.length)]
+let hasil = `*Answer the following questions :*\n${random.soal}\n\nThere is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(some answers have spaces)` : ''}`.trim()
+_family100['family100'+m.chat] = {
+id: 'family100'+m.chat,
+pesan: await JimbruOffical.sendText(m.chat, hasil, m),
+...random,
+terjawab: Array.from(random.jawaban, () => false),
+hadiah: 6,
+}
+}
+break
+case 'guess': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} song\n\nOption : \n1.song\n2. picture\n3. saying\n4. sentence\n5. lyrics\n6.food`)
+if (args[0] === "song") {
+if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+let msg = await JimbruOffical.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
+JimbruOffical.sendText(m.chat, `What is the name of this song?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
+tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess the song' }, type: 1 }], `Time has run out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+delete tebaklagu[m.sender.split('@')[0]]
+}
+} else if (args[0] === 'picture') {
+if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+JimbruOffical.sendImage(m.chat, result.img, `Please answer the question above\n\nDescription : ${result.deskripsi}\nTime : 60s`, m).then(() => {
+tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess the picture' }, type: 1 }], `Time has run out\nAnswer:  ${tebakgambar[m.sender.split('@')[0]]}\n\nWant to play? press the button below`,`${global.botname}`, m)
+delete tebakgambar[m.sender.split('@')[0]]
+}
+} else if (args[0] === 'word') {
+if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/fungames/main/GuessTheWord.js')
+let result = anu[Math.floor(Math.random() * anu.length)]
+JimbruOffical.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
+tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${tebakkata[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+delete tebakkata[m.sender.split('@')[0]]
+}
+} else if (args[0] === 'sentence') {
+if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/fungames/main/GuessTheSentence.js')
+let result = anu[Math.floor(Math.random() * anu.length)]
+JimbruOffical.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
+tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess the Sentence' }, type: 1 }], `Time Out\nAnswer:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+delete tebakkalimat[m.sender.split('@')[0]]
+}
+} else if (args[0] === 'lyrics') {
+if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+JimbruOffical.sendText(m.chat, `Fill the missing lyrics below : *${result.soal}*?\nTime : 60s`, m).then(() => {
+tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+})
+await sleep(60000)
+if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `Time Out\nAnswer:  ${tebaklirik[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+delete tebaklirik[m.sender.split('@')[0]]
+}
+} else if (args[0] === 'guess saying') {
+if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
+let result = anu[Math.floor(Math.random() * anu.length)]
+JimbruOffical.sendText(m.chat, `*Answer the following questions :*\n${result.soal}*\nTime : 60s`, m).then(() => {
+caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+caklontong_desk[m.sender.split('@')[0]] = result.deskripsi
+})
+await sleep(60000)
+if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess saying', buttonText: { displayText: 'Guess The Saying' }, type: 1 }], `Time Out\nAnswer:  ${caklontong[m.sender.split('@')[0]]}\nDescription : ${caklontong_desk[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+delete caklontong[m.sender.split('@')[0]]
+delete caklontong_desk[m.sender.split('@')[0]]
+}
+}
+}
+break
+// tictactoe
+case 'tictactoe': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let TicTacToe = require("./lib/tictactoe")
+this.game = this.game ? this.game : {}
+if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replay('You are still in the game')
+let room = Object.values(this.game).find(room => room.state === 'WAITING' && (args.join(" ") ? room.name === args.join(" ") : true))
+if (room) {
+replay('Partner found!')
+room.o = m.chat
+room.game.playerO = m.sender
+room.state = 'PLAYING'
+let arr = room.game.render().map(v => {
+return {
+X: '❌',
+O: '⭕',
+1: '1️⃣',
+2: '2️⃣',
+3: '3️⃣',
+4: '4️⃣',
+5: '5️⃣',
+6: '6️⃣',
+7: '7️⃣',
+8: '8️⃣',
+9: '9️⃣',
+}[v]
+})
+let str = `Room ID: ${room.id}
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')}
+${arr.slice(6).join('')}
+Waiting @${room.game.currentTurn.split('@')[0]}
+Type *surrender* to surrender and admit defeat`
+if (room.x !== room.o) await JimbruOffical.sendText(room.x, str, m, { mentions: parseMention(str) } )
+await JimbruOffical.sendText(room.o, str, m, { mentions: parseMention(str) } )
+} else {
+room = {
+id: 'tictactoe-' + (+new Date),
+x: m.chat,
+o: '',
+game: new TicTacToe(m.sender, 'o'),
+state: 'WAITING'
+}
+if (args.join(" ")) room.name = args.join(" ")
+replay('Waiting for partner' + (args.join(" ") ? ` type the command below ${prefix}${command} ${args.join(" ")}` : ''))
+this.game[room.id] = room
+}
+}
+break
+case 'delttc': case 'delttt': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+this.game = this.game ? this.game : {}
+try {
+if (this.game) {
+delete this.game
+JimbruOffical.sendText(m.chat, `Successfully deleted the TicTacToe session`, m)
+} else if (!this.game) {
+replay(`Session TicTacToe🎮 does not exist`)
+} else throw '?'
+} catch (e) {
+replay('error!')
+}
+}
+break
+case 'kuismath': case 'math': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+let { genMath, modes } = require('./src/math')
+if (!args.join(" ")) return replay(`Mode: ${Object.keys(modes).join(' | ')}\nUsage examples: ${prefix}math medium`)
+let result = await genMath(text.toLowerCase())
+JimbruOffical.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+kuismath[m.sender.split('@')[0]] = result.jawaban
+})
+await sleep(result.waktu)
+if (kuismath.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+replay("Time Out\nAnswer: " + kuismath[m.sender.split('@')[0]])
+delete kuismath[m.sender.split('@')[0]]
+}
+}
+break		
+case 'delete': case 'del': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.quoted) return
+let { chat, fromMe, id, isBaileys } = m.quoted
+if (!isBaileys) return replay('The message was not sent by a bot!')
+JimbruOffical.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+}
+		
 
 
 
