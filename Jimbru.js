@@ -1231,7 +1231,7 @@ const menulist = `╭➤
 │❖ Hᴇʏ👋 ❤︎
 └┬❥︎  ${pushname} 
 ┌┤❖  ᴛʜᴀɴᴋs ғᴏʀ ᴄʜᴏssɪɴɢ
-││     ᴊɪᴍʙʀᴏᴏᴛᴀɴ
+││ ᴊɪᴍʙʀᴏᴏᴛᴀɴ 🧞
 │╰────────────────❋ཻུ۪۪⸙
 ❤︎
 ╭➤ ʙᴏᴛ ɪɴғᴏ ✫    
@@ -1244,7 +1244,76 @@ const menulist = `╭➤
   ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘
 ╭◪ ᴄᴏᴅᴇᴅ ʙʏ ᴍɪᴋʜᴀɪᴇʟ
 │ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ
-╰────────────────❋ཻུ۪۪⸙ `	
+╰────────────────❋ཻུ۪۪⸙ `
+const qtod = m.quoted? "true":"false"
+
+//randoming function
+function pickRandom(list) {
+return list[Math.floor(list.length * Math.random())]
+}
+//document randomizer
+let documents = [doc1,doc2,doc3,doc4,doc5,doc6]
+let docs = pickRandom(documents)
+
+//react function
+const reactionMessage = {
+                    react: {
+                        text: args[0],
+                        key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
+                    }
+                }
+//cases starts here
+switch(command) {
+	case 'list': {
+		if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+JimbruOffical.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
+	                let btn = [{
+                                urlButton: {
+                                    displayText: 'YouTube',
+                                    url: `${website}`
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Script',
+                                    url: `${botscript}`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'All Menu',
+                                    id: 'allmenu'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'List Menu',
+                                    id: 'command'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Owner',
+                                    id: 'owner'
+                                }
+                            }]
+                         let setbot = db.data.settings[botNumber]
+                        if (setbot.templateImage) {
+                        JimbruOffical.send5ButImg(m.chat, menulist, global.botname, global.thumb, btn, global.thumb)
+                        } else if (setbot.templateGif) {
+                        JimbruOffical.send5ButGif(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
+                        } else if (setbot.templateVid) {
+                        JimbruOffical.send5ButVid(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
+                        } else if (setbot.templateMsg) {
+                        JimbruOffical.send5ButMsg(m.chat, menulist, global.botname, btn)
+                        } else if (setbot.templateDocument) {
+                        let buttonmenu = [
+        	{ urlButton: { displayText: `YouTube`, url : `${website}` } },
+            { urlButton: { displayText: `Script`, url: `${botscript}` } },
+            { quickReplyButton: { displayText: `All Menu`, id: 'allmenu'} },
+            { quickReplyButton: { displayText: `List Menu`, id: 'command'} },
+            { quickReplyButton: { displayText: `Owner`, id: 'owner'} }
+        	]
+        	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/doc.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
+                        }
+                     }
     
     
     
