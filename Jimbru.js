@@ -3501,3 +3501,1242 @@ replay('Success in turning off telegram antilink in this group')
   }
   }
   break		
+case 'antilinktiktok': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkTiktok) return replay('Already activated')
+ntilinktt.push(from)
+replay('Success in turning on tiktok antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the tiktok link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkTiktok) return replay('Already deactivated')
+let off = ntilinktt.indexOf(from)
+ntilinktt.splice(off, 1)
+replay('Success in turning off tiktok antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+            case 'antilinktwt': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkTwitter) return replay('Already activated')
+ntilinktwt.push(from)
+replay('Success in turning on twitter antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the twitter link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkTwitter) return replay('Already deactivated')
+let off = ntilinktwt.indexOf(from)
+ntilinktwt.splice(off, 1)
+replay('Success in turning off twitter antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+case 'alllinkban': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkTwitter) return replay('Already activated')
+ntilinkall.push(from)
+replay('Success in turning on all antilink in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkAll) return replay('Already deactivated')
+let off = ntilinkall.indexOf(from)
+ntilinkall.splice(off, 1)
+replay('Success in turning off all antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break			
+case 'antivirus': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (antiVirtex) return replay('Already activated')
+ntvirtex.push(from)
+replay('Success in turning on antivirus in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!antiVirtex) return replay('Already deactivated')
+let off = ntvirtex.indexOf(from)
+ntvirtex.splice(off, 1)
+replay('Success in turning off antivirus this group')
+} else {
+  let buttonsntvirtex = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntvirtex, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+case 'antibadword': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (antiToxic) return replay('Already activated')
+nttoxic.push(from)
+replay('Success in turning on antitoxic in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to use bad words in this group, one who uses will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!antiToxic) return replay('Already deactivated')
+let off = nttoxic.indexOf(from)
+nttoxic.splice(off, 1)
+replay('Success in turning off antitoxic in this group')
+} else {
+  let buttonsnttoxci = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsnttoxic, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+case 'antiwame': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (antiWame) return replay('Already activated')
+ntwame.push(from)
+replay('Success in turning on antiwame in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send wa.me in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!antiWame) return replay('Already deactivated')
+let off = nttoxic.indexOf(from)
+ntwame.splice(off, 1)
+replay('Success in turning off antiwame in this group')
+} else {
+  let buttonsntwame = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+  case 'nsfw': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiNsfw) return replay('Already activated')
+ntnsfw.push(from)
+replay('Success in turning on nsfw in this group')
+var groupe = await JimbruOffical.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+JimbruOffical.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiNsfw) return replay('Already deactivated')
+let off = ntnsfw.indexOf(from)
+ntnsfw.splice(off, 1)
+replay('Success in turning off nsfw in this group')
+} else {
+  let buttonsntnsfw = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
+case 'ban': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!args[0]) return replay(`Select add or del(add to ban, del to unban), For Example: Reply *${prefix}ban add* to the user u want to ban`)
+if (args[1]) {
+orgnye = args[1] + "@s.whatsapp.net"
+} else if (m.quoted) {
+orgnye = m.quoted.sender
+}
+const isBane = banUser.includes(orgnye)
+if (args[0] === "add") {
+if (isBane) return ads('User was already banned')
+banUser.push(orgnye)
+replay(`Successfully banned the user`)
+} else if (args[0] === "del") {
+if (!isBane) return ads('User was already unbanned')
+let delbans = banUser.indexOf(orgnye)
+banUser.splice(delbans, 1)
+replay(`Successfully unbanned the user`)
+} else {
+replay("Error")
+}
+}
+break
+case 'online': case 'onlinelist: {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
+let online = [...Object.keys(store.presences[id]), botNumber]
+let liston = 1
+JimbruOffical.sendText(m.chat, '     「 Online List 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+}
+break	
+case 'chat': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return reply(mess.owner)
+if (!args.join(" ")) return reply(`Example :\n${prefix + command} 916909xxxxxx|Hi`)
+const cpes = args.join(" ")
+const nony = cpes.split("|")[0];
+const pesny = cpes.split("|")[1];
+lolh = `*| CHAT |*
+Message from owner of bot
+Number : @${m.sender.split("@")[0]}
+Message : ${pesny}`
+JimbruOffical.sendMessage(nony + "@s.whatsapp.net", {text:lolh, mentions:[m.sender]}, {quoted:m})
+}
+await reply("Success")
+break
+case 'cowner': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return reply(mess.owner)
+if (!args[0]) return reply(`Select add or delete`)
+if (args[1]) {
+orgnye = args[1]
+} else if (m.quoted) {
+orgnye = m.quoted.sender.split("@")[0]
+}
+const isCwner = owner.includes(orgnye)
+if (args[0] === "add") {
+if (isCwner) return reply('The user is already the owner')
+owner.push(orgnye)
+reply(`Success in adding owner`)
+} else if (args[0] === "del") {
+if (!isCwner) return reply('User is not owner')
+let delcwner = owner.indexOf(orgnye)
+owner.splice(delcwner, 1)
+reply(`Success in deleting owner`)
+} else {
+reply("Error")
+}
+}
+break
+case 'ban': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!args[0]) return replay(`Select add or del(add to ban, del to unban), For Example: Reply *${prefix}ban add* to the user u want to ban`)
+if (args[1]) {
+orgnye = args[1] + "@s.whatsapp.net"
+} else if (m.quoted) {
+orgnye = m.quoted.sender
+}
+const isBane = banUser.includes(orgnye)
+if (args[0] === "add") {
+if (isBane) return ads('User was already banned')
+banUser.push(orgnye)
+replay(`Successfully banned the user`)
+} else if (args[0] === "del") {
+if (!isBane) return ads('User was already unbanned')
+let delbans = banUser.indexOf(orgnye)
+banUser.splice(delbans, 1)
+replay(`Successfully unbanned the user`)
+} else {
+replay("Error")
+}
+}
+break
+case 'request': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} hello dev please add a downloader feature`)
+teks = `*| REQUEST |*`
+teks1 = `\n\nNumber : @${m.sender.split("@")[0]}\nRequest : ${args.join(" ")}`
+teks2 = `\n\nSuccessfully sent to owner`
+for (let i of owner) {
+JimbruOffical.sendMessage(i + "@s.whatsapp.net", {text: teks + teks1, mentions:[m.sender]}, {quoted:m})
+}
+JimbruOffical.sendMessage(m.chat, {text: teks + teks2 + teks1, mentions:[m.sender]}, {quoted:m})
+}
+break
+case 'report': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : \n- ${prefix + command} fitur ig error min\n- ${prefix + command} hey dev this user is spamming`)
+teks = `*| REPORT |*`
+teks1 = `\n\nNumber : @${m.sender.split("@")[0]}\nReport : ${args.join(" ")}`
+teks2 = `\n\nSuccessfully sent to owner`
+for (let i of owner) {
+JimbruOffical.sendMessage(i + "@s.whatsapp.net", {text: teks + teks1, mentions:[m.sender]}, {quoted:m})
+}
+JimbruOffical.sendMessage(m.chat, {text: teks + teks2 + teks1, mentions:[m.sender]}, {quoted:m})
+}
+break
+case 'mcpedl': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} shader`)
+yogipw.mcpedl(args.join(" ")).then(async(res) => {
+teks = `*| MCPEDL SEARCH |*`
+for (let i of res) {
+teks += `\n\nName : ${i.name}\nCategory : ${i.category}\nDate : ${i.date}\nDesc : ${i.desc}\nLink : ${i.link}`
+}
+let buttons = [
+{buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
+]
+let buttonMessage = {
+image: logo,
+jpegThumbnail: thum,
+caption: teks,
+footer: `${global.botname}`,
+buttons: buttons,
+headerType: 4
+}
+JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+})
+}
+break
+case 'happymod': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} mobile legend`)
+yogipw.happymod(args.join(" ")).then(async(res) => {
+teks = '```「 HappyMod Search 」```'
+for (let i of res) {
+teks += `\n\n${i.name}\n`
+teks += `${i.link}`
+}
+let buttons = [
+{buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
+]
+let buttonMessage = {
+image: {url:res[0].icon},
+jpegThumbnail: thum,
+caption: teks,
+footer: `${global.botname}`,
+buttons: buttons,
+headerType: 4
+}
+JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+})
+}
+break	
+case 'searchgc': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (args.length < 1) return replay(`Example :\n${prefix}searchgc Classy Editor`)
+nae = args.join(" ")
+hx.linkwa(nae).then(res => {
+teks = '```「 Search Group 」```'
+for (let i of res) {
+teks += `\n\n•> Group Whatsapp :\n`
+teks += `${i.link}\n`
+teks += `${i.nama}`
+}
+let buttons = [
+{buttonId: `menu`, buttonText: {displayText: 'Menu🥀'}, type: 1}
+]
+let buttonMessage = {
+image: logo,
+jpegThumbnail: thum,
+caption: teks,
+footer: `${global.botname}`,
+buttons: buttons,
+headerType: 4
+}
+JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+})
+}
+case 'antitag': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return
+if (args.length < 1) return replay(`Type on to enable\nType off to disable`)
+if (args[0] === 'on') {
+if (antitags === true) return
+global.antitags = true
+replay(`Successfully activated antitag!`)
+} else if (args[0] === 'off') {
+if (antitags === false) return
+global.antitags = false
+replay(`Successfully deactivated antitag!`)
+} else {
+replay('Choose on or off')
+}
+}
+break
+case 'yts': case 'ytsearch': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
+let yts = require("yt-search")
+let search = await yts(args.join(" "))
+let teks = '*| YOUTUBE SEARCH |*\n\n Result From '+text+'\n\n'
+let no = 1
+for (let i of search.all) {
+teks += `${global.themeemoji} No : ${no++}\n${global.themeemoji} Type : ${i.type}\n${global.themeemoji} Video ID : ${i.videoId}\n${global.themeemoji} Title : ${i.title}\n${global.themeemoji} Views : ${i.views}\n${global.themeemoji} Duration : ${i.timestamp}\n${global.themeemoji} Uploaded : ${i.ago}\n${global.themeemoji} Author : ${i.author.name}\n${global.themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
+}
+JimbruOffical.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+}
+break
+case 'chatinfo': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.quoted) replay('Reply Message')
+let msg = await m.getQuotedObj()
+if (!m.quoted.isBaileys) return replay('The message was not sent by a bot!')
+let teks = ''
+for (let i of msg.userReceipt) {
+let read = i.readTimestamp
+let unread = i.receiptTimestamp
+let waktu = read ? read : unread
+teks += `${global.themeemoji} @${i.userJid.split('@')[0]}\n`
+teks += ` ┗━${global.themeemoji} *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ${global.themeemoji} *Status :* ${read ? 'Read' : 'Sent'}\n\n`
+}
+JimbruOffical.sendTextWithMentions(m.chat, teks, m)
+}
+break
+case 'setname': case 'setsubject': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (!text) return replay('Text ?')
+await JimbruOffical.groupUpdateSubject(m.chat, text).then((res) => replay(mess.success)).catch((err) => replay(jsonformat(err)))
+}
+break
+case 'block': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+		if (!isCreator) return reply(mess.owner)
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await JimbruOffical.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+	}
+	break
+        case 'unblock': {
+        	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+		if (!isCreator) return reply(mess.owner)
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await JimbruOffical.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+	}
+	break
+case 'setdesc' : {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (!text) return replay('Where is the text?')
+await JimbruOffical.groupUpdateDescription(m.chat, text).then((res) => replay(mess.success)).catch((err) => replay(jsonformat(err)))
+}
+break
+case 'pp': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+let media = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+await JimbruOffical.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+replay(mess.success)
+}	
+break
+case 'setgrouppp': case 'setgruppp': case 'setgcpp': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+let media = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+await JimbruOffical.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+replay(mess.success)
+}
+break
+case 'tag': case 'tagall': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
+
+🌹 *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
+for (let mem of participants) {
+teks += `${global.themeemoji} @${mem.id.split('@')[0]}\n`
+}
+JimbruOffical.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+}
+break
+case 'hidetag': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+JimbruOffical.sendMessage(m.chat, { text : args.join(" ") ? args.join(" ") : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+}
+break
+case 'virtex': {
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return reply(mess.admin)
+JimbruOffical.sendMessage(m.chat, { text : `${require('./storage/virtex.js').virtexfax(prefix, l, pushname)}`, mentions: participants.map(a => a.id)}, { quoted: m })
+JimbruOffical.sendMessage(m.chat, { text : `${require('./storage/virtex.js').virtexfax(prefix, l, pushname)}`, mentions: participants.map(a => a.id)}, { quoted: m })
+JimbruOffical.sendMessage(m.chat, { text : `${require('./storage/virtex.js').virtexfax(prefix, l, pushname)}`, mentions: participants.map(a => a.id)}, { quoted: m })
+JimbruOffical.sendMessage(m.chat, { text : `${require('./storage/virtex.js').virtexfax(prefix, l, pushname)}`, mentions: participants.map(a => a.id)}, { quoted: m })
+JimbruOffical.sendMessage(m.chat, { text : `${require('./storage/virtex.js').virtexfax(prefix, l, pushname)}`, mentions: participants.map(a => a.id)}, { quoted: m })
+}
+break
+	case 'autoreadstatus':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+	if (!isCreator) return reply(mess.owner)
+	if (args[0] == 'on') {
+		if (autoreadsw) return reply('*Already activated!*')
+		autoreadsw = true
+		reply('*Successfully activate auto read status*')
+	} else if (args[0] == 'off') {
+		if (!autoreadsw) return reply('*Already deactivated!*')
+		autoreadsw = false
+		reply('*Successfully turn off auto read status*')
+	} else {
+		reply('Choose on or off!')
+	}
+	break
+case 'grouplink': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+let response = await JimbruOffical.groupInviteCode(m.chat)
+JimbruOffical.sendMessage(m.chat, {text:`${groupMetadata.subject} Group Link : \nhttps://chat.whatsapp.com/${response}l`, "contextInfo": {
+mimetype: "image/jpeg",
+text: `${global.ownername}`,
+"forwardingScore": 1000000000,
+isForwarded: true,
+sendEphemeral: true,
+"externalAdReply": {
+"title": `${global.botname}`,
+"body": `${global.watermark}`,
+"previewType": "PHOTO",
+"thumbnailUrl": thum,
+"thumbnail": thum,
+"sourceUrl": `${global.website}`
+}}}, { quoted: m, detectLink: true })
+}
+break
+case 'revoke':
+case 'reset link':
+case 'reset group link': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+JimbruOffical.groupRevokeInvite(m.chat)
+}
+break
+	case 'ephemeral': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (!args[0]) return replay('Enter the enable/disable values')
+if (args[0] === 'enable') {
+await JimbruOffical.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
+} else if (args[0] === 'disable') {
+await JimbruOffical.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
+}
+}
+break
+case 'editinfo': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === 'open'){
+await JimbruOffical.groupSettingUpdate(m.chat, 'unlocked').then((res) => replay(`Successful in enabling the group info edit`)).catch((err) => replay(jsonformat(err)))
+} else if (args[0] === 'close'){
+await JimbruOffical.groupSettingUpdate(m.chat, 'locked').then((res) => replay(`Successful in disabling the group info edit`)).catch((err) => replay(jsonformat(err)))
+} else {
+let buttons = [
+{ buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
+{ buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
+]
+let buttonMessage = {
+image: logo,
+jpegThumbnail: thum,
+caption: `*「 ${global.botname} 」*\n\nChange Info, Select Open Or Close`,
+footer: `${botname}`,
+buttons: buttons,
+headerType: 4
+}
+JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+}
+break
+case 'group': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === 'close'){
+await JimbruOffical.groupSettingUpdate(m.chat, 'announcement').then((res) => replay(`Successful in closing the gc`)).catch((err) => replay(jsonformat(err)))
+} else if (args[0] === 'open'){
+await JimbruOffical.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replay(`Successful in opening the gc`)).catch((err) => replay(jsonformat(err)))
+} else {
+let buttons = [
+{ buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
+{ buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
+]
+let buttonMessage = {
+image: logo,
+jpegThumbnail: thum,
+caption: `*「 ${global.botname} 」*\n\nChange Group Setting, Select Open Or Close`,
+footer: `${botname}`,
+buttons: buttons,
+headerType: 4
+}
+JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+}
+break
+	case 'promote': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
+}
+break
+case 'demote': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
+}
+break
+case 'kick': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'remove')
+}
+break
+case 'addxxx': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'add')
+}
+break 
+case 'add': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+    let _participants = participants.map(user => user.id)
+    let users = (await Promise.all(
+        text.split(',')
+            .map(v => v.replace(/[^0-9]/g, ''))
+            .filter(v => v.length > 4 && v.length < 20 && !_participants.includes(v + '@s.whatsapp.net'))
+            .map(async v => [
+                v,
+                await JimbruOffical.onWhatsApp(v + '@s.whatsapp.net')
+            ])
+    )).filter(v => v[1][0]?.exists).map(v => v[0] + '@c.us')
+    const response = await JimbruOffical.query({
+        tag: 'iq',
+        attrs: {
+            type: 'set',
+            xmlns: 'w:g2',
+            to: m.chat,
+        },
+        content: users.map(jid => ({
+            tag: 'add',
+            attrs: {},
+            content: [{ tag: 'participant', attrs: { jid } }]
+        }))
+    })
+}
+
+break
+case 'inspect' : {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args[0]) return reply("Where is the link?")
+let linkRegex = args.join(" ")
+let coded = linkRegex.split("https://chat.whatsapp.com/")[1]
+if (!coded) return reply("Link Invalid")
+JimbruOffical.query({
+tag: "iq",
+attrs: {
+type: "get",
+xmlns: "w:g2",
+to: "@g.us"
+},
+content: [{ tag: "invite", attrs: { code: coded } }]
+}).then(async(res) => { 
+tekse = `     「 Group Link Inspector 」
+${themeemoji} ID : ${res.content[0].attrs.id ? res.content[0].attrs.id : "undefined"}
+${themeemoji} Subject : ${res.content[0].attrs.subject ? res.content[0].attrs.subject : "undefined"}
+${themeemoji} Subject update by : ${res.content[0].attrs.s_o.split("@")[0] ? "@" + res.content[0].attrs.s_o.split("@")[0] : "undefined"}
+${themeemoji} Subject update at : ${res.content[0].attrs.s_t ? moment(res.content[0].attrs.s_t *1000).tz("Asia/Kolkata").format("DD-MM-YYYY, HH:mm:ss") : "undefined"}
+${themeemoji} Create by : ${res.content[0].attrs.creator ? "@" + res.content[0].attrs.creator.split("@")[0] : "undefined"}
+${themeemoji} Create at : ${res.content[0].attrs.creation ? moment(res.content[0].attrs.creation * 1000).tz("Asia/Kolkata").format("DD-MM-YYYY, HH:mm:ss") : "undefined"}
+${themeemoji} Total Members : ${res.content[0].attrs.size ? res.content[0].attrs.size : "undefined"} Members
+${themeemoji} Desc update by : ${res.content[0].content[0].attrs.participant ? "@" + res.content[0].content[0].attrs.participant.split("@")[0] : "undefined"}
+${themeemoji} Desc update at : ${res.content[0].content[0].attrs.t ? moment(res.content[0].content[0].attrs.t * 1000).tz("Asia/Kolkata").format("DD-MM-YYYY, HH:mm:ss") : "undefined"}
+${themeemoji} Desc id : ${res.content[0].content[0].attrs.id ? res.content[0].content[0].attrs.id : "undefined"}
+${themeemoji} Description : ${res.content[0].content[0].content[0].content ? res.content[0].content[0].content[0].content.toString() : "No Description"}
+`
+try {
+pp = await JimbruOffical.profilePictureUrl(res.content[0].attrs.id + "@g.us", "image")
+} catch {
+pp = "https://tse2.mm.bing.net/th?id=OIP.n1C1oxOvYLLyDIavrBFoNQHaHa&pid=Api&P=0&w=153&h=153"
+}
+JimbruOffical.sendFile(m.chat, pp, "", m, { caption: tekse, mentions: await JimbruOffical.parseMention(tekse) })
+})
+}
+break
+case 'inspect': case 'inspectgclink': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args[0]) return replay("The link?")
+let linkRegex = args.join(" ")
+let coded = linkRegex.split("https://chat.whatsapp.com/")[1]
+if (!coded) return replay("Link Invalid")
+JimbruOffical.query({
+tag: "iq",
+attrs: {
+type: "get",
+xmlns: "w:g2",
+to: "@g.us"
+},
+content: [{ tag: "invite", attrs: { code: coded } }]
+}).then(async(res) => { 
+tekse = `     「 Group Link Inspector 」
+▸ ID : ${res.content[0].attrs.id ? res.content[0].attrs.id : "undefined"}
+▸ Subject : ${res.content[0].attrs.subject ? res.content[0].attrs.subject : "undefined"}
+▸ Subject update by : ${res.content[0].attrs.s_o.split("@")[0] ? "@" + res.content[0].attrs.s_o.split("@")[0] : "undefined"}
+▸ Subject update at : ${res.content[0].attrs.s_t ? moment(res.content[0].attrs.s_t *1000).tz("Asia/Kolkata").format("DD-MM-YYYY, HH:mm:ss") : "undefined"}
+▸ Create by : ${res.content[0].attrs.creator ? "@" + res.content[0].attrs.creator.split("@")[0] : "undefined"}
+▸ Create on : ${res.content[0].attrs.creation ? moment(res.content[0].attrs.creation * 1000).tz("Asia/Kolkata").format("DD-MM-YYYY, HH:mm:ss") : "undefined"}
+▸ Total Members : ${res.content[0].attrs.size ? res.content[0].attrs.size : "undefined"} Members
+▸ Desc update by : ${res.content[0].content[0].attrs.participant ? "@" + res.content[0].content[0].attrs.participant.split("@")[0] : "undefined"}
+▸ Desc update at : ${res.content[0].content[0].attrs.t ? moment(res.content[0].content[0].attrs.t * 1000).tz("Asia/Kolkata").format("DD-MM-YYYY, HH:mm:ss") : "undefined"}
+▸ Desc id : ${res.content[0].content[0].attrs.id ? res.content[0].content[0].attrs.id : "undefined"}
+▸ Description : ${res.content[0].content[0].content[0].content ? res.content[0].content[0].content[0].content.toString() : "No Description"}
+`
+try {
+pp = await JimbruOffical.profilePictureUrl(res.content[0].attrs.id + "@g.us", "image")
+} catch {
+pp = "https://tse2.mm.bing.net/th?id=OIP.n1C1oxOvYLLyDIavrBFoNQHaHa&pid=Api&P=0&w=153&h=153"
+}
+JimbruOffical.sendFile(m.chat, pp, "", m, { caption: tekse, mentions: await JimbruOffical.parseMention(tekse) })
+})
+}
+break	
+case 'join': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args[0]) return replay(`Where's the link?`)
+vdd = args[0]
+let vcc = vdd.split("https://chat.whatsapp.com/")[1]
+if (!vcc) return replay("Link invalid!")
+if (isCreator) {
+await JimbruOffical.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
+replay("Succes!")
+} else {
+JimbruOffical.query({
+tag: "iq",
+attrs: {
+type: "get",
+xmlns: "w:g2",
+to: "@g.us"
+},
+content: [{ tag: "invite", attrs: { code: vcc } }]
+}).then(async(res) => {
+sizny = res.content[0].attrs.size
+if (sizny < 50) {
+teks = `Sorry, your group members are less than 50, at least for a bot to join you must have more than 50 members`
+sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Media/theme/cheemsthumb.jpg'), `${global.watermark}`, `${global.botname}`, "916909137213@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")
+} else if (sizny > 50) {
+await JimbruOffical.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
+replay("Succes!")
+} else {
+replay("Error")
+}
+}).catch(_ => _)
+}
+}
+break
+case 'volume': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
+media = await JimbruOffical.downloadAndSaveMediaMessage(quoted, "volume")
+if (isQuotedAudio) {
+rname = getRandom('.mp3')
+exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
+fs.unlinkSync(media)
+if (err) return reply('Error!')
+jadie = fs.readFileSync(rname)
+JimbruOffical.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
+fs.unlinkSync(rname)
+})
+} else if (isQuotedVideo) {
+rname = getRandom('.mp4')
+exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
+fs.unlinkSync(media)
+if (err) return reply('Error!')
+jadie = fs.readFileSync(rname)
+JimbruOffical.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
+fs.unlinkSync(rname)
+})
+} else {
+reply("Send video/audio")
+}
+}
+break
+case 'tempo': {
+if (isBan) return reply(mess.ban)
+if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
+var req = args.join(' ')
+media = await JimbruOffical.downloadAndSaveMediaMessage(quoted, "tempo")
+if (isQuotedAudio) {
+ran = getRandom('.mp3')
+exec(`ffmpeg -i ${media} -filter:a "atempo=1.0,asetrate=${req}" ${ran}`, (err, stderr, stdout) => {
+fs.unlinkSync(media)
+if (err) return reply('Error!')
+hah = fs.readFileSync(ran)
+JimbruOffical.sendMessage(from, {audio:hah, mimetype:'audio/mp4', ptt:true}, {quoted:m})
+fs.unlinkSync(ran)
+})
+} else if (isQuotedVideo) {
+ran = getRandom('.mp4')
+exec(`ffmpeg -i ${media} -filter:a "atempo=1.0,asetrate=${req}" ${ran}`, (err, stderr, stdout) => {
+fs.unlinkSync(media)
+if (err) return reply('Error!')
+hah = fs.readFileSync(ran)
+JimbruOffical.sendMessage(from, {video:hah, mimetype:'video/mp4'}, {quoted:m})
+fs.unlinkSync(ran)
+})
+} else {
+reply("Send video/audio")
+}
+}
+break
+case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'tupai':
+                try {
+                let set
+                if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
+                if (/blown/.test(command)) set = '-af acrusher=.1:1:64:0:log'
+                if (/deep/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
+                if (/earrape/.test(command)) set = '-af volume=12'
+                if (/fast/.test(command)) set = '-filter:a "atempo=1.63,asetrate=44100"'
+                if (/fat/.test(command)) set = '-filter:a "atempo=1.6,asetrate=22100"'
+                if (/nightcore/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
+                if (/reverse/.test(command)) set = '-filter_complex "areverse"'
+                if (/robot/.test(command)) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
+                if (/slow/.test(command)) set = '-filter:a "atempo=0.7,asetrate=44100"'
+                if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
+                if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
+                if (/audio/.test(mime)) {
+                reply(mess.wait)
+                let media = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+                let ran = getRandom('.mp3')
+                exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+                fs.unlinkSync(media)
+                if (err) return reply(err)
+                let buff = fs.readFileSync(ran)
+                JimbruOffical.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                fs.unlinkSync(ran)
+                })
+                } else reply(`Reply to the audio you want to change with a caption *${prefix + command}*`)
+                } catch (e) {
+                reply(e)
+                }
+                break
+case 'write': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (args.length < 1) return reply(`Example :\n${prefix}nulis Aldi|91|#ff020a|Manusia terganteng adalah salman alfarizi`)
+const nls = args.join(" ")
+const nams = "Name : " + nls.split("|")[0];
+const kels = "Class : " + nls.split("|")[1];
+const menlise = nls.split("|")[3];
+const codewarn = nls.split("|")[2];
+await reply('Writing')
+const jangkale = menlise.replace(/(\S+\s*){1,10}/g, '$&\n')
+const jangbare = jangkale.split('\n').slice(0, 30).join('\n')
+const jangnam = nams.replace(/(\S+\s*){1,10}/g, '$&\n')
+const jangkel = kels.replace(/(\S+\s*){1,10}/g, '$&\n')
+if (kels.length > 12) return reply("Maximum number of class texts 4")
+if (nams.length > 34) return reply("The maximum number of text is 27")
+if (codewarn.length > 7) return reply("Maximum number of color text 7")
+console.log('「 WRITING 」is in process')
+spawn('convert', [
+'./Media/image/magernulis.jpg',
+'-fill',
+codewarn,
+'-font',
+'./Media/font/nulis.ttf',
+'-size',
+'1024x784',
+'-pointsize',
+'20',
+'-interline-spacing',
+'1',
+'-annotate',
+'+806+78',
+janghar,
+'-size',
+'1024x784',
+'-pointsize',
+'18',
+'-interline-spacing',
+'1',
+'-annotate',
+'+806+102',
+jangwak,
+'-size',
+'1024x784',
+'-pointsize',
+'21',
+'-interline-spacing',
+'1',
+'-annotate',
+'+285+90',
+jangnam,
+'-size',
+'1024x784',
+'-pointsize',
+'21',
+'-interline-spacing',
+'1',
+'-annotate',
+'+285+110',
+jangkel,
+'-size',
+'1024x784',
+'-pointsize',
+'20',
+'-interline-spacing',
+'-7.5',
+'-annotate',
+'+344+146',
+jangbare,
+'./storage/hasilnulis.jpg'
+])
+.on('error', () => reply('Error') )
+.on('exit', () => {
+JimbruOffical.sendMessage(from, {image:fs.readFileSync('./storage/hasilnulis.jpg'), caption:'Succes'}, {quoted:m}).catch(() => reply('```「 FAIL 」An error occurred sending the file```'))
+})
+exec(`npm i marker`)
+}
+break
+case 'calculator': case 'cal': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (args.length < 1) return reply(`*Example :*\n${prefix}calculator 2 * 5\n\n*List of Numbers :*\n•> Time : *\n•> For : /\n•> Plus : +\n•> Not enough : -`)
+let qsd = args.join(" ")
+if (typeof mathjs.evaluate(qsd) !== 'number') {
+reply('Error')
+} else {
+reply(`\`\`\`「 Calculator 」\`\`\`\n\n*•> Count :* ${qsd}\n*•> Results :* ${mathjs.evaluate(qsd.replace(/×/g, "*").replace(/x/g, "*").replace(/÷/g, "/"))}`)
+}
+}
+break
+case 'public': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return reply(mess.owner)
+JimbruOffical.public = true
+reply('Success In Chaing To Public Usage')
+JimbruOffical.setStatus(`Mode : Public`)
+}
+break
+case 'setbio':
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!q) return reply('Send orders *#setbio text*')
+JimbruOffical.setStatus(`${q}`)
+reply(mess.success)
+break
+case 'self': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return reply(mess.owner)
+JimbruOffical.public = false
+reply('Successful Change To Self Usage')
+JimbruOffical.setStatus(`Mode : Self`)
+}
+break	
+     case 'ping': {
+   if (isBan) return reply(mess.ban)	 			
+   if (isBanChat) return reply(mess.banChat)
+   let { performance } = require('perf_hooks')
+   let old = performance.now()
+       await JimbruOffical.sendMessage(m.chat, { text : 'please wait...' }, {quoted : false})
+       let neww = performance.now()
+       let speed = neww - old
+       mi = Math.ceil(speed)
+       JimbruOffical.sendMessage(m.chat, { text : "```" + `${mi}` + " ms```" }, {quoted : false})
+       }
+break
+case 'speedtest': {
+	   if (isBan) return reply(mess.ban)	 			
+           if (isBanChat) return reply(mess.banChat)
+           reply('Testing Speed...')
+           let cp = require('child_process')
+           let { promisify } = require('util')
+           let exec = promisify(cp.exec).bind(cp)
+           let o
+           try {
+           o = await exec('python speed.py')
+           } catch (e) {
+           o = e
+           } finally {
+           let { stdout, stderr } = o
+           if (stdout.trim()) reply(stdout)
+           if (stderr.trim()) reply(stderr)
+            }
+            }
+            break
+case 'emojimix2': {
+	   if (isBan) return reply(mess.ban)	 			
+           if (isBanChat) return reply(mess.banChat)
+	   if (!text) return reply(`Example : ${prefix + command} 😅`)
+           let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
+	   for (let res of anu.results) {
+	   let encmedia = await JimbruOffical.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+           await fs.unlinkSync(encmedia)
+		 }
+	         }
+	    break
+case 'attp': case 'ttp': {
+            if (isBan) return reply(mess.ban)	 			
+            if (isBanChat) return reply(mess.banChat)
+            if (!text) return reply(`Example : ${prefix + command} text`)
+            await JimbruOffical.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
+            }
+           break	
+case 'image': case 'img': {
+            if (isBan) return reply(mess.ban)	 			
+            if (isBanChat) return reply(mess.banChat)
+            if (!m.quoted) return reply('Reply Image')
+            if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
+            reply(mess.wait)
+            let media = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+            let ran = await getRandom('.png')
+            exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+            fs.unlinkSync(media)
+            if (err) throw err
+            let buffer = fs.readFileSync(ran)
+            JimbruOffical.sendMessage(m.chat, { image: buffer }, { quoted: m})
+            fs.unlinkSync(ran)
+            })
+            }
+            break
+case 'mp4': case 'video': {
+           if (isBan) return reply(mess.ban)	 			
+           if (isBanChat) return reply(mess.banChat)
+           if (!m.quoted) return reply('Reply Image')
+           if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
+           reply(mess.wait)
+           let { webp2mp4File } = require('./lib/uploader')
+           let media = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+           let webpToMp4 = await webp2mp4File(media)
+           await JimbruOffical.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Video' } }, { quoted: m })
+           await fs.unlinkSync(media)
+          }
+       break
+case 'audio': {
+      if (isBan) return reply(mess.ban)	 			
+      if (isBanChat) return reply(mess.banChat)
+      if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
+      if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
+      reply(mess.wait)
+      let media = await quoted.download()
+      let { toAudio } = require('./lib/converter')
+      let audio = await toAudio(media, 'mp4')
+      JimbruOffical.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
+      }
+break
+case 'mp3': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+reply(mess.wait)
+let media = await quoted.download()
+let { toAudio } = require('./lib/converter')
+let audio = await toAudio(media, 'mp4')
+JimbruOffical.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${JimbruOffical.user.name} (${m.id}).mp3`}, { quoted : m })
+}
+break
+case 'tovn': case 'voice': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
+if (!m.quoted) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
+reply(mess.wait)
+let media = await quoted.download()
+let { toPTT } = require('./lib/converter')
+let audio = await toPTT(media, 'mp4')
+JimbruOffical.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+}
+      break
+case 'gif': {
+      if (isBan) return reply(mess.ban)	 			
+      if (isBanChat) return reply(mess.banChat)
+      if (!m.quoted) return reply('Reply Image')
+      if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
+      reply(mess.wait)
+      let { webp2mp4File } = require('./lib/uploader')
+      let media = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+      let webpToMp4 = await webp2mp4File(media)
+      await JimbruOffical.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Gif' }, gifPlayback: true }, { quoted: m })
+      await fs.unlinkSync(media)
+      }
+      break	
+case 'antiviewonce' : {
+	      if (isBan) return reply(mess.ban)
+	      if (isBanChat) return reply(mess.banChat)
+              if (!m.key.fromMe && !isCreator) return reply(mess.owner)
+              if (args[0] === "on") {
+      	      if (global.db.data.chats[m.chat].antionce) return reply(`Already activated`)
+              global.db.data.chats[m.chat].antionce = true
+              reply(`${command} Successfully Activated !`)
+              } else if (args[0] === "off") {
+              if (!global.db.data.chats[m.chat].antionce) return reply(`Already deactivated`)
+              global.db.data.chats[m.chat].antionce = false
+              reply(`${command} Successfully Deactivated !`)
+              } else {
+              let buttonsntilink = [
+              { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+              { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+              ]
+              await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+              }
+      break	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
