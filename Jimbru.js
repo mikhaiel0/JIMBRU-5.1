@@ -1214,8 +1214,20 @@ message: {
 }
 } 
 }
-    
-    
+l = 1
+monospace = '```'
+const timestampe = speed();
+const latensie = speed() - timestampe
+const levelMenu = getLevelingLevel(m.sender)
+const xpMenu = getLevelingXp(m.sender)
+const uangku = getBalance(m.sender, balance)
+const reqXp  = 200 * (Math.pow(2, getLevelingLevel(m.sender)) - 1)
+const jumlahUser = pendaftar.length
+  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
+  if (!isInventory){ addInventori(m.sender) }
+  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }  
+
+	
     
     
     
