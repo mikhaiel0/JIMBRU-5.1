@@ -4968,7 +4968,299 @@ if (isBan) return reply(mess.ban)
 	
 	
 	
-	
+	case 'igreels': {
+          if (isBan) return reply(mess.ban)	 			
+          if (isBanChat) return reply(mess.banChat)
+          if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
+          try {
+          hx.igdl(args[0]).then(async(resed) => {
+          ini_anu = []
+          anu_list = []
+          textbv = `*| INSTAGRAM DOWNLOADER |*\n\n${global.themeemoji} Username : ${resed.user.username ? resed.user.name : "undefined"}\n${global.themeemoji} Followers : ${resed.user.followers}`
+          urut = 1
+          for (let i = 0; i < resed.medias.length; i++) {
+          ini_anu.push({
+          "type": resed.medias[i].fileType,
+          "url": resed.medias[i].url
+           })
+           }
+           ilod = 1
+           for (let i of ini_anu) {
+           anu_list.push({buttonId: `ig ${i.type} ${i.url}`, buttonText: {displayText: `Media ${ilod++}`}, type: 1})
+           }
+           textbv += `\n\n_Select the media below to download_`
+           let buttons = anu_list
+           let buttonMessage = {
+           image:logo,
+           jpegThumbnail:thum,
+           caption: textbv,
+           footer: `${global.botname}`,
+           buttons: buttons,
+           headerType: 4
+           }
+           JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
+           })
+           } catch (err) {
+           reply(String(err))
+           }
+           }
+break
+case 'ig': {
+	   if (isBan) return reply(mess.ban)	 			
+       if (isBanChat) return reply(mess.banChat)
+       if (args[0] === "mp4") {
+       JimbruOffical.sendMessage(from, {video:{url:args[1]}, caption:'Done!', mimetype:'video/mp4'}, {quoted:m})
+       } else if (args[0] === "jpg") {
+      JimbruOffical.sendMessage(from, {image:{url:args[1]}, caption:'Done!'}, {quoted:m})
+       } else {
+      reply("Error! ")
+       }
+       }
+break
+case 'mp4' : {
+	   if (isBan) return reply(mess.ban)	 			
+       if (isBanChat) return reply(mess.banChat)
+       if (!args[0]) return reply(`Where's the link ?`)
+       try {
+      JimbruOffical.sendMessage(from, {video:{url:args[0]}, caption:"Succes", contextInfo:{externalAdReply:{
+       title:`${global.botname}`,
+       body:`${global.ownername}`,
+       thumbnail: logo,
+       mediaType:2,
+       mediaUrl: `${global.website}`,
+       sourceUrl: `${global.website}`
+       }}}, {quoted:m})
+       } catch {
+       reply("Link error!")
+       }
+       }
+break
+case 'jpeg': {
+       if (isBan) return reply(mess.ban)	 			
+       if (isBanChat) return reply(mess.banChat)
+       if (!args[0]) return reply(`Where's the link?`)
+       try {
+       JimbruOffical.sendMessage(from, {image:{url:args[0]}, caption:"Success", contextInfo:{externalAdReply:{
+       title:`${global.botname}`,
+       body:`${global.ownername}`,
+       thumbnail: logo,
+       mediaType:2,
+       mediaUrl: `${global.website}`,
+       sourceUrl: `${global.website}`
+        }}}, {quoted:m})
+        } catch {
+        reply("Link error")
+        }
+        }
+break
+case 'igtv': {	            
+                if (isBan) return reply(mess.ban)	 			
+                if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(`Where is the link boss?`)
+                const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
+                if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply('*The link you provided is not valid*')
+                instagramdlv3(`${text}`).then(async (data) => {            
+                var buf = await getBuffer(data[0].thumbnail)        
+                JimbruOffical.sendMessage(m.chat, { video: { url: data[0].url }, jpegThumbnail:buf, caption: `${botname}`}, { quoted: m })
+                }).catch((err) => {
+                    reply(mess.error)
+                })
+            }
+            break
+         case 'twitter': case 'td': case 'twitterdl': {     
+         if (isBan) return reply(mess.ban)	 			
+         if (isBanChat) return reply(mess.banChat)	             
+         if (!text) return reply(`Where is the link?`)
+         if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(`The link you provided is not valid`)
+         xeonkey.Twitter(`${text}`).then(async (data) => {                    
+                    let txt = `*TWITTER DOWNLOADER*\n\n`
+                    txt += `*${themeemoji}TITLE :* ${data.title}\n`
+                    txt += `*${themeemoji}QUALITY :* ${data.medias[1].quality}\n`
+                    txt += `*${themeemoji}TYPE :* ${data.medias[1].extension}\n`
+                    txt += `*${themeemoji}SIZE :* ${data.medias[1].formattedSize}\n`
+                    txt += `*${themeemoji}DURATION :* ${data.medias.length}\n`
+                    txt += `*${themeemoji}URL :* ${data.url}\n\n`
+                    txt += `*${botname}*`
+                    buf = await getBuffer(data.thumbnail)    
+        JimbruOffical.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })
+        for (let i of data.medias) {
+        JimbruOffical.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*${text}*`}, { quoted: m })
+                   }
+                   }).catch((err) => {
+                   reply(mess.error)
+                   })
+                  }
+            break
+ case 'twittermp3': case 'twitteraudio': { 
+                    if (isBan) return reply(mess.ban)	 			
+                    if (isBanChat) return reply(mess.banChat)	             
+                    if (!text) return reply(`Where is the link?`)
+                    if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(`*The link you provided is not valid*`)
+                    xeonkey.Twitter(`${text}`).then(async (data) => {
+                    JimbruOffical.sendMessage(m.chat, { audio: { url: data.medias[1].url }, mimetype: 'audio/mp4'}, { quoted: m })
+                    }).catch((err) => {
+                    reply(mess.reply)
+                    })
+                    }
+            break
+case 'twmp4': {
+                  if (isBan) return reply(mess.ban)	 			
+                  if (isBanChat) return reply(mess.banChat)
+                  if (!args[0]) return reply(`Example :\n${prefix + command} https://twitter.com/cinema21/status/1517754155644821504?t=rUnbyqwh4vAE1QXMXlsVeQ&s=19`)
+                  try {
+                  let lotwit = await aiovideodl(args[0])
+                  teks = `*| TWITTER DOWNLOADER |*
+                  
+Caption : ${lotwit.title ? lotwit.title : "undefined"}
+Type : ${lotwit.medias[1].extension}
+Size : ${lotwit.medias[1].formattedSize}
+Link : ${lotwit.medias[1].url}
+
+_Choose the video quality below by clicking the button_`
+let buttons = [
+{buttonId: `twddl ${lotwit.medias[0].url}`, buttonText: {displayText: `Quality ${lotwit.medias[0].quality}`}, type: 1},
+{buttonId: `twddl ${lotwit.medias[2].url}`, buttonText: {displayText: `Quality ${lotwit.medias[2].quality}`}, type: 1}
+]
+let buttonMessage = {
+video: {url:lotwit.medias[1].url},
+caption: teks,
+footer: `${pushname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body:lotwit.title ? lotwit.title : "Twitter Downloader",
+thumbnail: logo,
+mediaType:1,
+mediaUrl: args[0],
+sourceUrl: args[0]
+}}
+}
+JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
+} catch {
+reply("Error link!")
+}
+}
+break
+case 'twdd': {
+          if (isBan) return reply(mess.ban)	 			
+          if (isBanChat) return reply(mess.banChat)
+          let buttons = [
+               {buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
+                ]
+let buttonMessage = {
+video: {url:args[0]},
+caption: "Done!",
+footer: `${pushname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body: "Twitter Downloader",
+thumbnail: logo,
+mediaType:1,
+mediaUrl: args[0],
+sourceUrl: args[0]
+}}
+}
+JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
+}
+break
+case 'fb':  {     	    
+            if (isBan) return reply(mess.ban)	 			
+            if (isBanChat) return reply(mess.banChat)
+            if (!text) return reply(`Where is the link bro?\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
+            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is not valid`)
+            let bocil = require('@bochilteam/scraper')  
+                  bocil.facebookdlv2(`${text}`).then(async (data) => {                   
+                         let txt = `*FB DOWNLOADER*\n\n`
+                         txt += `*${themeemoji}TITLE :* ${data.title}\n`
+                         txt += `*${themeemoji}QUALITY :* ${data.result[0].quality}\n`
+                         txt += `*${themeemoji}DESCRIPTION :* ${data.description}\n`
+                         txt += `*${themeemoji}ID :* ${watermark}\n`
+                         txt += `*${themeemoji}URL :* ${text}\n\n`
+                         buf = await getBuffer(data.thumbnail)    
+          JimbruOffical.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
+           for (let i of data.result) {     
+          JimbruOffical.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*${themeemoji} Quality :* ${i.quality}`}, { quoted: m })
+                      }          
+                      }).catch((err) => {
+                      reply(mess.error)
+                      })
+                      }
+              break
+case 'fbmp3' : {
+          if (isBan) return reply(mess.ban)	 			
+          if (isBanChat) return reply(mess.banChat)
+          if (!text) return reply(`Where is the link?\nExample: ${prefix + command} https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
+          if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is not valid`)
+          let noh = require('@bochilteam/scraper')                
+          noh.savefrom(`${text}`).then(async (anu) => {  
+          JimbruOffical.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' }, { quoted: m })      
+          }).catch((err) => {
+          reply(mess.error)
+          })
+          }
+            break
+case 'fbmp4' : {
+          if (isBan) return reply(mess.ban)	 			
+          if (isBanChat) return reply(mess.banChat)
+          if (!args[0]) return reply(`Example :\n${prefix + command} https://fb.watch/cAX2dep-BZ/`)
+          try {
+          let resd = await aiovideodl(args[0])
+          teks = `*| FACEBOOK DOWNLOADER |*
+
+Type : video/${resd.medias[0].extension}
+Quality : ${resd.medias[0].quality}
+Size : ${resd.medias[0].formattedSize}
+_For HD quality you can click the button below_`
+            let buttons = [
+            {buttonId: `fbddl ${resd.medias[1].url}`, buttonText: {displayText: 'QualityHD'}, type: 1}
+             ]
+let buttonMessage = {
+video: {url:resd.medias[0].url},
+caption: teks,
+footer: `${pushname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body:"Facebook Downloader",
+thumbnail: logo,
+mediaType:1,
+mediaUrl: args[0],
+sourceUrl: args[0]
+}}
+}
+JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
+} catch {
+reply("Link invalid!")
+}
+}
+break
+case 'fbd' : {
+          if (isBan) return reply(mess.ban)	 			
+          if (isBanChat) return reply(mess.banChat)
+let buttons = [
+          {buttonId: `menu`, buttonText: {displayText: 'Menu 🐥'}, type: 1}
+]
+let buttonMessage = {
+video: {url:args[0]},
+caption: "Done!",
+footer: `${pushname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body: " Facebook Downloader",
+thumbnail: logo,
+mediaType:1,
+mediaUrl: args[0],
+sourceUrl: args[0]
+}}
+}
+JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
+}
 	
 	
 	
