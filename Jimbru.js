@@ -2637,17 +2637,17 @@ await JimbruOffical.sendMessage(from, {text:"reply #s to this image to make stic
 }
 break
 case 'areaoftriangle':
-if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)
-if (!q) return reply(`to find the result of the area of ​​a triangle\nUse ${prefix}areaoftriangle side1 side 2 side 3\nexample: ${prefix}areaoftriangle 1 2 7`)
-if (!isInventoryLimit){ addInventoriLimit(m.sender) }
-try {
-const luasseg = bdr.datar.luas.segitiga(args[0], args[1], false)
-const caraluas = bdr.datar.luas.segitiga(args[0], args[1], true)
-reply(`*Results:* ${luasseg}\n${caraluas}`)
-} catch (err) {
-reply('The format of the message is wrong')
+      if (isBan) return reply(mess.ban)	 			
+      if (isBanChat) return reply(mess.banChat)
+      reply(mess.wait)
+      if (!q) return reply(`to find the result of the area of ​​a triangle\nUse ${prefix}areaoftriangle side1 side 2 side 3\nexample: ${prefix}areaoftriangle 1 2 7`)
+      if (!isInventoryLimit){ addInventoriLimit(m.sender) }
+      try {
+      const luasseg = bdr.datar.luas.segitiga(args[0], args[1], false)
+      const caraluas = bdr.datar.luas.segitiga(args[0], args[1], true)
+      reply(`*Results:* ${luasseg}\n${caraluas}`)
+      } catch (err) {
+      reply('The format of the message is wrong')
 }
 break
 case 'perimeteroftriangle':
@@ -3083,8 +3083,8 @@ replay(mess.success)
 }
 break
 case 'listcmd': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
+      if (isBan) return reply(mess.ban)	 			
+      if (isBanChat) return reply(mess.banChat)
 let teks = `
 *Hash List*
 Info: *bold* hash is Locked
@@ -5242,7 +5242,7 @@ case 'fbd' : {
           if (isBan) return reply(mess.ban)	 			
           if (isBanChat) return reply(mess.banChat)
 let buttons = [
-          {buttonId: `menu`, buttonText: {displayText: 'Menu 🐥'}, type: 1}
+          {buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
 ]
 let buttonMessage = {
 video: {url:args[0]},
@@ -5261,25 +5261,1397 @@ sourceUrl: args[0]
 }
 JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
 }
+case 'song': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let yts = require("yt-search")
+let search = await yts(text)
+let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
+let ytvc = await hx.youtube(anu.url)
+let buttons = [
+{buttonId: `ytvd ${ytvc.link}`, buttonText: {displayText: '► Video'}, type: 1},
+{buttonId: `ytad ${ytvc.mp3}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+]
+let buttonMessage = {
+image: { url: anu.thumbnail },
+caption: `*| YOUTUBE PLAY |*
+${global.themeemoji} Title : ${anu.title}
+${global.themeemoji} Ext : Search
+${global.themeemoji} ID : ${anu.videoId}
+${global.themeemoji} Duration : ${anu.timestamp}
+${global.themeemoji} Viewers : ${anu.views}
+${global.themeemoji} Uploaded : ${anu.ago}
+${global.themeemoji} Author : ${anu.author.name}
+${global.themeemoji} Channel : ${anu.author.url}
+${global.themeemoji} Description : ${anu.description}
+${global.themeemoji} Url : ${anu.url}`,
+footer: `${global.botname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: anu.title,
+body: `${global.botname}`,
+thumbnail: logo,
+mediaType:2,
+mediaUrl: anu.url,
+sourceUrl: anu.url
+}}
+}
+JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'ytmusic': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args[0]) return reply(mess.linkm)
+try {
+hx.youtube(args[0]).then(async(res) => {
+textyt = `*| YOUTUBE DOWNLOADER |*
+${global.themeemoji} Title : ${res.title}
+${global.themeemoji} Size : ${res.size}
+${global.themeemoji} Quality : ${res.quality}
+_Select video or audio and wait a while_`
+let buttons = [
+{buttonId: `ytvd ${res.link}`, buttonText: {displayText: '► Video'}, type: 1},
+{buttonId: `ytad ${res.mp3}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+]
+let buttonMessage = {
+image: {url:res.thumb},
+caption: textyt,
+footer: `${botname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: res.title,
+body: `${global.ownername}`,
+thumbnail: {url:res.thumb},
+mediaType:2,
+mediaUrl: args[0],
+sourceUrl: args[0]
+}}
+}
+JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
+}).catch(_ => _)
+} catch {
+reply("Link error!")
+}
+}
+break	
+	case 'ytvd': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+JimbruOffical.sendMessage(from, {video:{url:args[0]}, mimetype:"video/mp4", caption:"Success", contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body:`${global.botname}`,
+thumbnail: logo,
+mediaType:2,
+mediaUrl: `${global.websitex}`,
+sourceUrl: `${global.websitex}`
+}}}, {quoted:m})
+}
+break
+case 'ytad': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+JimbruOffical.sendMessage(from, {audio:{url:args[0]}, mimetype:"audio/mp4", ptt:true, contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body:`${global.botname}`,
+thumbnail: logo,
+mediaType:2,
+mediaUrl: `${global.websitex}`,
+sourceUrl: `${global.websitex}`
+}}}, {quoted:m})
+}
+break
+case 'ytshorts': case 'shorts': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+  if (!text) return reply(`*Use ${prefix + command} put yt shorts link*`)
+  if (!isUrl(args[0]) && !args[0].includes('youtube')) return reply(`The link you provided is not valid`)
+  xeonkey.Youtube(`${text}`).then(async (data) => {
+  if (data.medias[0].formattedSize.split('MB')[0] >= 999) return reply('*File Over Limit* '+util.format(data)) 
+  cap = `
+*YOUTUBE SHORTS*
+*${themeemoji}TITLE:* ${data.title}\n*${themeemoji}QUALITY:* ${data.medias[0].quality}\n*${themeemoji}SIZE:* ${data.medias[0].formattedSize}\n*${themeemoji}DURATION* ${data.duration}\n*${themeemoji}ID:* ${data.medias[0].cached}\n*${themeemoji}LINK:* ${data.url}\n\n*${botname}*`
+  buf = await getBuffer(data.thumbnail)
+  JimbruOffical.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${cap}` }, { quoted: m })
+  JimbruOffical.sendMessage(m.chat, { video: { url: data.medias[0].url }, jpegThumbnail:buf, caption: `*${themeemoji}TITLE:* ${data.title}\n*${themeemoji}QUALITY:* ${data.medias[0].quality}\n*${themeemoji}SIZE:* ${data.medias[0].formattedSize}` }, { quoted: m })  
+                }).catch((err) => {
+                    reply(mess.reply)
+                })
+            }
+            break
+                	    case 'couplepp': {
+                	   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                reply(mess.wait)
+                let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                JimbruOffical.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: m })
+                JimbruOffical.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
+            }
+	    break
+case 'ytmp3':  case 'ytmusic': {	    
+	                	   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                let { yta } = require('./lib/y2mate')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                let quality = args[1] ? args[1] : '128kbps'
+                let media = await yta(text, quality)
+                if (media.filesize >= 999999) return reply('*File Over Limit* '+util.format(media))
+                let caption = `*YOUTUBE MUSIC*\n\n*${themeemoji}Title :* ${media.title}\n*${themeemoji}File size :* ${media.filesizeF}\n*${themeemoji}Url :* ${isUrl(text)}\n*${themeemoji}Ext :* MP3\n*${themeemoji}Resolution :* ${args[1] || '128kbps'}`
+                buf = await getBuffer(media.thumb)
+                JimbruOffical.sendMessage(m.chat, { image: { url: media.thumb }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m }).catch((err) => reply(mess.error))                
+                JimbruOffical.sendMessage(m.chat, {audio:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`,  quoted: m, contextInfo: { externalAdReply:{title:media.title,body:"YOUTUBE MP3",mediaType:"2",thumbnail:buf,mediaUrl:`${text}`}}}).catch((err) => reply(mess.error))
+                }
+            break
+           case 'ytmp4': case 'ytvideo': {
+if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                let { ytv } = require('./lib/y2mate')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=RNa4thokVJ4 360p`)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid!`)
+                let quality = args[1] ? args[1] : '360p'
+                let media = await ytv(text, quality)
+                if (media.filesize >= 999999) return reply('*File Over Limit* '+util.format(media))
+                var capti = `*YOUTUBE VIDEO*\n\n*${themeemoji}Title* : ${media.title}\n*${themeemoji}File size* : ${media.filesizeF}\n*${themeemoji}Url* : ${isUrl(text)}\n*${themeemoji}Ext* : Mp4\n*${themeemoji}Resoultion* : ${args[1] || '360p'}`
+                var buf = await getBuffer(media.thumb)
+                JimbruOffical.sendMessage(m.chat, { image: { url: media.thumb }, jpegThumbnail:buf, caption: `${capti}` }, { quoted: m })
+                JimbruOffical.sendMessage(m.chat, { video: { url: media.dl_link }, jpegThumbnail:buf, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `Here you go!` }, { quoted: m }).catch((err) => reply(mess.error))
+            }
+            break	
 	
+	case 'ytdl': {
+            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(mess.linkm)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${text}`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumb)
+                audio = await getBuffer(anu.audio)        
+                JimbruOffical.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
+                JimbruOffical.sendMessage(m.chat, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `${util.format(anu)}`}, { quoted: m }).catch((err) => reply(mess.error))
+            }
+            break
+	case 'ytmp32':{
+  	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+   reply(mess.wait)
+  if (args.length < 1) return reply('Where is the link?')
+   try{
+    await yta(args[0])
+.then((res) => {
+     const { dl_link } = res
+      axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+.then((a) => {
+   
+      JimbruOffical.sendMessage(from, { audio: { url: dl_link }, mimetype: 'audio/mp4' }, { quoted: m })
+      })
+     
+})
+     } catch (e){
+    reply(from, `Access denied, can't download!. Try using another link`, { quoted : m })
+   }
+  }
+  break
+  case 'ytmp42':{
+  	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+   reply(mess.wait)
+  if (args.length < 1) return reply('the link?')
+   try{
+    await ytv(args[0])
+.then((res) => {
+     const { dl_link } = res
+      axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+.then((a) => {
+   
+      JimbruOffical.sendMessage(from, { video: { url: dl_link }, caption: "By Aldi Store" }, { quoted: m })
+      })
+     
+})
+     } catch (e){
+    reply(from, `Access denied, can't download!. Try using another link`, { quoted : m })
+   }
+  }
+  break
+case 'img2': {
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                reply(mess.wait)
+		let { pinterest } = require('./lib/scraper')
+                anu = await pinterest(text)
+                result = anu[Math.floor(Math.random() * anu.length)]
+                JimbruOffical.sendMessage(m.chat, { image: { url: result }, caption: ` ${themeemoji} Media Url : `+result }, { quoted: m })
+            }
+            break  
 	
+case 'take': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return reply(`Example :\nswm ${global.author}|${global.packname}`)
+const swn = args.join(" ")
+const pcknm = swn.split("|")[0];
+const atnm = swn.split("|")[1];
+if (m.quoted.isAnimated === true) {
+JimbruOffical.downloadAndSaveMediaMessage(quoted, "gifee")
+JimbruOffical.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
+} else if (/image/.test(mime)) {
+let media = await quoted.download()
+let encmedia = await JimbruOffical.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: global.atnm })
+await fs.unlinkSync(encmedia)
+} else if (/video/.test(mime)) {
+if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
+let media = await quoted.download()
+let encmedia = await JimbruOffical.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+await fs.unlinkSync(encmedia)
+} else {
+reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+}
+}
+break	
+// creater	
+case 'invert':{
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (isBan) return reply(mess.ban)
+if (/image/.test(mime)) {
+let dwnld = await quoted.download()
+let { floNime } = require('./lib/uploader')
+let fatGanss = await floNime(dwnld)
+buffer = `http://api.lolhuman.xyz/api/editor/invert?apikey=${lolkey}&img=${fatGanss.result.url}`
+JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+}
+}
+break
+case 'stupid':
+if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+		anu = `http://api.lolhuman.xyz/api/toloserti?apikey=${lolkey}&name=${q}`
+		JimbruOffical.sendMessage(from, {image:{url:anu}, caption:"Here you go!"}, {quoted:m})
+		break
+case 'wasted' :{
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (isBan) return reply(mess.ban)
+if (/image/.test(mime)) {
+let dwnld = await quoted.download()
+let { floNime } = require('./lib/uploader')
+let fatGa = await floNime(dwnld)
+buffer = `https://api.lolhuman.xyz/api/editor/wasted?apikey=${lolkey}&img=${fatGa.result.url}`
+JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+}
+}
+break
+case 'jail':{
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+if (isBan) return reply(mess.ban)
+if (/image/.test(mime)) {
+let dwnld = await quoted.download()
+let { floNime } = require('./lib/uploader')
+let fatGan = await floNime(dwnld)
+buffer = `https://api.lolhuman.xyz/api/editor/jail?apikey=${lolkey}&img=${fatGan.result.url}`
+JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+}
+}
+break
+case 'stickermeme' : {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let { TelegraPh } = require('./lib/uploader')
+if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
+if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
+if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
+reply(mess.wait)
+mee = await JimbruOffical.downloadAndSaveMediaMessage(quoted)
+mem = await TelegraPh(mee)
+meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
+memek = await JimbruOffical.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+await fs.unlinkSync(memek)
+}
+break
+case 'sticker' : {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (/image/.test(mime)) {
+let media = await quoted.download()
+let encmedia = await JimbruOffical.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+await fs.unlinkSync(encmedia)
+} else if (/video/.test(mime)) {
+if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
+let media = await quoted.download()
+let encmedia = await JimbruOffical.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+await fs.unlinkSync(encmedia)
+} else {
+reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+}
+}
+break
+case 'wiki':
+if (args.length < 1) return reply('What Are You Looking For?? ')
+const res2 = await wikiSearch(q).catch(e => {
+return reply('_[ ! ] Error Result Not Found_') 
+}) 
+const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
+JimbruOffical.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
+break	
+case 'playstore': case 'apk':
+if(!q) return reply('what are you looking for?')
+let play = await hx.playstore(q)
+let storee = '❉─────────────────────❉\n'
+for (let i of play){
+storee += `\n*「 *PLAY STORE* 」*\n
+- *Name* : ${i.name}
+- *Link* : ${i.link}\n
+- *Dev* : ${i.developer}
+- *Dev Link* : ${i.link_dev}\n❉─────────────────────❉`
+}
+reply(storee)	
+	break
+            case 'couple': {
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            if (!m.isGroup) return replay(`${mess.group}`)
+            let member = participants.map(u => u.id)
+            let orang = member[Math.floor(Math.random() * member.length)]
+            let jodoh = member[Math.floor(Math.random() * member.length)]
+            let jawab = `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
+Cieeee, What's Going On❤️💖👀`
+            let menst = [orang, jodoh]
+            let buttons = [
+                        { buttonId: '❤️', buttonText: { displayText: '❤️' }, type: 1 }
+                    ]
+                    await JimbruOffical.sendButtonText(m.chat, buttons, jawab, JimbruOffical.user.name, m, {mentions: menst})
+            }
+            break
+                        case 'mysoulmate': {
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            if (!m.isGroup) return replay(`${mess.group}`)
+            let member = participants.map(u => u.id)
+            let me = m.sender
+            let jodoh = member[Math.floor(Math.random() * member.length)]
+            let jawab = `👫Your Match Is
+@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
+            let ments = [me, jodoh]
+            let buttons = [
+                        { buttonId: '❤️', buttonText: { displayText: '❤️' }, type: 1 }
+                    ]
+                    await JimbruOffical.sendButtonText(m.chat, buttons, jawab, JimbruOffical.user.name, m, {mentions: ments})
+            }
+            break
+            case 'is':
+                        	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
+					const apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
+					const kah = apa[Math.floor(Math.random() * apa.length)]
+JimbruOffical.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
+
+					break
+					            case 'what':
+					            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
+					const lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
+					const kahk = lel[Math.floor(Math.random() * lel.length)]
+JimbruOffical.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
+
+					break
+case 'can':
+            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Use Text, Example : ${prefix + command} you fuck her lol `)
+					const bisa = [`Can`,`Can't`,`Cannot`,`Of Course!!!`]
+					const ga = bisa[Math.floor(Math.random() * bisa.length)]
+JimbruOffical.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
+
+					break
+case 'how':
+            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Use Text, Example : ${prefix + command} is my face`)
+					const gimana = [`It's Okay`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
+					const ya = gimana[Math.floor(Math.random() * gimana.length)]
+JimbruOffical.sendMessage(from, { text: `Question : How ${q}\nAnswer : How ${ya}` }, { quoted: m })
+					break
+case 'rate':
+            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Use Text, Example : ${prefix + command} My Dp`)
+					const ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
+					const te = ra[Math.floor(Math.random() * ra.length)]
+JimbruOffical.sendMessage(from, { text: `Question : Rate ${q}\nAnswer : *${te}%*` }, { quoted: m })
+					break
+  case 'handsomecheck':
+              	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
+					const teng = gan[Math.floor(Math.random() * gan.length)]
+JimbruOffical.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
+					break
+case 'beautifulcheck':
+            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
+					const tik = can[Math.floor(Math.random() * can.length)]
+JimbruOffical.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+					break
+case 'awesomecheck':
+  case 'greatcheck':
+    case 'gaycheck':
+      case 'cutecheck':
+        case 'lesbicheck':
+          case 'lesbiancheck':
+             case 'hornycheck':
+                 case 'prettycheck':
+                    case 'lovelycheck':
+                      case 'uglycheck':
+                                  	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
+					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
+JimbruOffical.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
+					break
+	case 'charactercheck':
+					            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+				
+					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
+					const taky = xeony[Math.floor(Math.random() * xeony.length)]
+					JimbruOffical.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
+				     break
+	  case 'stupid':
+      case 'foolish':
+      case 'smart':
+      case 'idiot':
+      case 'gay':
+      case 'lesbi':
+      case 'bastard':
+      case 'stubble':
+      case 'dog':
+      case 'fuck':
+      case 'ape':
+      case 'noob':
+      case 'great':
+      case 'horny':
+      case 'wibu':
+      case 'asshole':
+      case 'handsome':
+      case 'beautiful':
+      case 'cute':
+      case 'kind':
+      case 'ugly':
+      case 'pretty':
+      case 'lesbian':
+      case 'randi':
+      case 'gandu':
+      case 'madarchod':
+      case 'kala':
+      case 'gora':
+      case 'chutiya':
+      case 'nibba':
+      case 'nibbi':
+      case 'bhosdiwala':
+      case 'chutmarika':
+      case 'bokachoda':
+      case 'suarerbaccha':
+      case 'bolochoda':
+      case 'muthal':
+      case 'muthbaaz':
+      case 'randibaaz':
+      case 'topibaaz':
+      case 'cunt':
+      case 'nerd':
+      case 'behenchod':
+      case 'behnchoda':
+      case 'bhosdika':
+      case 'nerd':
+      case 'mc':
+      case 'bsdk':
+      case 'bhosdk':
+      case 'nigger':
+      case 'loda':
+      case 'laund':
+      case 'nigga':
+      case 'noobra':
+      case 'tharki':
+      case 'nibba':
+      case 'nibbi':
+      case 'mumu':
+      case 'rascal':
+      case 'scumbag':
+      case 'nuts':
+      case 'comrade':
+      case 'fagot':
+      case 'scoundrel':
+      case 'ditch':
+      case 'dope':
+      case 'gucci':
+      case 'lit':
+      case 'dumbass':
+      case 'sexy':
+      case 'crackhead':
+      case 'mf':
+      case 'motherfucker':
+      case 'dogla':
+      case 'bewda':
+      case 'boka':
+      case 'khanki':
+      case 'bal':
+      case 'sucker':
+      case 'fuckboy':
+      case 'playboy':
+      case 'fuckgirl':
+      case 'playgirl':
+      case 'bc':
+      case 'hot': {
+      	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            if (!m.isGroup) return replay(`${mess.group}`)
+            let member = participants.map(u => u.id)
+            let me = m.sender
+            let jodoh = member[Math.floor(Math.random() * member.length)]
+            let jawab = `The Most *${command}* Here Is @${jodoh.split('@')[0]}`
+            let ments = [me, jodoh]
+            let buttons = [
+                        { buttonId: '👀', buttonText: { displayText: '👀😂' }, type: 1 }
+                    ]
+                    await JimbruOffical.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
+            }
+            break
+case 'mobile': {
+	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            if (!text) return reply(`Example : ${prefix + command} realme`)
+            let res = await fetchJson(`https://zenzapis.xyz/webzone/gsmarena?query=${text}&apikey=APIKEY`)
+            let { judul, rilis, thumb, ukuran, type, storage, display, inchi, pixel, videoPixel, ram, chipset, batrai, merek_batre, detail } = res.result
+let capt = `${themeemoji} Title: ${judul}
+${themeemoji} Realease: ${rilis}
+${themeemoji} Size: ${ukuran}
+${themeemoji} Type: ${type}
+${themeemoji} Storage: ${storage}
+${themeemoji} Display: ${display}
+${themeemoji} Inchi: ${inchi}
+${themeemoji} Pixel: ${pixel}
+${themeemoji} Video Pixel: ${videoPixel}
+${themeemoji} Ram: ${ram}
+${themeemoji} Chipset: ${chipset}
+${themeemoji} Battery: ${batrai}
+${themeemoji} Battery Brand: ${merek_batre}
+${themeemoji} Detail: ${detail}`
+            JimbruOffical.sendImage(m.chat, thumb, capt, m)
+            }
+            break	
+//pack
+case 'xxxbj':case 'exxxro':case 'cxxxum':case 'fexxxet':case 'yuxxxri':case 'traxxxp':case 'lewxxxd':case 'fexxxed':case 'erxxxon':case 'soxxxlo':case 'gaxxxsm':case 'pxxxoke':case 'axxxnal':case 'holxxxo':case 'titxxxs':case 'kxxxuni':case 'kixxxss':case 'erxxxok':case 'smxxxug':case 'baxxxka':case 'sxxxolog':case 'feexxxxtg':case 'lexxwdk':case 'puxxxssy':case 'fexxxmdom':case 'cudxxxdle':case 'erozzzyuri':case 'cum_xxxjpg':case 'bloxxxwjob':case 'erofezzzzet':case 'holzzoero':case 'erokezzzmo':case 'fox_zzzgirl':case 'futxxxanari':case 'lewdkezzmo':case 'pussy_jpzzzg':case 'kemonozzzmimi':case 'nsfw_azzzvatar': 
+	            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	    buffer = `http://api.lolhuman.xyz/api/random2/${command}?apikey=${lolkey}`
+                    JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+    break
+case 'xxxcry':	anu = `http://api.lolhuman.xyz/api/random/cry?apikey=${lolkey}`
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'kisxxxs3':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/kiss?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'kixxxss2':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random2/kiss?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'crinxxxge':
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+		anu = `http://api.lolhuman.xyz/api/random/cringe?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'daxxxnce':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/dance?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'xxxkill':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/kill?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'haxxxppy':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/happy?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'bxxxonk':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/bonk?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'sxxxmug2':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/smug?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'slaxxxp':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/slap?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'waxxxve':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/wave?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'smilexxx':	
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+anu = `http://api.lolhuman.xyz/api/random/smile?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'bullyxxx':
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+		anu = `http://api.lolhuman.xyz/api/random/bully?apikey=${lolkey}`
+reply(mess.wait)
+JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
+break
+case 'xxart':case 'btsxx':case 'exoxx':case 'elxxxf':case 'lolxxxi':case 'nekoxxx':case 'shotxxxa':case 'sagirixxx':case 'shinxxxobu':case 'mexxxgumin':case 'wallnixxxme':   
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+  buffer = `http://api.lolhuman.xyz/api/random/${command}?apikey=${lolkey}`
+    JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+    break
+case 'xxxblowjob':
+case 'xxxyaoi':
+case 'xxxecchi':
+case 'xxxahegao':
+case 'xxxhololewd':
+case 'xxxsideoppai':
+case 'xxxanimefeets':
+case 'xxxanimebooty':
+case 'xxxanimethighss':
+case 'xxxanimearmpits':
+case 'xxxlewdanimegirls':
+case 'xxxbiganimetiddies':
+case 'xxxanimebellybutton': 
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+ buffer = `http://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${lolkey}`
+JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+break
+case 'xxxnaruto':
+case 'xxxminato':
+case 'xxxboruto':
+case 'xxxhinata':
+case 'xxxsasuke':
+case 'xxxsakura':
+case 'xxxkaneki':
+case 'xxxtoukachan':
+case 'xxxrize':
+case 'akira':
+case 'xxxitori':
+case 'xxkurumi':
+case 'xxxmiku':
+if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)
+nye = `http://api.lolhuman.xyz/api/gimage?apikey=${lolkey}&query=${command}`
+JimbruOffical.sendMessage(from, {image:{url:nye}, caption:"Here you go!"}, {quoted:m})
+break			
+case 'xxxanjing':
+if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+nye = `http://api.lolhuman.xyz/api/gimage?apikey=${lolkey}&query=anjing`
+reply(mess.wait)
+JimbruOffical.sendMessage(from, {image:{url:nye}, caption:"Here you go!"}, {quoted:m})
+break				
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	case 'mediafire': {
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+if (!text) return reply(mess.linkm)
+if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return reply(`The link you provided is invalid`)
+const baby1 = await mediafireDl(text)
+if (baby1[0].size.split('MB')[0] >= 999) return reply('*File Over Limit* '+util.format(baby1))
+const result4 = `*MEDIAFIRE DOWNLOADER*
+				
+*Name* : ${baby1[0].nama}
+*Size* : ${baby1[0].size}
+*Mime* : ${baby1[0].mime}
+*Link* : ${baby1[0].link}`
+reply(`${result4}`)
+JimbruOffical.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+}
+break
+            break
+case 'trap' :
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!AntiNsfw) return reply(mess.nsfw)
+reply(mess.wait)
+ waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
+ let trapbot = [
+    {buttonId: `trap`, buttonText: {displayText: `Next ⚡`}, type: 1},
+    ]
+  let button2Messages = {
+   image: {url:waifudd.data.url},
+   caption:  `Here you go!`,
+  buttons: trapbot,
+  headerType: 1
+  }     
+            await JimbruOffical.sendMessage(m.chat, button2Messages, { quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'hentai-neko' :
+case 'hneko' :
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!AntiNsfw) return reply(mess.nsfw)
+    waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
+ let hnekobot = [
+    {buttonId: `.hneko`, buttonText: {displayText: `Next ⚡`}, type: 1},
+    ]
+  let button3Messages = {
+   image: {url:waifudd.data.url},
+   caption:  `Here you go!`,
+  buttons: hnekobot,
+  headerType: 1
+  }      
+            await JimbruOffical.sendMessage(m.chat, button3Messages, { quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'hentai-waifu' :
+case 'nwaifu' :
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!AntiNsfw) return reply(mess.nsfw)
+reply(mess.wait)
+    waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
+ let nwaifubot = [
+    {buttonId: `.hneko`, buttonText: {displayText: `Next ⚡`}, type: 1},
+    ]
+  let button4Messages = {
+   image: {url:waifudd.data.url},
+   caption:  `Here you go!`,
+  buttons: nwaifubot,
+  headerType: 1
+  }      
+            await JimbruOffical.sendMessage(m.chat, button4Messages, { quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'gasm':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	if (!AntiNsfw) return reply(mess.nsfw)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttonsssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break   
+case 'wallneon': case 'wallrandom': case 'wallcode': case 'wallpubg': case 'wallml': 	
+try{
+	   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+nyz2 = await fetchJson(`https://myselfff.herokuapp.com/docs/wallpaper/${command}`) 
+nyz3 = await getBuffer(nyz2.list.gambar)
+JimbruOffical.sendMessage(from, {image : nyz3, caption:`By ${global.botname}`}, {quoted:m}) 						
+} catch (e) {
+error("Error!")
+}
+break
+case 'smug2':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/smug`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let button1ssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'foxgirl':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let button12ssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break   
+case 'animenom' :
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+    waifudd = await axios.get(`https://waifu.pics/api/sfw/nom`)
+ let xxhnekobot = [
+    {buttonId: `.nom`, buttonText: {displayText: `Next ⚡`}, type: 1},
+    ]
+  let xx1button3Messages = {
+   image: {url:waifudd.data.url},
+   caption:  `Here you go!`,
+  buttons: xxhnekobot,
+  headerType: 1
+  }      
+            await JimbruOffical.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'waifu3':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let button112ssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'neko2':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+   waifud = await axios.get('https://waifu.pics/api/sfw/neko')
+                var wbutsss = [
+        {buttonId: `.neko`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttonssMessage = {
+       image: {url:waifud.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbutsss,
+      headerType: 4
+      }
+            await JimbruOffical.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
+                    return('Error!')
+                })               
+                break
+case 'woof':
+case '8ball':
+case 'goose':
+case 'gecg':
+case 'feed':
+case 'avatar':
+case 'lizard':
+case 'meow':
+case 'tickle':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttonssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, buttonssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animecuddle':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/cuddle`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttonsosMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, buttonsosMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break   
+case 'animeslap':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/slap`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let btutttonssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, btutttonssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animepat':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/pat`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let xxbuttonssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, xxbuttonssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animeneko':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/neko`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttonsTsMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, buttonsTsMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animehug':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/hug`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttonussMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, buttonussMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animekiss':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/kiss`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let bxxuttonssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, bxxuttonssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animewlp':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/wallpaper`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttoxnssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, buttoxnssMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animespank':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`)
+                           var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let buttonssxMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, buttonssxMessages,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'shinobu2':  
+ if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+                    ud = await axios.get('https://waifu.pics/api/sfw/shinobu')
+var wbutsss = [
+    {buttonId: `.shinobu`, buttonText: {displayText: `Next ✨`}, type: 1},
+         ]
+      let buttonsesMessage = {
+      image: {url:ud.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+          buttons: wbutsss,
+     headerType: 4
+                      }
+await JimbruOffical.sendMessage(m.chat,buttonsesMessage, { quoted:m }).catch(err => {
+     return('Error!')
+    })               
+break
+case 'megumin2':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+                    ud = await axios.get('https://waifu.pics/api/sfw/megumin')
+var wbutsss = [
+    {buttonId: `.megumin`, buttonText: {displayText: `Next ✨`}, type: 1},
+         ]
+      let buttonzMessage = {
+      image: {url:ud.data.url},
+       caption:  `Here you go!`,
+      footer: `${global.botname}`,
+          buttons: wbutsss,
+     headerType: 4
+                      }
+await JimbruOffical.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
+     return('Error!')
+    })               
+break     
+case 'awoo2':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+ waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)
+ var wbuttsss = [
+    {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+    ]
+  let button1Messages = {
+   image: {url:waifudd.data.url},
+   caption:  `Here you go!`,
+   footer: `${global.botname}`,
+  buttons: wbuttsss,
+  headerType: 2
+  }       
+            await JimbruOffical.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
+                    return('Error!')
+                })
+break
+case 'animewall2': case 'animewallpaper2':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(mess.wait)						
+const { AnimeWallpaper } =require("anime-wallpaper")
+if(!q) return reply('What wallpaper do you want?')
+const wall = new AnimeWallpaper();
+    const pages = [1,2,3,4];
+        const random=pages[Math.floor(Math.random() * pages.length)]
+        const wallpaper = await wall
+            .getAnimeWall4({ title: q, type: "sfw", page: pages })
+            .catch(() => null);
+const i = Math.floor(Math.random() * wallpaper.length);
+var walb = [
+        {buttonId: `.${command} ${q}`, buttonText: {displayText: `Next ✨`}, type: 1},        
+        ]
+      let wal = {
+       image: {url:wallpaper[i].image},
+       caption: `*Query :* ${q}`,
+      footer: `${global.botname}`,
+      buttons: walb,
+      headerType: 4
+      }     
+            await JimbruOffical.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
+                    return('Error!')
+                })
+//JimbruOffical.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
+break	
+case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
+   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+					axios.get(`https://api.waifu.pics/sfw/${command}`)
+					.then(({data}) => {
+						JimbruOffical.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+					})
+					break
+case 'waifu': case 'loli':
+					   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+					reply(mess.wait)
+					axios.get(`https://api.waifu.pics/sfw/waifu`)
+					.then(({data}) => {
+					JimbruOffical.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'lyrics': {
+		            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	    if (!text) return reply(`Use example ${prefix}lyrics Despacito`)
+	reply(mess.wait)
+	const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
+    const result = await lyricsv2(text).catch(async _ => await lyrics(text))
+    reply(`
+${themeemoji} Title : *${result.title}*
+${themeemoji} Author : ${result.author}
+${themeemoji} Lyrics : ${result.lyrics}
+${themeemoji} Url : ${result.link}
+`.trim())
+}
+break	
+case 'react': { 
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+JimbruOffical.sendMessage(m.chat, reactionMessage)} 
+break  	
+case 'leavegc': case 'leavegroup': {
+if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	reply(mess.wait)
+                if (!isCreator) return replay(`${mess.owner}`)
+                await JimbruOffical.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+            }
+            break	
+case 'bcgc': case 'bcgroup': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!args.join(" ")) return replay(`Where is the text?\n\nExample : ${prefix + command} ${global.ownername}`)
+let getGroups = await JimbruOffical.groupFetchAllParticipating()
+let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+let anu = groups.map(v => v.id)
+replay(`Send broadcast to ${anu.length} group chat, time's up ${anu.length * 1.5} second`)
+for (let i of anu) {
+await sleep(1500)
+let btn = [{
+urlButton: {
+displayText: 'YouTube',
+url: `${global.websitex}`
+}
+}, {
+urlButton: {
+displayText: 'Script',
+url: `${global.botscript}`
+}
+}, {
+quickReplyButton: {
+displayText: 'Ping',
+id: 'ping'
+}
+}, {
+quickReplyButton: {
+displayText: 'Menu',
+id: 'menu'
+}  
+}, {
+quickReplyButton: {
+displayText: 'Owner',
+id: 'owner'
+}
+}]
+let txt = `*「 ${global.ownername} Broadcast」*\n\n${text}`
+JimbruOffical.send5ButImg(i, txt, `${global.botname}`, log0, btn, thum)
+}
+replay(`Successfully Sent Broadcast To ${anu.length} Group`)
+}
+break	
+case 'bc': case 'broadcast': case 'bcall': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!args.join(" ")) return replay(`Where is the text??\n\nExample : ${prefix + command} ${global.ownername}`)
+let anu = await store.chats.all().map(v => v.id)
+replay(`Send Broadcast To ${anu.length} Chat\nTime's up ${anu.length * 1.5} second`)
+for (let yoi of anu) {
+await sleep(1500)
+let btn = [{
+urlButton: {
+displayText: 'YouTube 🍓',
+url: `${global.websitex}`
+}
+}, {
+urlButton: {
+displayText: 'Script 🍜',
+url: `${global.botscript}`
+}
+}, {
+quickReplyButton: {
+displayText: 'Bot Status 🚀',
+id: 'ping'
+}
+}, {
+quickReplyButton: {
+displayText: 'Menu 🐰',
+id: 'menu'
+}  
+}, {
+quickReplyButton: {
+displayText: 'Owner 😈',
+id: 'owner'
+}
+}]
+let txt = `*「 ${global.ownername}'s Broadcast」*\n\n${text}`
+JimbruOffical.send5ButImg(yoi, txt, `${global.botname}`, log0, btn, thum)
+}
+replay('Broadcast Success')
+}
+break
+	case 'setmenu': {
+            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            if (!isCreator) return reply(mess.owner)
+            let setbot = db.data.settings[botNumber]
+               if (args[0] === 'templateImage'){
+                setbot.templateImage = true
+                setbot.templateVideo = false
+                setbot.templateGif = false
+                setbot.templateMsg = false
+                setbot.templateDocument = false
+                reply(mess.success)
+                } else if (args[0] === 'templateGif'){
+                setbot.templateImage = false
+                setbot.templateVideo = false
+                setbot.templateGif = true
+                setbot.templateMsg = false
+                setbot.templateDocument = false
+                reply(mess.success)
+                } else if (args[0] === 'templateMessage'){
+                setbot.templateImage = false
+                setbot.templateVideo = false
+                setbot.templateGif = false
+                setbot.templateMsg = true
+                setbot.templateDocument = false
+                reply(mess.success)
+                } else if (args[0] === 'templateDocument'){
+                setbot.templateImage = false
+                setbot.templateVideo = false
+                setbot.templateGif = false
+                setbot.templateMsg = false
+                setbot.templateDocument = true
+                reply(mess.success)
+                } else {
+                let sections = [
+                {
+                title: "😛CHANGE BOT MENU😛",
+                rows: [
+                {title: "Image Menu", rowId: `setmenu templateImage`, description: `Tap to change bot menu to Image Menu`},
+                {title: "Gif Menu", rowId: `setmenu templateGif`, description: `Tap to change bot menu to Gif Menu`},
+                {title: "Text Menu", rowId: `setmenu templateMessage`, description: `Tap to change bot menu to Text Menu`},
+                {title: "Document Menu", rowId: `setmenu templateDocument`, description: `Tap to change bot menu to Document Menu`}
+                ]
+                },
+                ]
+                JimbruOffical.sendListMsg(m.chat, `Please select the menu you want to change!`, ` `, JimbruOffical.user.name, `Click Here`, sections, m)
+                }
+            }
+            break
