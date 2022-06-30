@@ -706,10 +706,9 @@ JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 startJimbruOffical()
 }, 5000);
 
-let file = require.resolve(__filename)
-fs.watchFile(file, () => {
+        let file = require.resolve(__filename)
+        fs.watchFile(file, () => {
 	fs.unwatchFile(file)
-	console.log(chalk.redBright(`${__filename} Updated`))
         console.log(chalk.redBright(`Updated '${__filename}'`))
 	delete require.cache[file]
 	require(file)
