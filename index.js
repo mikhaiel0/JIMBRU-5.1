@@ -5,7 +5,7 @@
 //•|════════════════════════════|•      //
 
 require("./config.js")
-const { default: JimbruOfficalConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { default: JimbruOfficalConnect, WASocket, DisconnectReason, useSingleFileAuthState, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto, delay, jidNormalizedUser, makeWALegacySocket, useSingleFileLegacyAuthState, DEFAULT_CONNECTION_CONFIG, DEFAULT_LEGACY_CONNECTION_CONFIG } = require("@adiwajshing/baileys")
 const { MakeSession } = require('./lib/waconnect/auth')  
 const { state, saveState } = useSingleFileAuthState(`./lib/auth.json`)
 const pino = require('pino')
