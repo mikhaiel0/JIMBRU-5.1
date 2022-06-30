@@ -24,12 +24,9 @@ const {
     color
 } = require('./lib/color')
 //require("http").createServer((_, res) => res.end("Hello World!")).listen(8080)
-global.authFile ='./Files/Ammu.json'
- let id = global.session
-let session = id.replace('AMMUX',"") 
-if(!fs.existsSync('./Files/Ammu.json')){
+global.authFile ='./lib/Auth.json'
+if(!fs.existsSync('./lib/auth.json')){
     MakeSession(session,authFile)
-  
     }
 
 
@@ -166,7 +163,7 @@ let buttons = [
 {buttonId: `wkwwk`, buttonText: {displayText: 'Welcome'}, type: 1}
 ]
 let buttonMessage = {
-document: fs.readFileSync('./Media/theme/cheems.xlsx'),
+document: fs.readFileSync('./Media/theme/doc.xlsx'),
 mimetype: docs,
 jpegThumbnail:buffer,
 mentions: [num],
@@ -181,8 +178,8 @@ title: `${ownername}`,
 body: `Don't forget to read group description`,
 mediaType:2,
 thumbnail: buffer,
-sourceUrl: `${websitex}`,
-mediaUrl: `${websitex}`
+sourceUrl: `${website}`,
+mediaUrl: `${website}`
 }}
 }
 XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
@@ -210,7 +207,7 @@ let buttons = [
 {buttonId: `wkwkwk`, buttonText: {displayText: 'RIP'}, type: 1}
 ]
 let buttonMessage = {
-document: fs.readFileSync('./Media/theme/cheems.xlsx'),
+document: fs.readFileSync('./Media/theme/doc.xlsx'),
 mimetype: docs,
 jpegThumbnail:buffer,
 mentions: [num],
@@ -225,8 +222,8 @@ title: `${ownername}`,
 body: `Bye! my friend, take care.`,
 mediaType:2,
 thumbnail: buffer,
-sourceUrl: `${websitex}`,
-mediaUrl: `${websitex}`
+sourceUrl: `${website}`,
+mediaUrl: `${website}`
 }}
 }
 JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
