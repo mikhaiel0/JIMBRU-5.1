@@ -6642,7 +6642,7 @@ break
                 } else {
                 let sections = [
                 {
-                title: "😛CHANGE BOT MENU😛",
+                title: "CHANGE BOT MENU",
                 rows: [
                 {title: "Image Menu", rowId: `setmenu templateImage`, description: `Tap to change bot menu to Image Menu`},
                 {title: "Gif Menu", rowId: `setmenu templateGif`, description: `Tap to change bot menu to Gif Menu`},
@@ -6655,3 +6655,1703 @@ break
                 }
             }
             break
+case 'command': {
+    if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+listMessage :{
+ title: `ʜᴇʏ ${pushname}`,
+ description: `ᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴛʜᴇ ᴍᴇɴᴜ\n\n`,
+ buttonText: "ᴍᴇɴᴜ",
+ footerText: `${global.botname}`,
+ listType: "SINGLE_SELECT",
+ sections: [{
+             "title": "ғᴇᴀᴛᴜʀᴇs ᴏғ ʙᴏᴛ",
+             "rows": [
+                 {
+             "title": "❤︎ ᴏᴛʜᴇʀs ❤︎",
+             "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴏᴛʜᴇʀ ғᴇᴀᴛᴜʀᴇs",
+             "rowId": `othermenu`
+             }
+              ]
+              },
+              {
+             "title": "❤︎ ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs ❤︎",
+             "rows": [
+                 {
+             "title": "❤︎ ᴀʟʟ ᴍᴇɴᴜ ❤︎",
+             "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴏᴛʜᴇʀ ғᴇᴀᴛᴜʀᴇs",
+             "rowId": `allmenu`
+                 },
+                 {
+             "title": "❤︎ ᴏᴡɴᴇʀ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴏᴡɴᴇʀ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `ownermenu`
+                     },
+                 {
+                     "title": "❤︎ ɢʀᴏᴜᴘ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴍᴀɪɴ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `groupmenu`
+                     },
+                     {
+                     "title": "❤︎  ʀᴘɢ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ʀᴘɢ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `rpgmenu`
+                     },
+                     {
+                     "title": "❤︎ ᴍᴀᴋᴇʀ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ʟᴏɢᴏ ᴍᴀᴋɪɴɢ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `indomenu`
+                 },
+                 {
+                     "title": "❤︎ sᴏᴜɴᴅ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ sᴏᴜɴᴅ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": ` soundmenu`
+                 },
+                 {
+                     "title": "❤︎ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴅᴏᴡɴʟᴏᴀᴅ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `downloadmenu`
+                 },
+                 {
+                     "title": "❤︎ sᴛɪᴄᴋᴇʀ ᴍᴇɴᴜ ❤︎",
+                     "description": "Displays The List Of Sticker Features",
+                     "rowId": `indomenu`
+                 },
+                 {
+                     "title": "❤︎ sᴇᴀʀᴄʜ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ sᴇᴀʀᴄʜɪɴɢ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `searchmenu`
+                 },
+                 {
+                     "title": "❤︎ ᴛᴏᴏʟ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴛᴏᴏʟ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `toolmenu`
+                 },
+                 {
+                     "title": "❤︎  ʀᴀɴᴅᴏᴍ ɪᴍᴀɢᴇ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ʀᴀɴᴅᴏᴍ ɪᴍᴀɢᴇ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `randomimagemenu`
+                 },
+                     {
+                         "title": "❤︎ ᴀɴɪᴍᴇ ᴍᴇɴᴜ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ʀᴀɴᴅᴏᴍ ᴀɴɪᴍᴇ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `animemenu`
+                     },
+                     {
+                     "title": "❤︎ ᴀɴɪᴍᴇ sᴛɪᴄᴋᴇʀ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀɴɪᴍᴇ sᴛɪᴄᴋᴇʀ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `animestickermenu`
+                      },
+                 {
+                     "title": "❤︎ ɴsғᴡ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ɴsғᴇ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `nsfwmenu`
+                      },
+                     {
+                         "title": "❤︎ ғᴜɴ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ғᴜɴ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `funmenu`
+                     },
+                     {
+                     "title": "❤︎ ɢᴀᴍᴇ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ɢᴀᴍᴇ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `indomenu`
+                 },
+                     {
+                         "title": "❤︎ ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴄᴏɴᴠᴇʀᴛ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `convertmenu`
+                     },
+                     {
+                         "title": "❤︎ ᴅᴀᴛᴀʙᴀsᴇ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴅᴀᴛᴀʙᴀsᴇ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `databasemenu`
+                     },
+                     {
+                     "title": "❤︎ ɪɴᴅᴏ ᴍᴇɴᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ɪɴᴅᴏ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `indomenu`
+                 },
+                     {
+                         "title": "❤︎ ʜᴏʀᴏsᴄᴏᴘᴇ ᴍᴇɴᴜ ❤︎",
+                     "description": "❤︎ ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ʜᴏʀᴏsᴄᴏᴘᴇ ❤︎",
+                     "rowId": `indohoroscopemenu`
+                     }
+             ]
+         },
+         /* 
+             {
+             "title": "❤︎ ᴄʜᴀᴛ ᴡɪᴛʜ ғᴇʟʟᴏᴡ ᴜsᴇʀs ❤︎",
+             "rows": [
+                 {
+                     "title": "ᴀɴᴏɴʏᴍᴏᴜs ᴄʜᴀᴛ ᴍᴇɴᴜ",
+                     "description": "❤︎ ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀɴᴏɴʏᴍᴏᴜs ᴄʜᴀᴛ ғᴇᴀᴛᴜʀᴇs",
+                     "rowId": `❥︎anonymousmenu`
+                 }
+             ]
+         }, 
+ */
+         {
+             "title": "❤︎ ᴄʀᴇᴅɪᴛ ❤︎",
+             "rows": [
+                 {
+                     "title": "❤︎ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴜsɪɴɢ ᴊɪᴍʙʀᴜ ❤︎",
+                     "description": "ᴅɪsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴄʀᴇᴅɪᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ",
+                     "rowId": `tqtt`
+                 }
+             ]
+         }
+     ],
+listType: 1
+}
+}), {})
+JimbruOffical.relayMessage(m.chat, template.message, { messageId: template.key.id })
+}
+break
+case 'allmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'All Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐖𝐍𝐄𝐑
+│ ❥︎ sᴇʟғ
+│ ❥︎ ᴘᴜʙʟɪᴄ
+│ ❥︎ ᴀɴᴛɪ ᴛᴀɢ
+│ ❥︎ ʙᴀɴ [ ᴀᴅᴅ / ᴅᴇʟ ]
+│ ❥︎ ʙᴀɴᴄʜᴀᴛ [ ᴏɴ / ᴏғғ]
+│ ❥︎ ᴊᴏɪɴ [ ʟɪɴᴋ ]
+│ ❥︎ ʟᴇᴀᴠᴇɢᴄ
+│ ❥︎ sᴇᴛʙɪᴏ
+│ ❥︎ ʙʟᴏᴄᴋ [ ᴜsᴇʀ ]
+│ ❥︎ ᴜɴʙʟᴏᴄᴋ [ ᴜsᴇʀ ]
+│ ❥︎ ʙᴄɢʀᴏᴜᴘ [ ᴛᴇxᴛ ]
+│ ❥︎ ʙᴄᴀʟʟ [ ᴛᴇxᴛ ]
+│ ❥︎ sᴇᴛᴘᴘʙᴏᴛ [ ɪᴍᴀɢᴇ ]
+│ ❥︎ ᴇᴛᴇxɪғs
+│ ❥︎ ʙʟᴏᴄᴋ [ ᴛᴀɢ / ɴᴜᴍʙᴇʀ]
+│ ❥︎ ᴜɴʙʟᴏᴄᴋ [ ᴛᴀɢ /ɴᴜᴍʙᴇʀ]
+│ ❥︎ ᴄᴏᴏᴡɴᴇʀ [ ᴀᴅᴅ / ᴅᴇʟ]
+╰────────────────❋ཻུ۪۪⸙
+
+╭───➤  𝐆𝐑𝐎𝐔𝐏         
+│ ❥︎ ɢʀᴏᴜᴘsᴇᴛᴛɪɴɢs
+│ ❥︎ ɢʀᴏᴜᴘʟɪɴᴋ
+│ ❥︎ ᴇᴘʜᴇᴍᴇʀᴀʟ [ ᴏᴘᴛɪᴏɴ ]
+│ ❥︎ sᴇᴛɢᴄᴘᴘ [ ɪᴍɢ]
+│ ❥︎ sᴇᴛɴᴀᴍᴇ [ ᴛᴇxᴛ ]
+│ ❥︎ sᴇᴛᴅᴇsᴄs  [ ᴛᴇxᴛ ]
+│ ❥︎ ɢʀᴏᴜᴘ
+│ ❥︎ ʀᴇᴠᴏᴋᴇ
+│ ❥︎ ᴇᴅɪᴛɪɴғᴏ [ ᴏᴘᴛɪᴏɴ ]
+│ ❥︎ ᴀᴅᴅ [ ᴜsᴇʀ ]
+│ ❥︎ ᴋɪᴄᴋ [ ʀᴇᴘʟʏ / ᴛᴀɢ ]
+│ ❥︎ ʜɪᴅᴇᴛᴀɢ [ ᴛᴇxᴛ ]
+│ ❥︎ ᴛᴀɢᴀʟʟ [ ᴛᴇxᴛ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋɢᴄ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋᴛɢ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋʏᴛ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋʏᴛᴠɪᴅ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋɪɢ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋғʙ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋᴛᴡɪᴛ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋᴀʟʟ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪᴠɪʀᴜs [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪᴛᴏxɪᴄ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪᴡᴀᴍᴇ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀᴜᴛᴏʀᴇᴠᴏᴋᴇ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀᴜᴛᴏʀᴇᴘʟʏ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ɴsғᴡ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴍᴜᴛᴇ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴘʀᴏᴍᴏᴛᴇ [ ʀᴇᴘʟʏ / ᴛᴀɢ ]
+│ ❥︎ ᴅᴇᴍᴏᴛᴇ [ ʀᴇᴘʟʏ / ᴛᴀɢ ]
+│ ❥︎ ʀᴇᴀᴄᴛ [ ʀᴇᴘʟʏ ᴇᴍᴏᴊɪ]
+│ ❥︎ ᴠᴏᴛᴇ
+│ ❥︎ ᴅᴇᴠᴏᴛᴇ
+│ ❥︎ ᴜᴘᴠᴏᴛᴇ
+│ ❥︎ ᴄʜᴇᴄᴋᴠᴏᴛᴇ
+│ ❥︎ ᴅᴇʟᴠᴏᴛᴇ
+│ ❥︎ ᴄʜᴇᴄᴋʀᴇɴᴛ
+╰────────────────❋ཻུ۪۪⸙
+
+╭───➤  𝐑𝐏𝐆
+│ ❥︎ ʜᴜɴᴛ
+│ ❥︎ ᴍɪɴᴇ
+│ ❥︎ ғɪsʜ
+│ ❥︎ ʜᴇᴀʟ
+│ ❥︎ ʙʟᴏᴏᴅ
+│ ❥︎ sᴛᴀʙ
+│ ❥︎ ʙᴜʏ
+│ ❥︎ sᴇʟʟ
+│ ❥︎ ᴘʀᴏғɪʟᴇ
+│ ❥︎ ɪɴᴠᴇɴᴛᴏʀʏ
+│ ❥︎ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐌𝐀𝐊𝐄𝐑
+│ ❥︎ ᴄᴀɴᴅʏ
+│ ❥︎ ʙʟᴀᴄᴋᴘɪɴᴋɴᴇᴏɴ
+│ ❥︎ ᴅᴇᴇᴘsᴇᴀ
+│ ❥︎ sᴄɪғɪ
+│ ❥︎ ғɪᴄᴛɪᴏɴ
+│ ❥︎ ʙᴇʀʀʏ
+│ ❥︎ ғʀᴜɪᴛᴊᴜɪᴄᴇ
+│ ❥︎ ʙɪsᴄᴜɪᴛ
+│ ❥︎ ᴡᴏᴏᴅ
+│ ❥︎ ᴄʜᴏᴄᴏʟᴀᴛᴇ
+│ ❥︎ ᴍᴀᴛʀɪx
+│ ❥︎ ʙʟᴏᴏᴅ
+│ ❥︎ ʜᴀʟʟᴏᴡᴇᴇɴ
+│ ❥︎ ᴡɪᴄᴋᴇʀ 
+│ ❥︎ ᴅᴀʀᴋɢᴏʟᴅ 
+│ ❥︎ ғɪʀᴇᴡᴏʀᴋ 
+│ ❥︎ sᴋᴇʟᴇᴛᴏɴ 
+│ ❥︎ sᴀɴᴅ 
+│ ❥︎ ɢʟᴜᴇ 
+│ ❥︎ ʟᴇᴀᴠᴇs 
+│ ❥︎ ᴍᴀɢᴍᴀ 
+│ ❥︎ ʟᴀᴠᴀ 
+│ ❥︎ ʀᴏᴄᴋ 
+│ ❥︎ ʙʟᴏᴏᴅɢʟᴀs 
+│ ❥︎ ᴜɴᴅᴇʀᴡᴀᴛᴇʀ 
+│ ❥︎ ᴛᴇxᴛᴍᴀᴋᴇʀ 
+│ ❥︎ ʜᴏɴᴇʏ 
+│ ❥︎ ɪᴄᴇ 
+│ ❥︎ ᴡᴀᴛᴇʀᴄᴏʟᴏᴜʀ
+│ ❥︎ ᴍᴜʟᴛɪᴄᴏʟᴏʀ
+│ ❥︎ sɴᴏᴡ
+│ ❥︎ ʜᴀʀʀʏᴘᴏᴛ
+│ ❥︎ ʜᴀʀʀʏᴘᴏᴛᴛᴇʀ
+│ ❥︎ ʙʀᴏᴋᴇɴɢʟᴀss
+│ ❥︎ ᴡᴀᴛᴡʀᴘɪᴘᴇ
+│ ❥︎ sᴘᴏᴏᴋʏ
+│ ❥︎ ᴄɪʀᴄᴜɪᴛ 
+│ ❥︎ ᴍᴇᴛᴀʟʟɪᴄ
+│ ❥︎ ᴅᴇᴍᴏɴ
+│ ❥︎ sparklechristmas
+│ ❥︎ christmas
+│ ❥︎ 3dchristmas
+│ ❥︎ 3dbox
+│ ❥︎ waterdrop
+│ ❥︎ lion2
+│ ❥︎ papercut
+│ ❥︎ transformer
+│ ❥︎ neondevil
+│ ❥︎ 3davengers
+│ ❥︎ 3dstone
+│ ❥︎ 3dstone2
+│ ❥︎ summertime
+│ ❥︎ thunder
+│ ❥︎ window
+│ ❥︎ graffiti
+│ ❥︎ graffitibike
+│ ❥︎ pornhub
+│ ❥︎ glitch
+│ ❥︎ blackpink
+│ ❥︎ glitch2
+│ ❥︎ glitch3
+│ ❥︎ 3dspace
+│ ❥︎ lion
+│ ❥︎ 3dneon
+│ ❥︎ greenneon
+│ ❥︎ bokeh
+│ ❥︎ holographic
+│ ❥︎ bear
+│ ❥︎ wolf
+│ ❥︎ joker
+│ ❥︎ dropwater
+│ ❥︎ dropwater2
+│ ❥︎ thewall
+│ ❥︎ neonlight
+│ ❥︎ natural
+│ ❥︎ carbon
+│ ❥︎ pencil
+│ ❥︎ blackpink2
+│ ❥︎ neon
+│ ❥︎ neonlight2
+│ ❥︎ toxic
+│ ❥︎ strawberry
+│ ❥︎ discovery
+│ ❥︎ 1917
+│ ❥︎ sci_fi
+│ ❥︎ ancient
+│ ❥︎ fabric
+│ ❥︎ hoorror
+│ ❥︎ whitebear
+│ ❥︎ juice
+│ ❥︎ batman
+│ ❥︎ multicolor
+│ ❥︎ collwall
+│ ❥︎ wonderful
+│ ❥︎ cool
+│ ❥︎ sketch
+│ ❥︎ marvel
+│ ❥︎ foggy
+│ ❥︎ writing
+│ ❥︎ halloweenfire
+│ ❥︎ halloween
+│ ❥︎ watercolor
+│ ❥︎ classic
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃	
+│ ❥︎ instagram [url]
+│ ❥︎ igtv [url]
+│ ❥︎ igstory [username]
+│ ❥︎ facebook [url]
+│ ❥︎ fbmp3 [url]
+│ ❥︎ twitter [url]
+│ ❥︎ twittermp3 [url]
+│ ❥︎ tiktok [url]
+│ ❥︎ tiktokaudio[url]
+│ ❥︎ tiktoknowm [url]
+│ ❥︎ mediafire [url]
+│ ❥︎ ytmp3 [url|quality]
+│ ❥︎ ytmp4 [url|quality]
+│ ❥︎ getmusic [yt link]
+│ ❥︎ getvideo [yt link]
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐒𝐄𝐀𝐑𝐂𝐇
+│ ❥︎ play [query]
+│ ❥︎ song [query]
+│ ❥︎ yts [query]
+│ ❥︎ lyrics [query]
+│ ❥︎ google [query]
+│ ❥︎ playstore [query]
+│ ❥︎ gimage [query]
+│ ❥︎ pinterest [query]
+│ ❥︎ image [query]
+│ ❥︎ film [query]
+│ ❥︎ wallpaper [query]
+│ ❥︎ searchgc [query]
+│ ❥︎ happymod [query]
+│ ❥︎ servermc
+│ ❥︎ mcpedl [query]
+│ ❥︎ tvsearch [query]
+│ ❥︎ wikimedia [query]
+│ ❥︎ ytsearch [query]
+│ ❥︎ ringtone [query]
+│ ❥︎ webtoon [query]
+│ ❥︎ anime [query]
+│ ❥︎ animestory [query]
+│ ❥︎ manga [query]
+│ ❥︎ wattpad [query]
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤  𝐂𝐎𝐍𝐕𝐄𝐑𝐓
+│ ❥︎ image [reply stick]
+│ ❥︎ sticker [reply img|gif]
+│ ❥︎ take [reply img|gif|stik]
+│ ❥︎ smeme [reply img]
+│ ❥︎ emojimix [moji+moji]
+│ ❥︎ emoji [emoji]
+│ ❥︎ video [reply img]
+│ ❥︎ gif [reply stick]
+│ ❥︎ url [reply img]
+│ ❥︎ voice [reply aud]
+│ ❥︎ mp3 [reply vn]
+│ ❥︎ audio [reply vid]
+│ ❥︎ ebinary [reply txt]
+│ ❥︎ dbinary [reply txt]
+│ ❥︎ styletext  [ ᴛᴇxᴛ ]
+│ ❥︎ volume [reply aud]
+│ ❥︎ tempo [reply aud]
+│ ❥︎ bass [reply aud]
+│ ❥︎ blown [reply aud]
+│ ❥︎ deep [reply aud]
+│ ❥︎ earrape [reply aud]
+│ ❥︎ fast [reply aud]
+│ ❥︎ fat [reply aud]
+│ ❥︎ nightcore [reply aud]
+│ ❥︎ reverse [reply aud]
+│ ❥︎ robot [reply aud]
+│ ❥︎ slow [reply aud]
+│ ❥︎ squirrel [reply aud]
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐑𝐀𝐍𝐃𝐎𝐌 𝐈𝐌𝐆
+│ ❥︎ coffee
+│ ❥︎ bts
+│ ❥︎ woof
+│ ❥︎ meow
+│ ❥︎ lizard
+│ ❥︎ wallneon
+│ ❥︎ wallpubg
+│ ❥︎ wallml
+│ ❥︎ wallrandom
+│ ❥︎ wallcode
+│ ❥︎ animewall [query]
+│ ❥︎ animewall2 [query]
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐀𝐍𝐈𝐌𝐄
+│ ❥︎ neko2
+│ ❥︎ waifu
+│ ❥︎ waifu2
+│ ❥︎ awoo2
+│ ❥︎ shinobu
+│ ❥︎ waifu3
+│ ❥︎ foxgirl
+│ ❥︎ megumin2
+│ ❥︎ loli
+│ ❥︎ 8ball
+│ ❥︎ animenom
+│ ❥︎ goose
+│ ❥︎ avatar
+│ ❥︎ tickle
+│ ❥︎ gecg
+│ ❥︎ feed
+│ ❥︎ animeslap
+│ ❥︎ animespank
+│ ❥︎ animepat
+│ ❥︎ animeneko
+│ ❥︎ animekiss
+│ ❥︎ animewlp
+│ ❥︎ animecuddle
+│ ❥︎ smug2
+│ ❥︎ couplepp
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐒𝐓𝐈𝐂𝐊𝐄𝐑
+│ ❥︎ patrick
+│ ❥︎ emoji
+│ ❥︎ emojimix
+│ ❥︎ attp
+│ ❥︎ doge
+│ ❥︎ lovesticker
+│ ❥︎ gura
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐀𝐍𝐈𝐌𝐄 𝐒𝐓𝐈𝐂𝐊𝐄𝐑
+│ ❥︎ loli
+│ ❥︎ bully
+│ ❥︎ cuddle
+│ ❥︎ cry
+│ ❥︎ hug
+│ ❥︎ awoo
+│ ❥︎ kiss
+│ ❥︎ lick
+│ ❥︎ pat
+│ ❥︎ smug
+│ ❥︎ bonk
+│ ❥︎ yeet
+│ ❥︎ blush
+│ ❥︎ smile
+│ ❥︎ wave
+│ ❥︎ highfive
+│ ❥︎ handhold
+│ ❥︎ nom
+│ ❥︎ glomp
+│ ❥︎ bite
+│ ❥︎ slap
+│ ❥︎ kill
+│ ❥︎ happy
+│ ❥︎ wink
+│ ❥︎ poke
+│ ❥︎ dance
+│ ❥︎ cringe
+│ ❥︎ neko
+│ ❥︎ gura
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐍𝐒𝐅𝐖
+│ ❥︎ hentaivideo
+│ ❥︎ yuri
+│ ❥︎ masturbation
+│ ❥︎ thighs
+│ ❥︎ pussy
+│ ❥︎ panties
+│ ❥︎ orgy
+│ ❥︎ ahegao
+│ ❥︎ ass
+│ ❥︎ bdsm
+│ ❥︎ blowjob
+│ ❥︎ cuckold
+│ ❥︎ ero
+│ ❥︎ gasm
+│ ❥︎ cum
+│ ❥︎ femdom
+│ ❥︎ foot
+│ ❥︎ gangbang
+│ ❥︎ glasses
+│ ❥︎ jahy
+│ ❥︎ trap
+│ ❥︎ blowjobgif
+│ ❥︎ spank
+│ ❥︎ hneko
+│ ❥︎ nwaifu
+╰────────────────❋ཻུ۪۪⸙ 
+╭───➤ 𝐅𝐔𝐍
+│ ❥︎ how [text
+│ ❥︎ when  [ ᴛᴇxᴛ ]
+│ ❥︎ where  [ ᴛᴇxᴛ ]
+│ ❥︎ is  [ ᴛᴇxᴛ ]
+│ ❥︎ what  [ ᴛᴇxᴛ ]
+│ ❥︎ can  [ ᴛᴇxᴛ ]
+│ ❥︎ rate  [ ᴛᴇxᴛ ]
+│ ❥︎ wangy  [ ᴛᴇxᴛ ]
+│ ❥︎ beautifulcheck [tag]
+│ ❥︎ awesomecheck [tag]
+│ ❥︎ prettycheck [tag]
+│ ❥︎ lesbiancheck [tag]
+│ ❥︎ gaycheck [tag]
+│ ❥︎ cutecheck [tag]
+│ ❥︎ uglycheck [tag]
+│ ❥︎ hornycheck [tag]
+│ ❥︎ charactercheck [tag]
+│ ❥︎ lovelycheck [tag]
+│ ❥︎ couple
+│ ❥︎ mysoulmate
+│ ❥︎ hot
+│ ❥︎ sexy
+│ ❥︎ kind
+│ ❥︎ idiot
+│ ❥︎ handsome
+│ ❥︎ beautiful
+│ ❥︎ cute
+│ ❥︎ pretty
+│ ❥︎ lesbian
+│ ❥︎ noob
+│ ❥︎ bastard
+│ ❥︎ foolish
+│ ❥︎ nerd
+│ ❥︎ asshole
+│ ❥︎ gay
+│ ❥︎ smart
+│ ❥︎ stubble
+│ ❥︎ dog
+│ ❥︎ horny
+│ ❥︎ cunt
+│ ❥︎ wibu
+│ ❥︎ noobra
+│ ❥︎ nibba
+│ ❥︎ nibbi
+│ ❥︎ comrade
+│ ❥︎ mumu
+│ ❥︎ rascal
+│ ❥︎ scumbag
+│ ❥︎ nuts
+│ ❥︎ fagot
+│ ❥︎ scoundrel
+│ ❥︎ ditch
+│ ❥︎ dope
+│ ❥︎ gucci
+│ ❥︎ lit
+│ ❥︎ dumbass
+│ ❥︎ crackhead
+│ ❥︎ mf
+│ ❥︎ motherfucker
+│ ❥︎ sucker
+│ ❥︎ fuckboy
+│ ❥︎ playboy
+│ ❥︎ fuckgirl
+│ ❥︎ playgirl
+╰────────────────❋ཻུ۪۪⸙ 
+╭───➤ 𝐒𝐎𝐔𝐍𝐃
+│ ❥︎ sound1
+│ ❥︎ sound2
+│ ❥︎ sound3
+│ ❥︎ sound4
+│ ❥︎ sound5
+│ ❥︎ sound6
+│ ❥︎ sound7
+│ ❥︎ sound8
+│ ❥︎ sound9
+│ ❥︎ sound10
+│ ❥︎ sound11
+│ ❥︎ sound12
+│ ❥︎ sound13
+│ ❥︎ sound14
+│ ❥︎ sound15
+│ ❥︎ sound16
+│ ❥︎ sound17
+│ ❥︎ sound18
+│ ❥︎ sound19
+│ ❥︎ sound20
+│ ❥︎ sound21
+│ ❥︎ sound22
+│ ❥︎ sound23
+│ ❥︎ sound24
+│ ❥︎ sound25
+│ ❥︎ sound26
+│ ❥︎ sound27
+│ ❥︎ sound28
+│ ❥︎ sound29
+│ ❥︎ sound30
+│ ❥︎ sound31
+│ ❥︎ sound32
+│ ❥︎ sound33
+│ ❥︎ sound34
+│ ❥︎ sound35
+│ ❥︎ sound36
+│ ❥︎ sound37
+│ ❥︎ sound38
+│ ❥︎ sound39
+│ ❥︎ sound40
+│ ❥︎ sound41
+│ ❥︎ sound42
+│ ❥︎ sound43
+│ ❥︎ sound44
+│ ❥︎ sound45
+│ ❥︎ sound46
+│ ❥︎ sound47
+│ ❥︎ sound48
+│ ❥︎ sound49
+│ ❥︎ sound50
+│ ❥︎ sound51
+│ ❥︎ sound52
+│ ❥︎ sound53
+│ ❥︎ sound54
+│ ❥︎ sound55
+│ ❥︎ sound56
+│ ❥︎ sound57
+│ ❥︎ sound58
+│ ❥︎ sound59
+│ ❥︎ sound60
+│ ❥︎ sound61
+│ ❥︎ sound62
+│ ❥︎ sound63
+│ ❥︎ sound64
+│ ❥︎ sound65
+│ ❥︎ sound66
+│ ❥︎ sound67
+│ ❥︎ sound68
+│ ❥︎ sound69
+│ ❥︎ sound70
+│ ❥︎ sound71
+│ ❥︎ sound72
+│ ❥︎ sound73
+│ ❥︎ sound74
+│ ❥︎ sound75
+│ ❥︎ sound76
+│ ❥︎ sound77
+│ ❥︎ sound78
+│ ❥︎ sound79
+│ ❥︎ sound80
+│ ❥︎ sound81
+│ ❥︎ sound82
+│ ❥︎ sound83
+│ ❥︎ sound84
+│ ❥︎ sound85
+│ ❥︎ sound86
+│ ❥︎ sound87
+│ ❥︎ sound88
+│ ❥︎ sound89
+│ ❥︎ sound90
+│ ❥︎ sound91
+│ ❥︎ sound92
+│ ❥︎ sound93
+│ ❥︎ sound94
+│ ❥︎ sound95
+│ ❥︎ sound96
+│ ❥︎ sound97
+│ ❥︎ sound98
+│ ❥︎ sound99
+│ ❥︎ sound100
+│ ❥︎ sound101
+│ ❥︎ sound102
+│ ❥︎ sound103
+│ ❥︎ sound104
+│ ❥︎ sound105
+│ ❥︎ sound106
+│ ❥︎ sound107
+│ ❥︎ sound108
+│ ❥︎ sound109
+│ ❥︎ sound110
+│ ❥︎ sound111
+│ ❥︎ sound112
+│ ❥︎ sound113
+│ ❥︎ sound114
+│ ❥︎ sound115
+│ ❥︎ sound116
+│ ❥︎ sound117
+│ ❥︎ sound118
+│ ❥︎ sound119
+│ ❥︎ sound120
+│ ❥︎ sound121
+│ ❥︎ sound122
+│ ❥︎ sound123
+│ ❥︎ sound124
+│ ❥︎ sound125
+│ ❥︎ sound126
+│ ❥︎ sound127
+│ ❥︎ sound128
+│ ❥︎ sound129
+│ ❥︎ sound130
+│ ❥︎ sound131
+│ ❥︎ sound132
+│ ❥︎ sound133
+│ ❥︎ sound134
+│ ❥︎ sound135
+│ ❥︎ sound136
+│ ❥︎ sound137
+│ ❥︎ sound138
+│ ❥︎ sound139
+│ ❥︎ sound140
+│ ❥︎ sound141
+│ ❥︎ sound142
+│ ❥︎ sound143
+│ ❥︎ sound144
+│ ❥︎ sound145
+│ ❥︎ sound146
+│ ❥︎ sound147
+│ ❥︎ sound148
+│ ❥︎ sound149
+│ ❥︎ sound150
+│ ❥︎ sound151
+│ ❥︎ sound152
+│ ❥︎ sound153
+│ ❥︎ sound154
+│ ❥︎ sound155
+│ ❥︎ sound156
+│ ❥︎ sound157
+│ ❥︎ sound158
+│ ❥︎ sound159
+│ ❥︎ sound160
+│ ❥︎ sound161
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤  𝐆𝐀𝐌𝐄 
+│ ❥︎ truth
+│ ❥︎ dare
+│ ❥︎ tictactoe
+│ ❥︎ delttt
+│ ❥︎ guess [ ᴏᴘᴛɪᴏɴ ]
+│ ❥︎ math [mode]
+│ ❥︎ suitpvp [tag]
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤  𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒 𝐂𝐇𝐀𝐓
+│ ❥︎ anonymous
+│ ❥︎ start
+│ ❥︎ next
+│ ❥︎ leave
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤ 𝐓𝐎𝐎𝐋
+│ ❥︎ translate  [ ᴛᴇxᴛ ]
+│ ❥︎ fliptext  [ ᴛᴇxᴛ ]
+│ ❥︎ toletter [number]
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤  𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄
+│ ❥︎ setcmd
+│ ❥︎ listcmd
+│ ❥︎ delcmd
+│ ❥︎ lockcmd
+│ ❥︎ addmsg
+│ ❥︎ listmsg
+│ ❥︎ getmsg
+│ ❥︎ delmsg
+╰────────────────❋ཻུ۪۪⸙ 
+
+╭───➤  𝐈𝐍𝐃𝐎
+│ ❥︎ darkjoke
+│ ❥︎ quotes
+│ ❥︎ animequotes
+│ ❥︎ friendshipshortstory
+│ ❥︎ loveshortstory
+│ ❥︎ sacrificeshortstory
+│ ❥︎ disturbingshortstory
+│ ❥︎ amino
+│ ❥︎ wiki
+│ ❥︎ covidindo
+│ ❥︎ earthquake
+│ ❥︎ tvschedule
+╰────────────────❋ཻུ۪۪⸙ 
+ 
+╭───➤ 𝐎𝐓𝐇𝐄𝐑
+│ ❥︎ afk
+│ ❥︎ chatinfo
+│ ❥︎ alive
+│ ❥︎ script
+│ ❥︎ ping
+│ ❥︎ owner
+│ ❥︎ menu
+│ ❥︎ delete
+│ ❥︎ chatinfo
+│ ❥︎ quoted
+│ ❥︎ listpc
+│ ❥︎ listgc
+│ ❥︎ donate
+│ ❥︎ request
+│ ❥︎ report [bug]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
+break
+case 'ownermenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Owner Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐖𝐍𝐄𝐑
+│ ❥︎ sᴇʟғ
+│ ❥︎ ᴘᴜʙʟɪᴄ
+│ ❥︎ ᴀɴᴛɪ ᴛᴀɢ
+│ ❥︎ ʙᴀɴ [ ᴀᴅᴅ / ᴅᴇʟ ]
+│ ❥︎ ʙᴀɴᴄʜᴀᴛ [ ᴏɴ / ᴏғғ]
+│ ❥︎ ᴊᴏɪɴ [ ʟɪɴᴋ ]
+│ ❥︎ ʟᴇᴀᴠᴇɢᴄ
+│ ❥︎ sᴇᴛʙɪᴏ
+│ ❥︎ ʙʟᴏᴄᴋ [ ᴜsᴇʀ ]
+│ ❥︎ ᴜɴʙʟᴏᴄᴋ [ ᴜsᴇʀ ]
+│ ❥︎ ʙᴄɢʀᴏᴜᴘ [ ᴛᴇxᴛ ]
+│ ❥︎ ʙᴄᴀʟʟ [ ᴛᴇxᴛ ]
+│ ❥︎ sᴇᴛᴘᴘʙᴏᴛ [ ɪᴍᴀɢᴇ ]
+│ ❥︎ ᴇᴛᴇxɪғs
+│ ❥︎ ʙʟᴏᴄᴋ [ ᴛᴀɢ / ɴᴜᴍʙᴇʀ]
+│ ❥︎ ᴜɴʙʟᴏᴄᴋ [ ᴛᴀɢ /ɴᴜᴍʙᴇʀ]
+│ ❥︎ ᴄᴏᴏᴡɴᴇʀ [ ᴀᴅᴅ / ᴅᴇʟ]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
+break
+case 'groupmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Group Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤  𝐆𝐑𝐎𝐔𝐏         
+│ ❥︎ ɢʀᴏᴜᴘsᴇᴛᴛɪɴɢs
+│ ❥︎ ɢʀᴏᴜᴘʟɪɴᴋ
+│ ❥︎ ᴇᴘʜᴇᴍᴇʀᴀʟ [ ᴏᴘᴛɪᴏɴ ]
+│ ❥︎ sᴇᴛɢᴄᴘᴘ [ ɪᴍɢ]
+│ ❥︎ sᴇᴛɴᴀᴍᴇ [ ᴛᴇxᴛ ]
+│ ❥︎ sᴇᴛᴅᴇsᴄs  [ ᴛᴇxᴛ ]
+│ ❥︎ ɢʀᴏᴜᴘ
+│ ❥︎ ʀᴇᴠᴏᴋᴇ
+│ ❥︎ ᴇᴅɪᴛɪɴғᴏ [ ᴏᴘᴛɪᴏɴ ]
+│ ❥︎ ᴀᴅᴅ [ ᴜsᴇʀ ]
+│ ❥︎ ᴋɪᴄᴋ [ ʀᴇᴘʟʏ / ᴛᴀɢ ]
+│ ❥︎ ʜɪᴅᴇᴛᴀɢ [ ᴛᴇxᴛ ]
+│ ❥︎ ᴛᴀɢᴀʟʟ [ ᴛᴇxᴛ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋɢᴄ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋᴛɢ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋʏᴛ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋʏᴛᴠɪᴅ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋɪɢ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋғʙ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋᴛᴡɪᴛ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪʟɪɴᴋᴀʟʟ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪᴠɪʀᴜs [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪᴛᴏxɪᴄ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀɴᴛɪᴡᴀᴍᴇ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀᴜᴛᴏʀᴇᴠᴏᴋᴇ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴀᴜᴛᴏʀᴇᴘʟʏ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ɴsғᴡ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴍᴜᴛᴇ [ ᴏɴ / ᴏғғ ]
+│ ❥︎ ᴘʀᴏᴍᴏᴛᴇ [ ʀᴇᴘʟʏ / ᴛᴀɢ ]
+│ ❥︎ ᴅᴇᴍᴏᴛᴇ [ ʀᴇᴘʟʏ / ᴛᴀɢ ]
+│ ❥︎ ʀᴇᴀᴄᴛ [ ʀᴇᴘʟʏ ᴇᴍᴏᴊɪ]
+│ ❥︎ ᴠᴏᴛᴇ
+│ ❥︎ ᴅᴇᴠᴏᴛᴇ
+│ ❥︎ ᴜᴘᴠᴏᴛᴇ
+│ ❥︎ ᴄʜᴇᴄᴋᴠᴏᴛᴇ
+│ ❥︎ ᴅᴇʟᴠᴏᴛᴇ
+│ ❥︎ ᴄʜᴇᴄᴋʀᴇɴᴛ
+╰────────────────❋ཻུ۪۪⸙` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'rpgmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Rpg Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤  𝐑𝐏𝐆
+│ ❥︎ ʜᴜɴᴛ
+│ ❥︎ ᴍɪɴᴇ
+│ ❥︎ ғɪsʜ
+│ ❥︎ ʜᴇᴀʟ
+│ ❥︎ ʙʟᴏᴏᴅ
+│ ❥︎ sᴛᴀʙ
+│ ❥︎ ʙᴜʏ
+│ ❥︎ sᴇʟʟ
+│ ❥︎ ᴘʀᴏғɪʟᴇ
+│ ❥︎ ɪɴᴠᴇɴᴛᴏʀʏ
+│ ❥︎ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'makermenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Maker Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐌𝐀𝐊𝐄𝐑
+│ ❥︎ ᴄᴀɴᴅʏ
+│ ❥︎ ʙʟᴀᴄᴋᴘɪɴᴋɴᴇᴏɴ
+│ ❥︎ ᴅᴇᴇᴘsᴇᴀ
+│ ❥︎ sᴄɪғɪ
+│ ❥︎ ғɪᴄᴛɪᴏɴ
+│ ❥︎ ʙᴇʀʀʏ
+│ ❥︎ ғʀᴜɪᴛᴊᴜɪᴄᴇ
+│ ❥︎ ʙɪsᴄᴜɪᴛ
+│ ❥︎ ᴡᴏᴏᴅ
+│ ❥︎ ᴄʜᴏᴄᴏʟᴀᴛᴇ
+│ ❥︎ ᴍᴀᴛʀɪx
+│ ❥︎ ʙʟᴏᴏᴅ
+│ ❥︎ ʜᴀʟʟᴏᴡᴇᴇɴ
+│ ❥︎ ᴡɪᴄᴋᴇʀ 
+│ ❥︎ ᴅᴀʀᴋɢᴏʟᴅ 
+│ ❥︎ ғɪʀᴇᴡᴏʀᴋ 
+│ ❥︎ sᴋᴇʟᴇᴛᴏɴ 
+│ ❥︎ sᴀɴᴅ 
+│ ❥︎ ɢʟᴜᴇ 
+│ ❥︎ ʟᴇᴀᴠᴇs 
+│ ❥︎ ᴍᴀɢᴍᴀ 
+│ ❥︎ ʟᴀᴠᴀ 
+│ ❥︎ ʀᴏᴄᴋ 
+│ ❥︎ ʙʟᴏᴏᴅɢʟᴀs 
+│ ❥︎ ᴜɴᴅᴇʀᴡᴀᴛᴇʀ 
+│ ❥︎ ᴛᴇxᴛᴍᴀᴋᴇʀ 
+│ ❥︎ ʜᴏɴᴇʏ 
+│ ❥︎ ɪᴄᴇ 
+│ ❥︎ ᴡᴀᴛᴇʀᴄᴏʟᴏᴜʀ
+│ ❥︎ ᴍᴜʟᴛɪᴄᴏʟᴏʀ
+│ ❥︎ sɴᴏᴡ
+│ ❥︎ ʜᴀʀʀʏᴘᴏᴛ
+│ ❥︎ ʜᴀʀʀʏᴘᴏᴛᴛᴇʀ
+│ ❥︎ ʙʀᴏᴋᴇɴɢʟᴀss
+│ ❥︎ ᴡᴀᴛᴡʀᴘɪᴘᴇ
+│ ❥︎ sᴘᴏᴏᴋʏ
+│ ❥︎ ᴄɪʀᴄᴜɪᴛ 
+│ ❥︎ ᴍᴇᴛᴀʟʟɪᴄ
+│ ❥︎ ᴅᴇᴍᴏɴ
+│ ❥︎ sparklechristmas
+│ ❥︎ christmas
+│ ❥︎ 3dchristmas
+│ ❥︎ 3dbox
+│ ❥︎ waterdrop
+│ ❥︎ lion2
+│ ❥︎ papercut
+│ ❥︎ transformer
+│ ❥︎ neondevil
+│ ❥︎ 3davengers
+│ ❥︎ 3dstone
+│ ❥︎ 3dstone2
+│ ❥︎ summertime
+│ ❥︎ thunder
+│ ❥︎ window
+│ ❥︎ graffiti
+│ ❥︎ graffitibike
+│ ❥︎ pornhub
+│ ❥︎ glitch
+│ ❥︎ blackpink
+│ ❥︎ glitch2
+│ ❥︎ glitch3
+│ ❥︎ 3dspace
+│ ❥︎ lion
+│ ❥︎ 3dneon
+│ ❥︎ greenneon
+│ ❥︎ bokeh
+│ ❥︎ holographic
+│ ❥︎ bear
+│ ❥︎ wolf
+│ ❥︎ joker
+│ ❥︎ dropwater
+│ ❥︎ dropwater2
+│ ❥︎ thewall
+│ ❥︎ neonlight
+│ ❥︎ natural
+│ ❥︎ carbon
+│ ❥︎ pencil
+│ ❥︎ blackpink2
+│ ❥︎ neon
+│ ❥︎ neonlight2
+│ ❥︎ toxic
+│ ❥︎ strawberry
+│ ❥︎ discovery
+│ ❥︎ 1917
+│ ❥︎ sci_fi
+│ ❥︎ ancient
+│ ❥︎ fabric
+│ ❥︎ hoorror
+│ ❥︎ whitebear
+│ ❥︎ juice
+│ ❥︎ batman
+│ ❥︎ multicolor
+│ ❥︎ collwall
+│ ❥︎ wonderful
+│ ❥︎ cool
+│ ❥︎ sketch
+│ ❥︎ marvel
+│ ❥︎ foggy
+│ ❥︎ writing
+│ ❥︎ halloweenfire
+│ ❥︎ halloween
+│ ❥︎ watercolor
+│ ❥︎ classic
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
+break
+case 'downloadmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Download Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃	
+│ ❥︎ instagram [url]
+│ ❥︎ igtv [url]
+│ ❥︎ igstory [username]
+│ ❥︎ facebook [url]
+│ ❥︎ fbmp3 [url]
+│ ❥︎ twitter [url]
+│ ❥︎ twittermp3 [url]
+│ ❥︎ tiktok [url]
+│ ❥︎ tiktokaudio[url]
+│ ❥︎ tiktoknowm [url]
+│ ❥︎ mediafire [url]
+│ ❥︎ ytmp3 [url|quality]
+│ ❥︎ ytmp4 [url|quality]
+│ ❥︎ getmusic [yt link]
+│ ❥︎ getvideo [yt link]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'searchmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Search Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐒𝐄𝐀𝐑𝐂𝐇
+│ ❥︎ play [query]
+│ ❥︎ song [query]
+│ ❥︎ yts [query]
+│ ❥︎ lyrics [query]
+│ ❥︎ google [query]
+│ ❥︎ playstore [query]
+│ ❥︎ gimage [query]
+│ ❥︎ pinterest [query]
+│ ❥︎ image [query]
+│ ❥︎ film [query]
+│ ❥︎ wallpaper [query]
+│ ❥︎ searchgc [query]
+│ ❥︎ happymod [query]
+│ ❥︎ servermc
+│ ❥︎ mcpedl [query]
+│ ❥︎ tvsearch [query]
+│ ❥︎ wikimedia [query]
+│ ❥︎ ytsearch [query]
+│ ❥︎ ringtone [query]
+│ ❥︎ webtoon [query]
+│ ❥︎ anime [query]
+│ ❥︎ animestory [query]
+│ ❥︎ manga [query]
+│ ❥︎ wattpad [query]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'convertmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Convert Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤  𝐂𝐎𝐍𝐕𝐄𝐑𝐓
+│ ❥︎ image [reply stick]
+│ ❥︎ sticker [reply img|gif]
+│ ❥︎ take [reply img|gif|stik]
+│ ❥︎ smeme [reply img]
+│ ❥︎ emojimix [moji+moji]
+│ ❥︎ emoji [emoji]
+│ ❥︎ video [reply img]
+│ ❥︎ gif [reply stick]
+│ ❥︎ url [reply img]
+│ ❥︎ voice [reply aud]
+│ ❥︎ mp3 [reply vn]
+│ ❥︎ audio [reply vid]
+│ ❥︎ ebinary [reply txt]
+│ ❥︎ dbinary [reply txt]
+│ ❥︎ styletext  [ ᴛᴇxᴛ ]
+│ ❥︎ volume [reply aud]
+│ ❥︎ tempo [reply aud]
+│ ❥︎ bass [reply aud]
+│ ❥︎ blown [reply aud]
+│ ❥︎ deep [reply aud]
+│ ❥︎ earrape [reply aud]
+│ ❥︎ fast [reply aud]
+│ ❥︎ fat [reply aud]
+│ ❥︎ nightcore [reply aud]
+│ ❥︎ reverse [reply aud]
+│ ❥︎ robot [reply aud]
+│ ❥︎ slow [reply aud]
+│ ❥︎ squirrel [reply aud]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'randomimagemenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Random Image Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐑𝐀𝐍𝐃𝐎𝐌 𝐈𝐌𝐆
+│ ❥︎ coffee
+│ ❥︎ bts
+│ ❥︎ woof
+│ ❥︎ meow
+│ ❥︎ lizard
+│ ❥︎ wallneon
+│ ❥︎ wallpubg
+│ ❥︎ wallml
+│ ❥︎ wallrandom
+│ ❥︎ wallcode
+│ ❥︎ animewall [query]
+│ ❥︎ animewall2 [query]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'animemenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Anime Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐀𝐍𝐈𝐌𝐄
+│ ❥︎ neko2
+│ ❥︎ waifu
+│ ❥︎ waifu2
+│ ❥︎ awoo2
+│ ❥︎ shinobu
+│ ❥︎ waifu3
+│ ❥︎ foxgirl
+│ ❥︎ megumin2
+│ ❥︎ loli
+│ ❥︎ 8ball
+│ ❥︎ animenom
+│ ❥︎ goose
+│ ❥︎ avatar
+│ ❥︎ tickle
+│ ❥︎ gecg
+│ ❥︎ feed
+│ ❥︎ animeslap
+│ ❥︎ animespank
+│ ❥︎ animepat
+│ ❥︎ animeneko
+│ ❥︎ animekiss
+│ ❥︎ animewlp
+│ ❥︎ animecuddle
+│ ❥︎ smug2
+│ ❥︎ couplepp
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'stickermenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Sticker Menu')
+await JimbruOffical.send5ButImg(from, `╔═══════✪「 STICKER 」	
+│ ❥︎patrick
+│ ❥︎emoji
+│ ❥︎emojimix
+│ ❥︎attp
+│ ❥︎doge
+│ ❥︎lovesticker
+│ ❥︎gura
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'animestickermenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Anime Sticker Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐒𝐓𝐈𝐂𝐊𝐄𝐑
+│ ❥︎ patrick
+│ ❥︎ emoji
+│ ❥︎ emojimix
+│ ❥︎ attp
+│ ❥︎ doge
+│ ❥︎ lovesticker
+│ ❥︎ gura
+╭───➤ 𝐀𝐍𝐈𝐌𝐄 𝐒𝐓𝐈𝐂𝐊𝐄𝐑
+│ ❥︎ loli
+│ ❥︎ bully
+│ ❥︎ cuddle
+│ ❥︎ cry
+│ ❥︎ hug
+│ ❥︎ awoo
+│ ❥︎ kiss
+│ ❥︎ lick
+│ ❥︎ pat
+│ ❥︎ smug
+│ ❥︎ bonk
+│ ❥︎ yeet
+│ ❥︎ blush
+│ ❥︎ smile
+│ ❥︎ wave
+│ ❥︎ highfive
+│ ❥︎ handhold
+│ ❥︎ nom
+│ ❥︎ glomp
+│ ❥︎ bite
+│ ❥︎ slap
+│ ❥︎ kill
+│ ❥︎ happy
+│ ❥︎ wink
+│ ❥︎ poke
+│ ❥︎ dance
+│ ❥︎ cringe
+│ ❥︎ neko
+│ ❥︎ gura
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'nsfwmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Nsfw Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐍𝐒𝐅𝐖
+│ ❥︎ hentaivideo
+│ ❥︎ yuri
+│ ❥︎ masturbation
+│ ❥︎ thighs
+│ ❥︎ pussy
+│ ❥︎ panties
+│ ❥︎ orgy
+│ ❥︎ ahegao
+│ ❥︎ ass
+│ ❥︎ bdsm
+│ ❥︎ blowjob
+│ ❥︎ cuckold
+│ ❥︎ ero
+│ ❥︎ gasm
+│ ❥︎ cum
+│ ❥︎ femdom
+│ ❥︎ foot
+│ ❥︎ gangbang
+│ ❥︎ glasses
+│ ❥︎ jahy
+│ ❥︎ trap
+│ ❥︎ blowjobgif
+│ ❥︎ spank
+│ ❥︎ hneko
+│ ❥︎ nwaifu
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'funmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Fun Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐅𝐔𝐍
+│ ❥︎ how [text
+│ ❥︎ when  [ ᴛᴇxᴛ ]
+│ ❥︎ where  [ ᴛᴇxᴛ ]
+│ ❥︎ is  [ ᴛᴇxᴛ ]
+│ ❥︎ what  [ ᴛᴇxᴛ ]
+│ ❥︎ can  [ ᴛᴇxᴛ ]
+│ ❥︎ rate  [ ᴛᴇxᴛ ]
+│ ❥︎ wangy  [ ᴛᴇxᴛ ]
+│ ❥︎ beautifulcheck [tag]
+│ ❥︎ awesomecheck [tag]
+│ ❥︎ prettycheck [tag]
+│ ❥︎ lesbiancheck [tag]
+│ ❥︎ gaycheck [tag]
+│ ❥︎ cutecheck [tag]
+│ ❥︎ uglycheck [tag]
+│ ❥︎ hornycheck [tag]
+│ ❥︎ charactercheck [tag]
+│ ❥︎ lovelycheck [tag]
+│ ❥︎ couple
+│ ❥︎ mysoulmate
+│ ❥︎ hot
+│ ❥︎ sexy
+│ ❥︎ kind
+│ ❥︎ idiot
+│ ❥︎ handsome
+│ ❥︎ beautiful
+│ ❥︎ cute
+│ ❥︎ pretty
+│ ❥︎ lesbian
+│ ❥︎ noob
+│ ❥︎ bastard
+│ ❥︎ foolish
+│ ❥︎ nerd
+│ ❥︎ asshole
+│ ❥︎ gay
+│ ❥︎ smart
+│ ❥︎ stubble
+│ ❥︎ dog
+│ ❥︎ horny
+│ ❥︎ cunt
+│ ❥︎ wibu
+│ ❥︎ noobra
+│ ❥︎ nibba
+│ ❥︎ nibbi
+│ ❥︎ comrade
+│ ❥︎ mumu
+│ ❥︎ rascal
+│ ❥︎ scumbag
+│ ❥︎ nuts
+│ ❥︎ fagot
+│ ❥︎ scoundrel
+│ ❥︎ ditch
+│ ❥︎ dope
+│ ❥︎ gucci
+│ ❥︎ lit
+│ ❥︎ dumbass
+│ ❥︎ crackhead
+│ ❥︎ mf
+│ ❥︎ motherfucker
+│ ❥︎ sucker
+│ ❥︎ fuckboy
+│ ❥︎ playboy
+│ ❥︎ fuckgirl
+│ ❥︎ playgirl
+╰────────────────❋ཻུ۪۪⸙  ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case ' soundmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+' sound Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐒𝐎𝐔𝐍𝐃	
+│ ❥︎ sound1
+│ ❥︎ sound2
+│ ❥︎ sound3
+│ ❥︎ sound4
+│ ❥︎ sound5
+│ ❥︎ sound6
+│ ❥︎ sound7
+│ ❥︎ sound8
+│ ❥︎ sound9
+│ ❥︎ sound10
+│ ❥︎ sound11
+│ ❥︎ sound12
+│ ❥︎ sound13
+│ ❥︎ sound14
+│ ❥︎ sound15
+│ ❥︎ sound16
+│ ❥︎ sound17
+│ ❥︎ sound18
+│ ❥︎ sound19
+│ ❥︎ sound20
+│ ❥︎ sound21
+│ ❥︎ sound22
+│ ❥︎ sound23
+│ ❥︎ sound24
+│ ❥︎ sound25
+│ ❥︎ sound26
+│ ❥︎ sound27
+│ ❥︎ sound28
+│ ❥︎ sound29
+│ ❥︎ sound30
+│ ❥︎ sound31
+│ ❥︎ sound32
+│ ❥︎ sound33
+│ ❥︎ sound34
+│ ❥︎ sound35
+│ ❥︎ sound36
+│ ❥︎ sound37
+│ ❥︎ sound38
+│ ❥︎ sound39
+│ ❥︎ sound40
+│ ❥︎ sound41
+│ ❥︎ sound42
+│ ❥︎ sound43
+│ ❥︎ sound44
+│ ❥︎ sound45
+│ ❥︎ sound46
+│ ❥︎ sound47
+│ ❥︎ sound48
+│ ❥︎ sound49
+│ ❥︎ sound50
+│ ❥︎ sound51
+│ ❥︎ sound52
+│ ❥︎ sound53
+│ ❥︎ sound54
+│ ❥︎ sound55
+│ ❥︎ sound56
+│ ❥︎ sound57
+│ ❥︎ sound58
+│ ❥︎ sound59
+│ ❥︎ sound60
+│ ❥︎ sound61
+│ ❥︎ sound62
+│ ❥︎ sound63
+│ ❥︎ sound64
+│ ❥︎ sound65
+│ ❥︎ sound66
+│ ❥︎ sound67
+│ ❥︎ sound68
+│ ❥︎ sound69
+│ ❥︎ sound70
+│ ❥︎ sound71
+│ ❥︎ sound72
+│ ❥︎ sound73
+│ ❥︎ sound74
+│ ❥︎ sound75
+│ ❥︎ sound76
+│ ❥︎ sound77
+│ ❥︎ sound78
+│ ❥︎ sound79
+│ ❥︎ sound80
+│ ❥︎ sound81
+│ ❥︎ sound82
+│ ❥︎ sound83
+│ ❥︎ sound84
+│ ❥︎ sound85
+│ ❥︎ sound86
+│ ❥︎ sound87
+│ ❥︎ sound88
+│ ❥︎ sound89
+│ ❥︎ sound90
+│ ❥︎ sound91
+│ ❥︎ sound92
+│ ❥︎ sound93
+│ ❥︎ sound94
+│ ❥︎ sound95
+│ ❥︎ sound96
+│ ❥︎ sound97
+│ ❥︎ sound98
+│ ❥︎ sound99
+│ ❥︎ sound100
+│ ❥︎ sound101
+│ ❥︎ sound102
+│ ❥︎ sound103
+│ ❥︎ sound104
+│ ❥︎ sound105
+│ ❥︎ sound106
+│ ❥︎ sound107
+│ ❥︎ sound108
+│ ❥︎ sound109
+│ ❥︎ sound110
+│ ❥︎ sound111
+│ ❥︎ sound112
+│ ❥︎ sound113
+│ ❥︎ sound114
+│ ❥︎ sound115
+│ ❥︎ sound116
+│ ❥︎ sound117
+│ ❥︎ sound118
+│ ❥︎ sound119
+│ ❥︎ sound120
+│ ❥︎ sound121
+│ ❥︎ sound122
+│ ❥︎ sound123
+│ ❥︎ sound124
+│ ❥︎ sound125
+│ ❥︎ sound126
+│ ❥︎ sound127
+│ ❥︎ sound128
+│ ❥︎ sound129
+│ ❥︎ sound130
+│ ❥︎ sound131
+│ ❥︎ sound132
+│ ❥︎ sound133
+│ ❥︎ sound134
+│ ❥︎ sound135
+│ ❥︎ sound136
+│ ❥︎ sound137
+│ ❥︎ sound138
+│ ❥︎ sound139
+│ ❥︎ sound140
+│ ❥︎ sound141
+│ ❥︎ sound142
+│ ❥︎ sound143
+│ ❥︎ sound144
+│ ❥︎ sound145
+│ ❥︎ sound146
+│ ❥︎ sound147
+│ ❥︎ sound148
+│ ❥︎ sound149
+│ ❥︎ sound150
+│ ❥︎ sound151
+│ ❥︎ sound152
+│ ❥︎ sound153
+│ ❥︎ sound154
+│ ❥︎ sound155
+│ ❥︎ sound156
+│ ❥︎ sound157
+│ ❥︎ sound158
+│ ❥︎ sound159
+│ ❥︎ sound160
+│ ❥︎ sound161
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'gamemenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Game Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤  𝐆𝐀𝐌𝐄 	
+│ ❥︎truth
+│ ❥︎dare
+│ ❥︎tictactoe
+│ ❥︎delttt
+│ ❥︎guess [ ᴏᴘᴛɪᴏɴ ]
+│ ❥︎math [mode]
+│ ❥︎suitpvp [tag]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'anonymousmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Anonymous Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤  𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒 𝐂𝐇𝐀𝐓	
+│ ❥︎ anonymous
+│ ❥︎ start
+│ ❥︎ next
+│ ❥︎ leave
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'toolmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Tool Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐓𝐎𝐎𝐋	
+│ ❥︎ translate  [ ᴛᴇxᴛ ]
+│ ❥︎ fliptext  [ ᴛᴇxᴛ ]
+│ ❥︎ toletter [number]
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'databasemenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Database Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤  𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄	
+│ ❥︎setcmd
+│ ❥︎listcmd
+│ ❥︎delcmd
+│ ❥︎lockcmd
+│ ❥︎addmsg
+│ ❥︎listmsg
+│ ❥︎getmsg
+│ ❥︎delmsg
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'islamicmenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Islamic Menu')
+await JimbruOffical.send5ButImg(from, `╔═══✪「 ISLAMIC 」	
+│ ❥︎ juzamma
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'indomenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Indo Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤  𝐈𝐍𝐃𝐎
+│ ❥︎ darkjoke
+│ ❥︎ quotes
+│ ❥︎ animequotes
+│ ❥︎ friendshipshortstory
+│ ❥︎ loveshortstory
+│ ❥︎ sacrificeshortstory
+│ ❥︎ disturbingshortstory
+│ ❥︎ amino
+│ ❥︎ wiki
+│ ❥︎ covidindo
+│ ❥︎ earthquake
+│ ❥︎ tvschedule
+╰────────────────❋ཻུ۪۪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'othermenu':
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+var unicorn = await getBuffer(picak+'Other Menu')
+await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐓𝐇𝐄𝐑
+│ ❥︎ afk
+│ ❥︎ chatinfo
+│ ❥︎ alive
+│ ❥︎ script
+│ ❥︎ ping
+│ ❥︎ owner
+│ ❥︎ menu
+│ ❥︎ delete
+│ ❥︎ chatinfo
+│ ❥︎ quoted
+│ ❥︎ listpc
+│ ❥︎ listgc
+│ ❥︎ donate
+│ ❥︎ request
+│ ❥︎ report [bug]
+╰────────────────❋ཻུ۪۪⸙` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+break
+case 'tqtt': 
+if (isBan) return reply(mess.ban)
+if (isBanChat) return reply(mess.banChat)
+reply(`╭➤ ᴍᴀᴅᴇ ᴡɪᴛʜ ʟᴏᴠᴇ 🥰   
+│❖  ᴊɪᴍʙʀᴏᴏᴛᴀɴ ᴏғғɪᴄᴀʟ ❖
+╰────────────────❋ཻུ۪۪⸙
+╭➤
+│ ᴛʜᴀɴᴋs ᴛᴏ ʟᴏʀᴅ . ᴍʏ ғᴀᴍɪʟʏ.
+│ ᴀɴᴅ ᴀʟʟ ғʀɪᴇɴᴅs ᴡʜᴏ ʜᴇʟᴘᴇᴅ
+│ ᴀssᴇᴍʙʟᴇ ᴛʜɪs sᴄʀɪᴘᴛ 🤗
+╰────────────────❋ཻུ۪۪⸙ 
+  𝐗𝐗𝐈𝐗 . 𝐗𝐈𝐈 . 𝐌𝐂𝐌𝐗𝐂𝐕𝐈𝐈𝐈
+   ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘
+╭◪ ᴄᴏᴅᴇᴅ ʙʏ ᴍɪᴋʜᴀɪᴇʟ
+│         ᴠᴇʀsɪᴏɴ 5.0
+╰────────────────❋ཻུ۪۪⸙`)
+break
+default:
+if (budy.startsWith('=>')) {
+if (!isCreator) return reply(mess.owner)
+function Return(sul) {
+sat = JSON.stringify(sul, null, 2)
+bang = util.format(sat)
+if (sat == undefined) {
+bang = util.format(sul)
+}
+return reply(bang)
+}
+try {
+reply(util.format(eval(`(async () => { ${budy.slice(3)} })()`)))
+} catch (e) {
+JimbruOffical.sendMessage(from, {image:err4r, caption:String(e)}, {quoted:m})
+}
+}
+if (budy.startsWith('>')) {
+if (!isCreator) return reply(mess.owner)
+try {
+let evaled = await eval(budy.slice(2))
+if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
+await reply(evaled)
+} catch (err) {
+await JimbruOffical.sendMessage(from, {image:err4r, caption:String(err)}, {quoted:m})
+}
+}
+//anonymous msg forwarder
+if (m.chat.endsWith('@s.whatsapp.net') && isCmd) {
+ this.anonymous = this.anonymous ? this.anonymous : {}
+ let room = Object.values(this.anonymous).find(room => [room.a, room.b].includes(m.sender) && room.state === 'CHATTING')
+ if (room) {
+     if (/^.*(next|leave|start)/.test(m.text)) return
+     if (['.next', '.leave', '.stop', '.start', 'Find Partner', 'Keluar', 'Lanjut', 'Stop'].includes(m.text)) return
+     let other = [room.a, room.b].find(user => user !== m.sender)
+     m.copyNForward(other, true, m.quoted && m.quoted.fromMe ? {
+         contextInfo: {
+             ...m.msg.contextInfo,
+             forwardingScore: 0,
+             isForwarded: true,
+             participant: other
+         }
+     } : {})
+ }
+ return !0
+}
+
+if (budy.startsWith('$')) {
+if (!isCreator) return replay(mess.owner)
+exec(budy.slice(2), (err, stdout) => {
+if(err) return JimbruOffical.sendMessage(from, {image:err4r, caption:String(err)}, {quoted:m})
+if (stdout) return replay(stdout)
+})
+}
+//anti-tag
+const listTag = [`${global.ownertag}@s.whatsapp.net`]
+const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
+//anti-tag 2
+if (listTag.includes(partiNum)) {
+if (antitags === false) return
+if (!m.isGroup) return
+if (m.key.fromMe) return
+sendNye = fs.readFileSync('./Media/theme/yourtag.webp')
+JimbruOffical.sendReadReceipt(m.chat, m.sender, [m.key.id])
+JimbruOffical.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
+}
+//anti-tag 3
+if (budy.includes(`${global.ownertag}`)) {
+if (antitags === false) return
+if (!m.isGroup) return
+if (m.key.fromMe) return
+sendNye = fs.readFileSync('./Media/theme/yourtag.webp')
+JimbruOffical.sendReadReceipt(m.chat, m.sender, [m.key.id])
+JimbruOffical.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
+}
+if (isCmd && budy.toLowerCase() != undefined) {
+if (m.chat.endsWith('broadcast')) return
+if (m.isBaileys) return
+let msgs = global.db.database
+if (!(budy.toLowerCase() in msgs)) return
+JimbruOffical.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+}
+}
+} catch (err) {
+JimbruOffical.sendMessage(`${ownertag}@s.whatsapp.net`, util.format(err), {quoted:m})
+console.log(err)
+}
+}
+
+
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+fs.unwatchFile(file)
+console.log(chalk.redBright(`Update ${__filename}`))
+delete require.cache[file]
+require(file)
+})	
