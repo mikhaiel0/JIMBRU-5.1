@@ -28,14 +28,14 @@ global.website = process.env.WEBSITE 'https://instagram.com/the_real_mikhaiel' /
 global.vidmenu = { url: 'https://www.instagram.com/reel/CfMGePqj5KM/?igshid=YmMyMTA2M2Y=.mp4' } //gif and video menu
 global.packname = process.env.PACK_NAME || 'Jimbru \n\n\n\n\n\n\n❤‍🩹'
 global.author = process.env.AUTHOR_NAME || 'Made By'
-global.themeemoji = "🧞"
-global.reactmoji = "🧞"
-global.ownertag = ['919544846609'] //ur owner tag
-global.ownernummenu = ['919544846609'] //ur owner number in menu and all
+global.themeemoji = process.env.THEME_EMOGI || '🧞'
+global.reactmoji = process.env.REACT_EMOGI || '🧞'
+global.ownertag = process.env.OWNER_TAG ||['919544846609'] //ur owner tag
+global.ownernummenu = process.env.OWNER_NUM_MENU || ['919544846609'] //ur owner number in menu and all
 global.watermark = "© Mikhaiel." //ur watermark
 global.botscript = "https://github.com/Mikhaiel/Jimbru-MD"
-global.links = "https://chat.whatsapp.com/"
-global.linkz = "https://chat.whatsapp.com/"
+global.links = "https://chat.whatsapp.com/BuYtj7IRcd2E2EaBftF9fC"
+global.linkz = "https://chat.whatsapp.com/BuYtj7IRcd2E2EaBftF9fC"
 
 //documents variants
 global.doc1 = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
