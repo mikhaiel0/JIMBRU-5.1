@@ -704,7 +704,7 @@ JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 }
 
 startJimbruOffical()
-
+}, 5000);
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
