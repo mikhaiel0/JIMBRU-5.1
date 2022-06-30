@@ -202,7 +202,7 @@ body: `ᴅᴏɴ'ᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ʀᴇᴀᴅ ɢʀᴏᴜᴘ ᴅᴇꜱ�
 mediaType:2,
 thumbnail: buffer,
 sourceUrl: `${website}`,
-mediaUrl: `${webslink}`
+mediaUrl: `${website}`
 }}
 }
 JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
@@ -240,7 +240,7 @@ body: `Bye! my friend, take care.`,
 mediaType:2,
 thumbnail: buffer,
 sourceUrl: `${website}`,
-mediaUrl: `${weblink}`
+mediaUrl: `${website}`
 }}
 }
 JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
