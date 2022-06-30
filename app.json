@@ -1,0 +1,33 @@
+{
+  "name": "Jimbru-MD",
+  "description": "whatsapp md bot build with nodejs",
+  "repository": "https://github.com/Mikhaiel/Jimbru-MD",
+  "logo": "https://telegra.ph/file/ddaca390b13a4246bf1ef.jpg",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+    "env": {
+ "SESSION_ID": {
+    "description": "Type Your Session Code Here",
+    "required": true
+    },
+    "OWNERNUMBER": {
+    "description": "ADD Your Number",
+    "required": false
+    },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+   "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
