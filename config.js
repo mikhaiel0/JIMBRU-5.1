@@ -15,12 +15,13 @@ global.ytname = process.env.YTNAME || 'YT: Mikhaiel' //ur yt chanel name
 global.socialm = process.env.SOCIALMEDIA || 'GitHub: Mikhaiel'  //ur github or insta name
 global.location = process.env.LOCATION || 'India, Kerala, Pathanamthitta' //ur location
 
-global.autoTyping = process.env.AUTOTYPING 'false' //auto tying in gc (true to on, false to off)
-global.autoreadpmngc = process.env.AUTOREAD 'false' //auto reading in gc and pm (true to on, false to off)
-global.autoReadGc = process.env.AUTOREADGC 'true' //auto reading in gc (true to on, false to off)
-global.autoReadAll = process.env.AUTO_READ 'false' // auto reading in all pchat gc and status (true to on, false to off)
-global.autoRecord = process.env.AUTO_RECORD 'false' //auto recording (true to on, false to off)
-global.available = process.env.ONLINE 'true' //auto available (true to on, false to off)
+//aumto functioner
+global.autoTyping = false //auto tying in gc (true to on, false to off)
+global.autoreadpmngc = false //auto reading in gc and pm (true to on, false to off)
+global.autoReadGc = true //auto reading in gc (true to on, false to off)
+global.autoReadAll = false // auto reading in all pchat gc and status (true to on, false to off)
+global.autoRecord = false //auto recording (true to on, false to off)
+global.available = true //auto available (true to on, false to off)
 
 //bot bombdy
 global.botname = process.env.BOT_NAME || 'Jimbru-v4.2' //ur bot name
