@@ -13,7 +13,7 @@ global.owner = process.env.OWNERNUMBER || ['919544846609'] //ur owner number
 global.ownername = process.env.OWNERNAME || 'Mikhaiel'
 global.ytname = process.env.YTNAME || 'YT: Mikhaiel' //ur yt chanel name
 global.socialm = process.env.SOCIALMEDIA || 'GitHub: Mikhaiel'  //ur github or insta name
-global.location process.env.LOCATION || 'India, Kerala, Pathanamthitta' //ur location
+global.location = process.env.LOCATION || 'India, Kerala, Pathanamthitta' //ur location
 
 global.autoTyping = process.env.AUTOTYPING 'false' //auto tying in gc (true to on, false to off)
 global.autoreadpmngc = process.env.AUTOREAD 'false' //auto reading in gc and pm (true to on, false to off)
