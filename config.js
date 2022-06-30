@@ -25,7 +25,7 @@ global.available = true //auto available (true to on, false to off)
 
 //bot bombdy
 global.botname = process.env.BOT_NAME || 'Jimbru-v4.2' //ur bot name
-global.website = process.env.WEBSITE 'https://instagram.com/the_real_mikhaiel' //ur website
+global.website = process.env.WEBSITE "https://instagram.com/the_real_mikhaiel" //ur website
 global.vidmenu = { url: 'https://www.instagram.com/reel/CfMGePqj5KM/?igshid=YmMyMTA2M2Y=.mp4' } //gif and video menu
 global.packname = process.env.PACK_NAME || 'Jimbru \n\n\n\n\n\n\n❤‍🩹'
 global.author = process.env.AUTHOR_NAME || 'Made By'
