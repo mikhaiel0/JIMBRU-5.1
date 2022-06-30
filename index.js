@@ -11,6 +11,7 @@ setTimeout(() => {
 const { state, saveState } = useSingleFileAuthState(`./lib/auth.json`)
 const pino = require('pino')
 const fs = require('fs')
+const _ = require('lodash')
 const chalk = require('chalk')
 const FileType = require('file-type')
 const path = require('path')
@@ -25,9 +26,9 @@ const {
     color
 } = require('./lib/color')
 //require("http").createServer((_, res) => res.end("Hello World!")).listen(8080)
-global.authFile ='./lib/Auth.json'
+global.authFile ='./lib/auth.json'
 if(!fs.existsSync('./lib/auth.json')){
-    MakeSession(session,authFile)
+    MakeSession(global.session ,authFile)
     }
 
 
@@ -38,7 +39,7 @@ console.log(color(figlet.textSync('JIMBRU-MD', {
 		font: 'Pagga',
 		horizontalLayout: 'default',
 		vertivalLayout: 'default',
-	    width: 80,
+	         width: 80,
 		whitespaceBreak: true
         }), 'yellow'))
 console.log(color('\n🦋 YT : MIKHAIEL','silver'))
