@@ -10,7 +10,7 @@ const chalk = require("chalk")
 //auto function
 global.session = process.env.SESSION_ID
 global.owner = process.env.OWNERNUMBER || ['919544846609'] //ur owner number
-global.ownername = process.env.OWNERNAME || 'Mikhaiel' 'Mikhaiel'
+global.ownername = process.env.OWNERNAME || 'Mikhaiel'
 global.ytname = process.env.YTNAME || 'YT: Mikhaiel' //ur yt chanel name
 global.socialm = process.env.SOCIALMEDIA || 'GitHub: Mikhaiel'  //ur github or insta name
 global.location process.env.LOCATION || 'India, Kerala, Pathanamthitta' //ur location
