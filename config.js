@@ -8,12 +8,34 @@ const fs = require("fs")
 const chalk = require("chalk")
 
 //auto function
-global.autoTyping = false //auto tying in gc (true to on, false to off)
-global.autoreadpmngc = false //auto reading in gc and pm (true to on, false to off)
-global.autoReadGc = true //auto reading in gc (true to on, false to off)
-global.autoReadAll = false // auto reading in all pchat gc and status (true to on, false to off)
-global.autoRecord = false //auto recording (true to on, false to off)
-global.available = true //auto available (true to on, false to off)
+global.session = process.env.SESSION_ID
+global.owner = process.env.OWNERNUMBER || ['919544846609'] //ur owner number
+global.ownername = process.env.OWNERNAME || 'Mikhaiel' 'Mikhaiel'
+global.ytname = process.env.YTNAME || 'YT: Mikhaiel' //ur yt chanel name
+global.socialm = process.env.SOCIALMEDIA || 'GitHub: Mikhaiel'  //ur github or insta name
+global.location process.env.LOCATION || 'India, Kerala, Pathanamthitta' //ur location
+
+global.autoTyping = process.env.AUTOTYPING 'false' //auto tying in gc (true to on, false to off)
+global.autoreadpmngc = process.env.AUTOREAD 'false' //auto reading in gc and pm (true to on, false to off)
+global.autoReadGc = process.env.AUTOREADGC 'true' //auto reading in gc (true to on, false to off)
+global.autoReadAll = process.env.AUTO_READ 'false' // auto reading in all pchat gc and status (true to on, false to off)
+global.autoRecord = process.env.AUTO_RECORD 'false' //auto recording (true to on, false to off)
+global.available = process.env.ONLINE 'true' //auto available (true to on, false to off)
+
+//bot bombdy
+global.botname = process.env.BOT_NAME || 'Jimbru-v4.2' //ur bot name
+global.website = process.env.WEBSITE 'https://instagram.com/the_real_mikhaiel' //ur website
+global.vidmenu = { url: 'https://www.instagram.com/reel/CfMGePqj5KM/?igshid=YmMyMTA2M2Y=.mp4' } //gif and video menu
+global.packname = process.env.PACK_NAME || 'Jimbru \n\n\n\n\n\n\n❤‍🩹'
+global.author = process.env.AUTHOR_NAME || 'Made By'
+global.themeemoji = "🧞"
+global.reactmoji = "🧞"
+global.ownertag = ['919544846609'] //ur owner tag
+global.ownernummenu = ['919544846609'] //ur owner number in menu and all
+global.watermark = "© Mikhaiel." //ur watermark
+global.botscript = "https://github.com/Mikhaiel/Jimbru-MD"
+global.links = "https://chat.whatsapp.com/"
+global.linkz = "https://chat.whatsapp.com/"
 
 //documents variants
 global.doc1 = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
@@ -23,27 +45,6 @@ global.doc4 = 'application/zip'
 global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
-//owmner v card
-global.owner = ['919544846609'] //ur owner number
-global.ownername = "Mikhaiel"
-global.ytname = "YT: Mikhaiel" //ur yt chanel name
-global.socialm = "GitHub: Mikhaiel" //ur github or insta name
-global.location = "India, Kerala, Pathanamthitta" //ur location
-
-//bot bombdy
-global.botname = "Jimbru-v4.2" //ur bot name
-global.website = "https://instagram.com/the_real_mikhaiel" //ur website
-global.vidmenu = { url: 'https://www.instagram.com/reel/CfMGePqj5KM/?igshid=YmMyMTA2M2Y=.mp4' } //gif and video menu
-global.packname = "Jimbru \n\n\n\n\n\n\n❤‍🩹"
-global.author = "Made By"
-global.themeemoji = "🧞"
-global.reactmoji = "🧞"
-global.ownertag = ['919544846609'] //ur owner tag
-global.ownernummenu = ['919544846609'] //ur owner number in menu and all
-global.watermark = "© Mikhaiel." //ur watermark
-global.botscript = "https://github.com/Mikhaiel/Jimbru-MD"
-global.links = "https://chat.whatsapp.com/"
-global.linkz = "https://chat.whatsapp.com/"
 
 //Bot theme media
 global.thum = fs.readFileSync("./Media/theme/Jimbru.jpg") //ur thumb pic
@@ -73,9 +74,11 @@ global.ntilink = []
 
 //omther
 global.lolhuman = "KaysaS"
-global.sessionName = "session"
 global.antitags = true
 global.prefa = ['','!','.','🐦','🐤','🗿']
+function convertToBool(text, fault = 'true') {
+  return text === fault ? true : false;
+}
 global.mess = {
     success: 'Done✓',
     admin: 'This feature is only for admins!',
