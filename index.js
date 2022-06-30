@@ -7,7 +7,8 @@
 require("./config.js")
 const { default: JimbruOfficalConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { MakeSession } = require('./lib/waconnect/auth')
-const { state } = useSingleFileAuthState(`./lib/auth.json`)
+setTimeout(() => {    
+const { state, saveState } = useSingleFileAuthState(`./lib/auth.json`)
 const pino = require('pino')
 const fs = require('fs')
 const chalk = require('chalk')
