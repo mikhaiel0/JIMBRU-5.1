@@ -7,7 +7,6 @@
 require("./config.js")
 const { default: JimbruOfficalConnect, WASocket, DisconnectReason, useSingleFileAuthState, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto, delay, jidNormalizedUser, makeWALegacySocket, useSingleFileLegacyAuthState, DEFAULT_CONNECTION_CONFIG, DEFAULT_LEGACY_CONNECTION_CONFIG } = require("@adiwajshing/baileys")
 const { MakeSession } = require('./lib/waconnect/auth')  
-setTimeout(() => {
 const { state, saveState } = useSingleFileAuthState(`./lib/auth.json`)
 const pino = require('pino')
 const fs = require('fs');
@@ -705,7 +704,6 @@ JimbruOffical.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 }
 
 startJimbruOffical()
-}, 5000);
 
         let file = require.resolve(__filename)
         fs.watchFile(file, () => {
