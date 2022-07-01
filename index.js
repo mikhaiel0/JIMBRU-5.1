@@ -723,7 +723,7 @@ startJimbruOffical()
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
 	fs.unwatchFile(file)
-	console.log(chalk.redBright(`${__filename} Updated`))
+	console.log(chalk.redBright(`'${__filename}' Updated`))
 	delete require.cache[file]
 	require(file)
 })
