@@ -16,7 +16,6 @@ const FileType = require('file-type')
 const { MakeSession } = require('./lib/waconnect/auth')
 const path = require('path')
 const CFonts = require('cfonts');
-const { exec, spawn, execSync } = require("child_process")
 const moment = require('moment-timezone')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
