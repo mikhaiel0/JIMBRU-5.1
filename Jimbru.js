@@ -6576,22 +6576,22 @@ for (let yoi of anu) {
 await sleep(1500)
 let btn = [{
 urlButton: {
-displayText: 'YouTube 🍓',
+displayText: 'YouTube',
 url: `${global.website}`
 }
 }, {
 urlButton: {
-displayText: 'Script 🍜',
+displayText: 'Scrip',
 url: `${global.botscript}`
 }
 }, {
 quickReplyButton: {
-displayText: 'Bot Status 🚀',
+displayText: 'Bot Status',
 id: 'ping'
 }
 }, {
 quickReplyButton: {
-displayText: 'Menu 🐰',
+displayText: 'Menu',
 id: 'menu'
 }  
 }, {
@@ -7461,21 +7461,21 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐖𝐍𝐄𝐑
 ╰────────────────❋ཻུ۪۪⸙ 
  
 ╭───➤ 𝐎𝐓𝐇𝐄𝐑
-│ ❥︎ afk
-│ ❥︎ chatinfo
-│ ❥︎ alive
-│ ❥︎ script
-│ ❥︎ ping
-│ ❥︎ owner
-│ ❥︎ menu
-│ ❥︎ delete
-│ ❥︎ chatinfo
-│ ❥︎ quoted
-│ ❥︎ listpc
-│ ❥︎ listgc
-│ ❥︎ donate
-│ ❥︎ request
-│ ❥︎ report [bug]
+│ ❥︎ ${prefix}afk
+│ ❥︎ ${prefix}chatinfo
+│ ❥︎ ${prefix}alive
+│ ❥︎ ${prefix}script
+│ ❥︎ ${prefix}ping
+│ ❥︎ ${prefix}owner
+│ ❥︎ ${prefix}menu
+│ ❥︎ ${prefix}delete
+│ ❥︎ ${prefix}chatinfo
+│ ❥︎ ${prefix}quoted
+│ ❥︎ ${prefix}listpc
+│ ❥︎ ${prefix}listgc
+│ ❥︎ ${prefix}donate
+│ ❥︎ ${prefix}request
+│ ❥︎ ${prefix}report [bug]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
 break
 case 'ownermenu':
@@ -8224,21 +8224,21 @@ if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Other Menu')
 await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐓𝐇𝐄𝐑
-│ ❥︎ afk
-│ ❥︎ chatinfo
-│ ❥︎ alive
-│ ❥︎ script
-│ ❥︎ ping
-│ ❥︎ owner
-│ ❥︎ menu
-│ ❥︎ delete
-│ ❥︎ chatinfo
-│ ❥︎ quoted
-│ ❥︎ listpc
-│ ❥︎ listgc
-│ ❥︎ donate
-│ ❥︎ request
-│ ❥︎ report [bug]
+│ ❥︎ ${prefix}afk
+│ ❥︎ ${prefix}chatinfo
+│ ❥︎ ${prefix}alive
+│ ❥︎ ${prefix}script
+│ ❥︎ ${prefix}ping
+│ ❥︎ ${prefix}owner
+│ ❥︎ ${prefix}menu
+│ ❥︎ ${prefix}delete
+│ ❥︎ ${prefix}chatinfo
+│ ❥︎ ${prefix}quoted
+│ ❥︎ ${prefix}listpc
+│ ❥︎ ${prefix}listgc
+│ ❥︎ ${prefix}donate
+│ ❥︎ ${prefix}request
+│ ❥︎ ${prefix}report [bug]
 ╰────────────────❋ཻུ۪۪⸙` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
 case 'tqtt': 
