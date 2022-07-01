@@ -8,7 +8,7 @@ const fs = require("fs")
 const chalk = require("chalk")
 
 //auto function
-global.session = process.env.SESSION_ID
+global.session = process.env.SESSION_ID || ''
 global.owner = process.env.OWNERNUMBER || ['919544846609'] //ur owner number
 global.ownername = process.env.OWNERNAME || 'Mikhaiel'
 global.ytname = process.env.YTNAME || 'YT: Mikhaiel' //ur yt chanel name
