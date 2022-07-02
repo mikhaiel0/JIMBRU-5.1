@@ -169,7 +169,7 @@ var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == '
 var budy = (typeof m.text == 'string' ? m.text : '')
 var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
 const isCmd = body.startsWith(prefix)
-const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
+const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowercase perf+)
 const args = body.trim().split(/ +/).slice(1)
 const pushname = m.pushName || "No Name"
 const botNumber = await JimbruOffical.decodeJid(JimbruOffical.user.id)
@@ -180,7 +180,7 @@ const from = m.chat
 const quoted = m.quoted ? m.quoted : m
 const mime = (quoted.msg || quoted).mimetype || ''
 const isMedia = /image|video|sticker|audio/.test(mime)
-const messagesD = body.slice(0).trim().split(/ +/).shift().toLowerCase()
+const messagesD = body.slice(0).trim().split(/ +/).shift().toLowercase perf+)
 // Group
 const groupMetadata = m.isGroup ? await JimbruOffical.groupMetadata(m.chat).catch(e => {}) : ''
 const groupName = m.isGroup ? groupMetadata.subject : ''
@@ -765,7 +765,7 @@ timezone: "Asia/Kolkata"
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebaklagu[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Song 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebaklagu[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
@@ -774,7 +774,7 @@ delete tebaklagu[m.sender.split('@')[0]]
 if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakgambar[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebakgambar[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
@@ -783,7 +783,7 @@ delete tebakgambar[m.sender.split('@')[0]]
 if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakkata[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebakkata[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
@@ -793,7 +793,7 @@ if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = caklontong[m.sender.split('@')[0]]
 deskripsi = caklontong_desk[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess saying', buttonText: { displayText: 'Guess The Saying' }, type: 1 }], `🎮 Guess The Saying 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete caklontong[m.sender.split('@')[0]]
 delete caklontong_desk[m.sender.split('@')[0]]
@@ -803,7 +803,7 @@ delete caklontong_desk[m.sender.split('@')[0]]
 if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakkalimat[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebakkalimat[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
@@ -812,7 +812,7 @@ delete tebakkalimat[m.sender.split('@')[0]]
 if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebaklirik[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebaklirik[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
@@ -821,7 +821,7 @@ delete tebaklirik[m.sender.split('@')[0]]
 if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebaktebakan[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await JimbruOffical.sendButtonText(m.chat, [{ buttonId: 'riddles', buttonText: { displayText: 'Riddles' }, type: 1 }], `🎮 Riddles 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, `${global.botname}`, m)
 delete tebaktebakan[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
@@ -830,10 +830,10 @@ delete tebaktebakan[m.sender.split('@')[0]]
 if (('family100'+m.chat in _family100) && isCmd) {
 kuis = true
 let room = _family100['family100'+m.chat]
-let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
+let teks = budy.toLowercase perf+).replace(/[^\w\s\-]+/, '')
 let isSurender = /^((me)?give up|surr?ender|surrender)$/i.test(m.text)
 if (!isSurender) {
-let index = room.jawaban.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
+let index = room.jawaban.findIndex(v => v.toLowercase perf+).replace(/[^\w\s\-]+/, '') === teks)
 if (room.terjawab[index]) return !0
 room.terjawab[index] = m.sender
 }
@@ -889,13 +889,13 @@ let b = /rock/i
 let k = /paper/i
 let reg = /^(scissors|rock|paper)/i
 if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
-roof.pilih = reg.exec(m.text.toLowerCase())[0]
+roof.pilih = reg.exec(m.text.toLowercase perf+))[0]
 roof.text = m.text
 reply(`You have chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting for the opponent to choose` : ''}`)
 if (!roof.pilih2) JimbruOffical.sendText(roof.p2, '_The opponent has chosen_\nNow it is your turn', 0)
 }
 if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
-roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
+roof.pilih2 = reg.exec(m.text.toLowercase perf+))[0]
 roof.text2 = m.text
 reply(`You have chosen ${m.text} ${!roof.pilih ? `\n\nWaiting for the opponent to choose` : ''}`)
 if (!roof.pilih) JimbruOffical.sendText(roof.p, '_The opponent has chosen_\nNow it is your turn', 0)
@@ -921,7 +921,7 @@ delete this.suit[roof.id]
 // short story
 async function cerpen (category) {
     return new Promise((resolve, reject) => {
-        let title = category.toLowerCase().replace(/[()*]/g, "")
+        let title = category.toLowercase perf+).replace(/[()*]/g, "")
         let judul = title.replace(/\s/g, "-")
         let page = Math.floor(Math.random() * 5)
         axios.get('http://cerpenmu.com/category/cerpen-'+judul+'/page/'+page)
@@ -952,7 +952,7 @@ async function cerpen (category) {
 if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = kuismath[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowercase perf+) == jawaban) {
 await reply(`🎮 ᴍᴀᴛʜs ǫᴜɪᴢ 🎮\n\nCᴏʀʀᴇᴄᴛ Aɴsᴡᴇʀ 🎉\n\nWᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ᴀɢᴀɪɴ ? sᴇɴᴅ ${prefix}math mode`)
 delete kuismath[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
@@ -1262,9 +1262,9 @@ const reactionMessage = {
                         key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
                     }
                 }
-//cases starts here
+//case perf+ starts here
 switch(command) {
-	case 'list': {
+	case perf+'list': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 JimbruOffical.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
@@ -1315,8 +1315,8 @@ JimbruOffical.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.k
                         }
                      }
 break
-case 'menuxxx':
-case 'helpxxx':
+case perf+'menuxxx':
+case perf+'helpxxx':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 JimbruOffical.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
@@ -1329,7 +1329,7 @@ let buttonmenu = [
         	]
         	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
         	break
-case 'sc': case 'script': case 'donate': case 'sourcecode': {
+case perf+'sc': case perf+'script': case perf+'donate': case perf+'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.website}\nGitHub: ${global.botscript}\n\n ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ꜰᴏᴜɴᴅ ᴀɴʏᴛʜɪɴɢ ᴜꜱᴇꜰᴜʟ ᴀɴᴅ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ꜱᴜᴘᴘᴏʀᴛ ᴍᴇ ᴛʜᴇɴ ʙᴜʏ ᴍᴇ ᴀ ᴄᴏꜰꜰᴇᴇ  ʙᴜʏ ᴍᴇ ᴀ ᴄᴏꜰꜰᴇᴇ ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄᴏɴᴛʀɪʙᴜᴛᴇ ꜰᴇᴇʟ ꜰʀᴇᴇ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ !  ᴀɴᴅ ᴍᴀɴʏ ᴛʜᴀɴᴋꜱ ɪɴ ᴀᴅᴠᴀɴᴄᴇ.  ꜰᴏʀ ᴀꜱ ᴡᴇ ᴡᴇʟʟ ᴋɴᴏᴡ`
@@ -1355,7 +1355,7 @@ sourceUrl: "https://telegra.ph/file/ddaca390b13a4246bf1ef.jpg"
 JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
 }    
 //ban chat
- case 'banchat': {
+ case perf+'banchat': {
  if (isBan) return reply(mess.ban)	 			
 if (!isCreator) return replay(mess.owner)
 if (args[0] === "on") {
@@ -1383,15 +1383,15 @@ replay('Success in unbanning the group')
   }
   }
   break		
-case 'botgroups':
-case 'botgroup':
+case perf+'botgroups':
+case perf+'botgroup':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(` Don't forget to join yeah!
 *GROUP*
 https://chat.whatsapp.com/BuYtj7IRcd2E2EaBftF9fC`)
 break
-case 'getsxvdxcmd': {
+case perf+'getsxvdxcmd': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 JimbruOffical.sendMessage(from, {sticker:{url:"https://github.com/Mikhaiel/Media/blob/main/stickers/menu.webp"}}, {quoted:m})
@@ -1400,7 +1400,7 @@ JimbruOffical.sendMessage(from, {sticker:{url:"https://github.com/Mikhaiel/Media
 }    
 break
 //logo maker
-case 'hoorror':{
+case perf+'hoorror':{
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/horror-blood-text-effect-online-883.html`
@@ -1410,7 +1410,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-  case 'whitebear':{
+  case perf+'whitebear':{
   	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html`
@@ -1420,7 +1420,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'thunder2':{
+case perf+'thunder2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-thunder-text-effect-online-881.html`
@@ -1430,7 +1430,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'blackpink':{
+case perf+'blackpink':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-blackpink-logo-style-online-1001.html`
@@ -1440,7 +1440,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'neon':{
+case perf+'neon':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/neon-light-text-effect-online-882.html`
@@ -1450,7 +1450,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'matrix2':{
+case perf+'matrix2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/matrix-style-text-effect-online-884.html`
@@ -1460,7 +1460,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'sky':{
+case perf+'sky':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html`
@@ -1470,7 +1470,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'joker':{
+case perf+'joker':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-logo-joker-online-934.html`
@@ -1480,7 +1480,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'magma':{
+case perf+'magma':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-a-magma-hot-text-effect-online-1030.html`
@@ -1490,7 +1490,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'sand':{
+case perf+'sand':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/sand-writing-text-effect-online-990.html`
@@ -1500,7 +1500,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'pencil':{
+case perf+'pencil':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-a-sketch-text-effect-online-1044.html`
@@ -1510,7 +1510,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'graffiti':{
+case perf+'graffiti':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html`
@@ -1520,7 +1520,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'metallic':{
+case perf+'metallic':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-a-metallic-text-effect-free-online-1041.html`
@@ -1530,7 +1530,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'steel':{
+case perf+'steel':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/steel-text-effect-online-921.html`
@@ -1540,7 +1540,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'harrypotter':{
+case perf+'harrypotter':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-harry-potter-text-effect-online-1025.html`
@@ -1550,7 +1550,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'underwater':{
+case perf+'underwater':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/3d-underwater-text-effect-generator-online-1013.html`
@@ -1560,7 +1560,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'luxury':{
+case perf+'luxury':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/3d-luxury-gold-text-effect-online-1003.html`
@@ -1570,7 +1570,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'glue2':{
+case perf+'glue2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html`
@@ -1580,7 +1580,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'fabric':{
+case perf+'fabric':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/fabric-text-effect-online-964.html`
@@ -1590,7 +1590,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'neonlight':{
+case perf+'neonlight':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/neon-light-glitch-text-generator-online-1063.html`
@@ -1600,7 +1600,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'lava':{
+case perf+'lava':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/lava-text-effect-online-914.html`
@@ -1610,7 +1610,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'toxic':{
+case perf+'toxic':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/toxic-text-effect-online-901.html`
@@ -1620,7 +1620,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'ancient':{
+case perf+'ancient':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html`
@@ -1630,7 +1630,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'christmas2':{
+case perf+'christmas2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/sparkles-merry-christmas-text-effect-1054.html`
@@ -1640,7 +1640,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'sci_fi':{
+case perf+'sci_fi':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html`
@@ -1650,7 +1650,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'rainbow':{
+case perf+'rainbow':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
      let link = `https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html`
@@ -1660,7 +1660,7 @@ if (isBanChat) return reply(mess.banChat)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'classic':{
+case perf+'classic':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/video-game-classic-8-bit-text-effect-1037.html`
@@ -1670,7 +1670,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'watercolor2':{
+case perf+'watercolor2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html`
@@ -1680,7 +1680,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'halloween2':{
+case perf+'halloween2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-a-spooky-halloween-text-effect-online-1046.html`
@@ -1690,7 +1690,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'halloweenfire':{
+case perf+'halloweenfire':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/halloween-fire-text-effect-940.html`
@@ -1700,7 +1700,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'writing':{
+case perf+'writing':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/sand-writing-text-effect-online-990.html`
@@ -1710,7 +1710,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'foggy':{
+case perf+'foggy':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/write-text-on-foggy-window-online-free-1015.html`
@@ -1720,7 +1720,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'marvel':{
+case perf+'marvel':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html`
@@ -1730,7 +1730,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'skeleton2':{
+case perf+'skeleton2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html`
@@ -1740,7 +1740,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'sketch':{
+case perf+'sketch':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-a-sketch-text-effect-online-1044.html`
@@ -1750,7 +1750,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'wonderful':{
+case perf+'wonderful':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html`
@@ -1760,7 +1760,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'cool':{
+case perf+'cool':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html`
@@ -1770,7 +1770,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'collwall':{
+case perf+'collwall':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html`
@@ -1780,7 +1780,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'multicolor2':{
+case perf+'multicolor2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html`
@@ -1790,7 +1790,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'batman':{
+case perf+'batman':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/make-a-batman-logo-online-free-1066.html`
@@ -1800,7 +1800,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'juice':{
+case perf+'juice':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let link = `https://textpro.me/fruit-juice-text-effect-861.html`
@@ -1810,7 +1810,7 @@ let anui = await textpro(link, q)
     JimbruOffical.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
-case 'pornhub':{
+case perf+'pornhub':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
@@ -1824,7 +1824,7 @@ console.log(anu)
 JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
-case 'retro':{
+case perf+'retro':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
@@ -1838,7 +1838,7 @@ console.log(anu)
 JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
-case 'horror':{
+case perf+'horror':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
@@ -1852,7 +1852,7 @@ console.log(anu)
 JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
-case '8bit':{
+case perf+'8bit':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
@@ -1866,7 +1866,7 @@ console.log(anu)
 JimbruOffical.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
-case 'textmaker': {
+case perf+'textmaker': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args.length < 1) return reply(`Example :\n${prefix + command} <name>`)
@@ -1884,7 +1884,7 @@ reply(`*Text Maker List :*\n•> glitch\n•> glow`)
 }
 break
 // user limit
-             case 'userlimit':
+             case perf+'userlimit':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 {      
@@ -1896,7 +1896,7 @@ if (isBanChat) return reply(mess.banChat)
   }
  break	
 //h     
-case 'ringtone': {
+case perf+'ringtone': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!args.join(" ")) return reply(`Example:\n${prefix + command} black over`)
@@ -1906,7 +1906,7 @@ if (isBanChat) return reply(mess.banChat)
 		JimbruOffical.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
-case 'film':
+case perf+'film':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
@@ -1920,7 +1920,7 @@ xeonkey.Film(q)
                JimbruOffical.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
 });
 break
-case 'wallpaper': case 'animewallpaper': case 'anime': {
+case perf+'wallpaper': case perf+'animewallpaper': case perf+'anime': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!args.join(" ")) return reply("What picture are you looking for??")
@@ -1940,7 +1940,7 @@ if (isBanChat) return reply(mess.banChat)
                 JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-case 'wikimedia': {
+case perf+'wikimedia': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!args.join(" ")) return reply("What picture are you looking for??")
@@ -1960,14 +1960,14 @@ if (isBanChat) return reply(mess.banChat)
                 JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-case 'quotes':case 'qoutesimage':
+case perf+'quotes':case perf+'qoutesimage':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 				   let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
 				   reply(mess.wait)
 				  JimbruOffical.sendMessage(m.chat, { image: { url: cok }, caption: 'Done' }, { quoted: m })
 				  break
-            case 'quotesanime': case 'quoteanime': {
+            case perf+'quotesanime': case perf+'quoteanime': {
 		let { quotesAnime } = require('./lib/scraper')
                 let anu = await quotesAnime()
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -1983,7 +1983,7 @@ if (isBanChat) return reply(mess.banChat)
                 JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break		
-case 'animestory': { 
+case perf+'animestory': { 
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -2016,7 +2016,7 @@ let sections = []
 })
 }    
 break
-case 'group setting':{
+case perf+'group setting':{
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                     let sections = []
@@ -2055,7 +2055,7 @@ if (isBanChat) return reply(mess.banChat)
     )  
 }    
 break
-case'glitch3':
+case perf+glitch3':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2068,7 +2068,7 @@ maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.ht
   .catch((err) => console.log(err));
    break
 
-case '3dbox':
+case perf+'3dbox':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2080,7 +2080,7 @@ maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
 break
 
 
-case 'waterdrop':
+case perf+'waterdrop':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2092,7 +2092,7 @@ reply(mess.wait)
      break
 
 
-case 'lion2':
+case perf+'lion2':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
   if(!q) return reply(`Use ${prefix + command} text`)
@@ -2104,7 +2104,7 @@ if (isBanChat) return reply(mess.banChat)
      break
 
 
-case 'papercut':
+case perf+'papercut':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
       if(!q) return reply(`Use ${prefix + command} text`)
@@ -2116,7 +2116,7 @@ if (isBanChat) return reply(mess.banChat)
          break
 
 
-case 'transformer':
+case perf+'transformer':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
       if(!q) return reply(`Use ${prefix + command} text`)
@@ -2128,7 +2128,7 @@ if (isBanChat) return reply(mess.banChat)
 break
    
 
-case 'harrypot':
+case perf+'harrypot':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
        if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2142,7 +2142,7 @@ if (isBanChat) return reply(mess.banChat)
  break
 
 
-case 'neondevil':
+case perf+'neondevil':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
       if(!q) return reply(`Use ${prefix + command} text`)
@@ -2154,7 +2154,7 @@ if (isBanChat) return reply(mess.banChat)
          break
 
 
-case '3dstone':
+case perf+'3dstone':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2166,7 +2166,7 @@ maker.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html", 
    break
 
 
-case '3davengers':
+case perf+'3davengers':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2178,7 +2178,7 @@ maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
    break
 
 
-case 'thunder':
+case perf+'thunder':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2190,7 +2190,7 @@ maker.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html
    break
    
 
-case 'window':
+case perf+'window':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2200,7 +2200,7 @@ maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.ht
   .then((data) => JimbruOffical.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
-   case 'blackpinkneon':
+   case perf+'blackpinkneon':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2211,8 +2211,8 @@ maker.textpro("https://textpro.me/create-neon-light-blackpink-logo-text-effect-o
   .catch((err) => console.log(err));
    break
 
-case 'graffiti':
-   case 'grafiti':
+case perf+'graffiti':
+   case perf+'grafiti':
       if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2227,7 +2227,7 @@ maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.h
 
 
 
-case 'pornhub2':
+case perf+'pornhub2':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2242,7 +2242,7 @@ maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.h
 
 
 
-case 'blackpink2':
+case perf+'blackpink2':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2253,7 +2253,7 @@ maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html",
   .catch((err) => console.log(err));
    break
 
-case 'glitch':
+case perf+'glitch':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2266,7 +2266,7 @@ maker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1
 
 
 
-case 'glitch2':
+case perf+'glitch2':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2281,7 +2281,7 @@ maker.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.h
 
 
 
-case 'glitch3':
+case perf+'glitch3':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2296,7 +2296,7 @@ maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.ht
 
 
 
-case '3dspace':
+case perf+'3dspace':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2311,7 +2311,7 @@ maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", 
 
 
 
-case 'lion':
+case perf+'lion':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2326,7 +2326,7 @@ maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
 
 
 
-case '3dneon':
+case perf+'3dneon':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2339,7 +2339,7 @@ maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.h
 
 
 
-case 'neon':
+case perf+'neon':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2352,7 +2352,7 @@ maker.textpro("https://textpro.me/neon-text-effect-online-879.html", [
 
 
 
-case 'greenneon':
+case perf+'greenneon':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2365,7 +2365,7 @@ maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
    
    
   
-case 'bokeh':
+case perf+'bokeh':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2378,7 +2378,7 @@ maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
    
    
 
-case 'holographic':
+case perf+'holographic':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2391,7 +2391,7 @@ maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
 
 
 
-case 'bear':
+case perf+'bear':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2406,7 +2406,7 @@ maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creati
 
 
 
-case 'wolf':
+case perf+'wolf':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2422,7 +2422,7 @@ maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
 
 
 
-case 'joker':
+case perf+'joker':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2434,7 +2434,7 @@ maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
    break
 
 
-case 'dropwater2':
+case perf+'dropwater2':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2445,7 +2445,7 @@ maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
   .catch((err) => console.log(err));
    break
    
-   case 'summertime':
+   case perf+'summertime':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2456,7 +2456,7 @@ maker.textpro("https://textpro.me/create-a-summer-neon-light-text-effect-online-
   .catch((err) => console.log(err));
    break
 
-case 'neonlight2':
+case perf+'neonlight2':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2467,7 +2467,7 @@ maker.textpro("https://textpro.me/neon-light-text-effect-with-galaxy-style-981.h
   .catch((err) => console.log(err));
    break
 
-case 'thewall':
+case perf+'thewall':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2478,7 +2478,7 @@ maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
   .catch((err) => console.log(err));
    break
    
-case 'natural':
+case perf+'natural':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2489,7 +2489,7 @@ maker.textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
   .catch((err) => console.log(err));
    break 
 
-case 'carbon':
+case perf+'carbon':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2500,7 +2500,7 @@ maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
   .catch((err) => console.log(err));
    break
 
-case 'pencil':
+case perf+'pencil':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text`)
@@ -2511,16 +2511,16 @@ maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html",
   .catch((err) => console.log(err));
    break
  
-case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas':
-case 'deepsea': case 'scifi': case 'rainbow2': case 'waterpipe': case 'spooky': 
-case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': 
-case 'transformer': case 'berry': case 'thunder': case '.': case '3dstone2': 
-case 'neonlight': case 'glitch': case 'harrypotter': case 'brokenglass': case 'papercut': 
-case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 'graffitibike':
- case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood': 
-case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
-case 'lava': case 'rock': case 'bloodglas': case 'halloween': case 'darkgold': case 'joker': case 'wicker':
- case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': {
+case perf+'candy': case perf+'christmas': case perf+'3dchristmas': case perf+'sparklechristmas':
+case perf+'deepsea': case perf+'scifi': case perf+'rainbow2': case perf+'waterpipe': case perf+'spooky': 
+case perf+'pencil': case perf+'circuit': case perf+'discovery': case perf+'metalic': case perf+'fiction': case perf+'demon': 
+case perf+'transformer': case perf+'berry': case perf+'thunder': case perf+'.': case perf+'3dstone2': 
+case perf+'neonlight': case perf+'glitch': case perf+'harrypotter': case perf+'brokenglass': case perf+'papercut': 
+case perf+'watercolor': case perf+'multicolor': case perf+'neondevil': case perf+'underwater': case perf+'graffitibike':
+ case perf+'snow': case perf+'cloud': case perf+'honey': case perf+'ice': case perf+'fruitjuice': case perf+'biscuit': case perf+'wood': 
+case perf+'chocolate': case perf+'strawberry': case perf+'matrix': case perf+'blood': case perf+'dropwater': case perf+'toxic': 
+case perf+'lava': case perf+'rock': case perf+'bloodglas': case perf+'halloween': case perf+'darkgold': case perf+'joker': case perf+'wicker':
+ case perf+'firework': case perf+'skeleton': case perf+'blackpink': case perf+'sand': case perf+'glue': case perf+'1917': case perf+'leaves': case perf+'demon': {
              if (!q) return reply(`Example : ${prefix + command} ${global.ownername}`) 
                 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -2587,7 +2587,7 @@ if (isBanChat) return reply(mess.banChat)
                 JimbruOffical.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname}` }, { quoted: m })
              }
              break
-case 'emojimix': {
+case perf+'emojimix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) reply(`*Example :* ${prefix + command} 😇+😁`)
@@ -2599,17 +2599,17 @@ await fs.unlinkSync(encmedia)
 }
 }
 break
-case 'getcase':
+case perf+'getcase perf+:
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.isGroup) reply(mess.private)
 if (!isCreator) return reply(mess.owner)
-const getCase = (cases) => {
-return "case"+`'${cases}'`+fs.readFileSync("Jimbru.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
+const getcase perf+= (case perf+) => {
+return "case perf++`'${case perf+}'`+fs.readFileSync("Jimbru.js").toString().split('case perf+\''+case perf++'\'')[1].split("break")[0]+"break"
 }
-replay(`${getCase(q)}`)
+replay(`${getcase perf+q)}`)
 break
-case 'textmaker2': {
+case perf+'textmaker2': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args.length < 1) return reply(`Example :\n${prefix + command} <name>`)
@@ -2626,7 +2626,7 @@ reply(`*Text Maker List :*\n•> glitch\n•> glow`)
 }
 }
 break
-case 'emoji': {
+case perf+'emoji': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply('Where is the emoji?')
@@ -2636,7 +2636,7 @@ await JimbruOffical.sendMessage(from, {text:"reply #s to this image to make stic
 })
 }
 break
-case 'areaoftriangle':
+case perf+'areaoftriangle':
       if (isBan) return reply(mess.ban)	 			
       if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
@@ -2650,7 +2650,7 @@ case 'areaoftriangle':
       reply('The format of the message is wrong')
 }
 break
-case 'perimeteroftriangle':
+case perf+'perimeteroftriangle':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -2667,7 +2667,7 @@ reply(`*Results:* ${kelsegitiga}\n*Formula:* ${carakel}`)
 reply('The format of the message is wrong')
 }
 break
-case 'areaofsquare':
+case perf+'areaofsquare':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -2680,7 +2680,7 @@ reply(`*Results:* ${luaspersegi}\n*Formula:* ${luaspersegis}`)
 reply('The format of the message is wrong') 
 }
 break
-case 'pythagoras':
+case perf+'pythagoras':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -2693,7 +2693,7 @@ reply(`*Results:* ${pytha}\n*Formula:* ${rumuspytha}`)
 reply('The format of the message is wrong') 
 }
 break
-case 'multiply':
+case perf+'multiply':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -2705,7 +2705,7 @@ reply(`*Results:* ${perkal}\n*Formula:* ${rumusperkal}`)
 reply('The format of the message is wrong') 
 }
 break
-case 'perimeterofsquare':
+case perf+'perimeterofsquare':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -2718,7 +2718,7 @@ reply(`*Results:* ${persegi}\n*Formula:* ${caraPersegi}`)
 reply('The format of the message is wrong') 
 }
 break
-case 'square':
+case perf+'square':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -2730,7 +2730,7 @@ reply(`*Results:* ${kuadrat}`)
 reply('The format of the message is wrong') 
 }
 break
-case 'cubic':
+case perf+'cubic':
 if (!q) return reply(`Untuk mencari sebuah Hasil Kubik\nUse ${prefix}cubic number\nExample: ${prefix}cubic 9`) 
 try {
 const kubik = bdr.rdb.kubik(q)
@@ -2739,7 +2739,7 @@ reply(`*Results:* ${kubik}`)
 reply('The format of the message is wrong') 
 }
 break
-case 'family100': {
+case perf+'family100': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if ('family100'+m.chat in _family100) {
@@ -2758,7 +2758,7 @@ hadiah: 6,
 }
 }
 break
-case 'guess': {
+case perf+'guess': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} song\n\nOption : \n1.song\n2. picture\n3. saying\n4. sentence\n5. lyrics\n6.food`)
@@ -2768,7 +2768,7 @@ let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 let msg = await JimbruOffical.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
 JimbruOffical.sendText(m.chat, `What is the name of this song?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
-tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowercase perf+)
 })
 await sleep(60000)
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
@@ -2781,7 +2781,7 @@ if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return replay("There are
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 JimbruOffical.sendImage(m.chat, result.img, `Please answer the question above\n\nDescription : ${result.deskripsi}\nTime : 60s`, m).then(() => {
-tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowercase perf+)
 })
 await sleep(60000)
 if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
@@ -2794,7 +2794,7 @@ if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return replay("There are s
 let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/fungames/main/GuessTheWord.js')
 let result = anu[Math.floor(Math.random() * anu.length)]
 JimbruOffical.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
-tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowercase perf+)
 })
 await sleep(60000)
 if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
@@ -2807,7 +2807,7 @@ if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return replay("There ar
 let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/fungames/main/GuessTheSentence.js')
 let result = anu[Math.floor(Math.random() * anu.length)]
 JimbruOffical.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
-tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowercase perf+)
 })
 await sleep(60000)
 if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
@@ -2820,7 +2820,7 @@ if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return replay("There are 
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 JimbruOffical.sendText(m.chat, `Fill the missing lyrics below : *${result.soal}*?\nTime : 60s`, m).then(() => {
-tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowercase perf+)
 })
 await sleep(60000)
 if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
@@ -2833,7 +2833,7 @@ if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return replay("There are 
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 JimbruOffical.sendText(m.chat, `*Answer the following questions :*\n${result.soal}*\nTime : 60s`, m).then(() => {
-caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
+caklontong[m.sender.split('@')[0]] = result.jawaban.toLowercase perf+)
 caklontong_desk[m.sender.split('@')[0]] = result.deskripsi
 })
 await sleep(60000)
@@ -2847,7 +2847,7 @@ delete caklontong_desk[m.sender.split('@')[0]]
 }
 break
 // tictactoe
-case 'tictactoe': {
+case perf+'tictactoe': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let TicTacToe = require("./lib/tictactoe")
@@ -2896,7 +2896,7 @@ this.game[room.id] = room
 }
 }
 break
-case 'delttc': case 'delttt': {
+case perf+'delttc': case perf+'delttt': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 this.game = this.game ? this.game : {}
@@ -2912,14 +2912,14 @@ replay('error!')
 }
 }
 break
-case 'kuismath': case 'math': {
+case perf+'kuismath': case perf+'math': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
 let { genMath, modes } = require('./src/math')
 if (!args.join(" ")) return replay(`Mode: ${Object.keys(modes).join(' | ')}\nUsage examples: ${prefix}math medium`)
-let result = await genMath(text.toLowerCase())
-JimbruOffical.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+let result = await genMath(text.toLowercase perf+))
+JimbruOffical.sendText(m.chat, `*What is the result of: ${result.soal.toLowercase perf+)}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
 kuismath[m.sender.split('@')[0]] = result.jawaban
 })
 await sleep(result.waktu)
@@ -2930,7 +2930,7 @@ delete kuismath[m.sender.split('@')[0]]
 }
 }
 break		
-case 'delete': case 'del': {
+case perf+'delete': case perf+'del': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) return
@@ -2939,7 +2939,7 @@ if (!isBaileys) return replay('The message was not sent by a bot!')
 JimbruOffical.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
 }
 /*		
-case 'vote': {
+case perf+'vote': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2975,7 +2975,7 @@ devote = vote[m.chat][2]
   
 	    }
             break
-               case perf+'appvote': {
+               case perf+perf+'appvote': {
             if (!m.isGroup) throw hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
             if (!(m.chat in vote)) throw false
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
@@ -2987,7 +2987,7 @@ devote = vote[m.chat][2]
             hisoka.sendMessage(m.chat, { text : `${await hisoka.getName(m.sender)} ${'```'}Voted${'```'}`})
 	    }
              break
-                case perf+'dawnvote': {
+                case perf+perf+'dawnvote': {
             if (!m.isGroup) hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
             if (!(m.chat in vote)) throw false
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
@@ -2999,7 +2999,7 @@ devote = vote[m.chat][2]
 	}
             break
                  
-case perf+'voteresult':
+case perf+perf+'voteresult':
 if (!m.isGroup) throw hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
 if (!(m.chat in vote)) hisoka.sendMessage(m.chat, { text : '```No Vote in this Chat\nTry ```'+ perf +'```Vote reason,yes,no```'})
 teks_vote = `${vote[m.chat][0]}
@@ -3007,7 +3007,7 @@ ${vote[m.chat][3]} => ${appvote.length}
 ${vote[m.chat][4]} => ${dawnvote.length}`
 hisoka.sendMessage(m.chat, { text : teks_vote}, m)
 break
-		case perf+'deletevote': case perf+'delvote': {
+		case perf+perf+'deletevote': case perf+perf+'delvote': {
             if (!m.isGroup) throw hisoka.sendMessage(m.chat, { text : '```Try at Groups```'})
             if (!(m.chat in vote)) throw `_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`
             delete vote[m.chat]
@@ -3017,7 +3017,7 @@ break
 
 */
 break
-case 'listpc': {
+case perf+'listpc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
@@ -3028,7 +3028,7 @@ for (let i of anu) {
 JimbruOffical.sendTextWithMentions(m.chat, teks, m)
 }
 break
-case 'listgc': {
+case perf+'listgc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
@@ -3045,7 +3045,7 @@ for (let i of anu) {
 JimbruOffical.sendTextWithMentions(m.chat, teks, m)
 }
 break
-case 'afk': {
+case perf+'afk': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let user = global.db.users[m.sender]
@@ -3054,7 +3054,7 @@ user.afkReason = args.join(" ")
 replay(`${m.pushName} has gone afk\nReason : ${args.join(" ") ? args.join(" ") : ''}`)
 }
 break
-case 'addcmd': {
+case perf+'addcmd': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) return replay('Reply Message!')
@@ -3072,7 +3072,7 @@ locked: false,
 replay(mess.success)
 }
 break
-case 'delcmd': {
+case perf+'delcmd': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let hash = m.quoted.fileSha256.toString('base64')
@@ -3082,7 +3082,7 @@ delete global.db.sticker[hash]
 replay(mess.success)
 }
 break
-case 'listcmd': {
+case perf+'listcmd': {
       if (isBan) return reply(mess.ban)	 			
       if (isBanChat) return reply(mess.banChat)
 let teks = `
@@ -3093,7 +3093,7 @@ ${Object.entries(global.db.sticker).map(([key, value], index) => `${index + 1}. 
 JimbruOffical.sendText(m.chat, teks, m, { mentions: Object.values(global.db.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
 }
 break
-case 'lockcmd': {
+case perf+'lockcmd': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
@@ -3105,30 +3105,30 @@ global.db.sticker[hash].locked = !/^un/i.test(command)
 replay(mess.success)
 }
 break
-case 'addmsg': {
+case perf+'addmsg': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) return replay(`Reply message you want to save in database`)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} file name`)
 let msgs = global.db.database
-if (text.toLowerCase() in msgs) return replay(`'${args.join(" ")}' has been saved in the message list`)
-msgs[text.toLowerCase()] = quoted.fakeObj
+if (text.toLowercase perf+) in msgs) return replay(`'${args.join(" ")}' has been saved in the message list`)
+msgs[text.toLowercase perf+)] = quoted.fakeObj
 replay(`Successfully added message in message list as '${args.join(" ")}'
     
 Access with ${prefix}getmsg ${args.join(" ")}
 View list of messages with ${prefix}listmsg`)
 }
 break
-case 'getmsg': {
+case perf+'getmsg': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat) 
 if (!args.join(" ")) return replay(`Example : ${prefix + command} file name\n\nView message list with ${prefix}listmsg`)
 let msgs = global.db.database
-if (!(text.toLowerCase() in msgs)) return replay(`'${args.join(" ")}' not listed in the message list`)
-JimbruOffical.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+if (!(text.toLowercase perf+) in msgs)) return replay(`'${args.join(" ")}' not listed in the message list`)
+JimbruOffical.copyNForward(m.chat, msgs[text.toLowercase perf+)], true)
 }
 break
-case 'listmsg': {
+case perf+'listmsg': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -3140,15 +3140,15 @@ teks += `⬡ *Name :* ${i.nama}\n⬡ *Type :* ${getContentType(i.message).replac
 replay(teks)
 }
 break		
-case 'delmsg': case 'deletemsg': {
+case perf+'delmsg': case perf+'deletemsg': {
 	        let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
-	        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' not listed in the message list`)
-		delete msgs[text.toLowerCase()]
+	        if (!(text.toLowercase perf+) in msgs)) return reply(`'${text}' not listed in the message list`)
+		delete msgs[text.toLowercase perf+)]
                 fs.writeFileSync('./src/database.json', JSON.stringify(msgs))
 		reply(`Deleted successfully '${text}' from the message list`)
             }
 	    break
-case 'fliptext': {
+case perf+'fliptext': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args.length < 1) return replay(`Example:\n${prefix}fliptext ${ownername}`)
@@ -3157,7 +3157,7 @@ flipe = quere.split('').reverse().join('')
 replay(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
 }
 break
-case 'toletter': {
+case perf+'toletter': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!Number(args[0])) return replay(`Example:\n${prefix}toletter 956`)
@@ -3170,14 +3170,14 @@ replay(`Error!`)
 }
 }
 break
-	case 'github':
+	case perf+'github':
 anu = await fetchJson(`https://api.github.com/users/${q}/following`)
 teks = `*Following Github: ${q}\n\n`
 buffer = await getBuffer(anu[0].avatar_url)
 	teks = `*Username:* ${anu.login}\n*Link:* ${anu.html_url}\n                            \n`
 JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:teks}, {quoted:m})
 break	
-case 'welcome': {
+case perf+'welcome': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3201,7 +3201,7 @@ replay('Success in turning off welcome/left msg in this group')
   }
   }
   break
-    case 'autoreply': {
+    case perf+'autoreply': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3225,7 +3225,7 @@ replay('Success in turning off autoreply in this group')
   }
   }
   break
-case 'autorevoke': {
+case perf+'autorevoke': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3249,7 +3249,7 @@ replay('Success in turning off autorevoke in this group')
   }
   }
   break
-case 'autosticker':
+case perf+'autosticker':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3268,7 +3268,7 @@ fs.writeFileSync('./database/autosticker.json', JSON.stringify(autosticker))
 reply('auto sticker deactivated')
 }
 break
-case 'autostickerpc':
+case perf+'autostickerpc':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3285,20 +3285,20 @@ fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc deactivated')
 }
 break
-case 'rentbot':
+case perf+'rentbot':
 if (!q) return reply(`Use :\n*${prefix}sewa* add/del time`)
 if (args[0] === 'add'){
 _sewa.addSewaGroup(from, args[1], sewa)
 reply(`Success`)
-} else if (args[0].toLowerCase() === 'del'){
+} else if (args[0].toLowercase perf+) === 'del'){
 sewa.splice(_sewa.getSewaPosition(from, sewa), 1)
 fs.writeFileSync('./database/sewa.json', JSON.stringify(sewa))
 reply(mess.success)
 } else {
 reply(`Use :\n*${prefix}sewa* add/del time`)}
 break
-case 'rentlist': 
-case 'rentallist':
+case perf+'rentlist': 
+case perf+'rentallist':
 let txtnyee = `Rental List\nAmount : ${sewa.length}\n\n`
 for (let i of sewa){
 let cekvippsewa = ms(i.expired - Date.now())
@@ -3306,7 +3306,7 @@ txtnyee += `*ID :* ${i.id} \n*Expire :* ${cekvippsewa.days} day(s) ${cekvippsewa
 }
 reply(txtnyee)
 break
-case 'rentcheck':
+case perf+'rentcheck':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3315,7 +3315,7 @@ let cekvipsewa = ms(_sewa.getSewaExpired(from, sewa) - Date.now())
 let sewanya = `*「 RENT EXPIRE 」*\n\n➸ *ID*: ${from}\n➸ *Expired :* ${cekvipsewa.days} day(s) ${cekvipsewa.hours} hour(s) ${cekvipsewa.minutes} minute(s)`
 reply(sewanya)
 break
-case 'antilinkgc': {
+case perf+'antilinkgc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3346,7 +3346,7 @@ replay('Success in turning off group chat antilink in this group')
   }
   }
   break
-case 'antilinkyt': {
+case perf+'antilinkyt': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3377,7 +3377,7 @@ replay('Success in turning off youtube video antilink in this group')
   }
   }
   break	
-   case 'antilinkytch': {
+   case perf+'antilinkytch': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3408,7 +3408,7 @@ replay('Success in turning off youtube channel antilink in this group')
   }
   }
   break	
-case 'antilinkig': {
+case perf+'antilinkig': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3439,7 +3439,7 @@ replay('Success in turning off instagram antilink in this group')
   }
   }
   break	
-   case 'antilinkfb': {
+   case perf+'antilinkfb': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3470,7 +3470,7 @@ replay('Success in turning off facebook antilink in this group')
   }
   }
   break
-          case 'antilinktg': {
+          case perf+'antilinktg': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3501,7 +3501,7 @@ replay('Success in turning off telegram antilink in this group')
   }
   }
   break		
-case 'antilinktiktok': {
+case perf+'antilinktiktok': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3532,7 +3532,7 @@ replay('Success in turning off tiktok antilink in this group')
   }
   }
   break
-            case 'antilinktwt': {
+            case perf+'antilinktwt': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3563,7 +3563,7 @@ replay('Success in turning off twitter antilink in this group')
   }
   }
   break
-case 'alllinkban': {
+case perf+'alllinkban': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3594,7 +3594,7 @@ replay('Success in turning off all antilink in this group')
   }
   }
   break			
-case 'antivirus': {
+case perf+'antivirus': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3625,7 +3625,7 @@ replay('Success in turning off antivirus this group')
   }
   }
   break
-case 'antibadword': {
+case perf+'antibadword': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3656,7 +3656,7 @@ replay('Success in turning off antitoxic in this group')
   }
   }
   break
-case 'antiwame': {
+case perf+'antiwame': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3687,7 +3687,7 @@ replay('Success in turning off antiwame in this group')
   }
   }
   break
-  case 'nsfw': {
+  case perf+'nsfw': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3718,7 +3718,7 @@ replay('Success in turning off nsfw in this group')
   }
   }
   break
-case 'ban': {
+case perf+'ban': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
@@ -3743,7 +3743,7 @@ replay("Error")
 }
 }
 break
-case 'online': case 'onlinelist: {
+case perf+'online': case perf+'onlinelist: {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3753,7 +3753,7 @@ let liston = 1
 JimbruOffical.sendText(m.chat, '     「 Online List 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 }
 break	
-case 'chat': {
+case perf+'chat': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return reply(mess.owner)
@@ -3769,7 +3769,7 @@ JimbruOffical.sendMessage(nony + "@s.whatsapp.net", {text:lolh, mentions:[m.send
 }
 await reply("Success")
 break
-case 'cowner': {
+case perf+'cowner': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return reply(mess.owner)
@@ -3794,7 +3794,7 @@ reply("Error")
 }
 }
 break
-case 'ban': {
+case perf+'ban': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
@@ -3819,7 +3819,7 @@ replay("Error")
 }
 }
 break
-case 'request': {
+case perf+'request': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} hello dev please add a downloader feature`)
@@ -3832,7 +3832,7 @@ JimbruOffical.sendMessage(i + "@s.whatsapp.net", {text: teks + teks1, mentions:[
 JimbruOffical.sendMessage(m.chat, {text: teks + teks2 + teks1, mentions:[m.sender]}, {quoted:m})
 }
 break
-case 'report': {
+case perf+'report': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : \n- ${prefix + command} fitur ig error min\n- ${prefix + command} hey dev this user is spamming`)
@@ -3845,7 +3845,7 @@ JimbruOffical.sendMessage(i + "@s.whatsapp.net", {text: teks + teks1, mentions:[
 JimbruOffical.sendMessage(m.chat, {text: teks + teks2 + teks1, mentions:[m.sender]}, {quoted:m})
 }
 break
-case 'mcpedl': {
+case perf+'mcpedl': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} shader`)
@@ -3869,7 +3869,7 @@ JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
-case 'happymod': {
+case perf+'happymod': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} mobile legend`)
@@ -3894,7 +3894,7 @@ JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break	
-case 'searchgc': {
+case perf+'searchgc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args.length < 1) return replay(`Example :\n${prefix}searchgc Classy Editor`)
@@ -3920,7 +3920,7 @@ headerType: 4
 JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
-case 'antitag': {
+case perf+'antitag': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return
@@ -3938,7 +3938,7 @@ replay('Choose on or off')
 }
 }
 break
-case 'yts': case 'ytsearch': {
+case perf+'yts': case perf+'ytsearch': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
@@ -3952,7 +3952,7 @@ teks += `${global.themeemoji} No : ${no++}\n${global.themeemoji} Type : ${i.type
 JimbruOffical.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
 break
-case 'chatinfo': {
+case perf+'chatinfo': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) replay('Reply Message')
@@ -3969,7 +3969,7 @@ teks += ` ┗━${global.themeemoji} *Time :* ${moment(waktu * 1000).format('DD/
 JimbruOffical.sendTextWithMentions(m.chat, teks, m)
 }
 break
-case 'setname': case 'setsubject': {
+case perf+'setname': case perf+'setsubject': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3979,7 +3979,7 @@ if (!text) return replay('Text ?')
 await JimbruOffical.groupUpdateSubject(m.chat, text).then((res) => replay(mess.success)).catch((err) => replay(jsonformat(err)))
 }
 break
-case 'block': {
+case perf+'block': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return reply(mess.owner)
@@ -3987,7 +3987,7 @@ if (isBanChat) return reply(mess.banChat)
 		await JimbruOffical.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-        case 'unblock': {
+        case perf+'unblock': {
         	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return reply(mess.owner)
@@ -3995,7 +3995,7 @@ if (isBanChat) return reply(mess.banChat)
 		await JimbruOffical.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-case 'setdesc' : {
+case perf+'setdesc' : {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4005,7 +4005,7 @@ if (!text) return replay('Where is the text?')
 await JimbruOffical.groupUpdateDescription(m.chat, text).then((res) => replay(mess.success)).catch((err) => replay(jsonformat(err)))
 }
 break
-case 'pp': {
+case perf+'pp': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
@@ -4017,7 +4017,7 @@ await JimbruOffical.updateProfilePicture(botNumber, { url: media }).catch((err) 
 replay(mess.success)
 }	
 break
-case 'setgrouppp': case 'setgruppp': case 'setgcpp': {
+case perf+'setgrouppp': case perf+'setgruppp': case perf+'setgcpp': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4030,7 +4030,7 @@ await JimbruOffical.updateProfilePicture(m.chat, { url: media }).catch((err) => 
 replay(mess.success)
 }
 break
-case 'tag': case 'tagall': {
+case perf+'tag': case perf+'tagall': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4044,7 +4044,7 @@ teks += `${global.themeemoji} @${mem.id.split('@')[0]}\n`
 JimbruOffical.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
-case 'hidetag': {
+case perf+'hidetag': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4052,7 +4052,7 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 JimbruOffical.sendMessage(m.chat, { text : args.join(" ") ? args.join(" ") : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
-case 'virtex': {
+case perf+'virtex': {
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return reply(mess.admin)
@@ -4063,7 +4063,7 @@ JimbruOffical.sendMessage(m.chat, { text : `${require('./storage/virtex.js').vir
 JimbruOffical.sendMessage(m.chat, { text : `${require('./storage/virtex.js').virtexfax(prefix, l, pushname)}`, mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
-	case 'autoreadstatus':
+	case perf+'autoreadstatus':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	if (!isCreator) return reply(mess.owner)
@@ -4079,7 +4079,7 @@ if (isBanChat) return reply(mess.banChat)
 		reply('Choose on or off!')
 	}
 	break
-case 'grouplink': {
+case perf+'grouplink': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4101,9 +4101,9 @@ sendEphemeral: true,
 }}}, { quoted: m, detectLink: true })
 }
 break
-case 'revoke':
-case 'reset link':
-case 'reset group link': {
+case perf+'revoke':
+case perf+'reset link':
+case perf+'reset group link': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4112,7 +4112,7 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 JimbruOffical.groupRevokeInvite(m.chat)
 }
 break
-	case 'ephemeral': {
+	case perf+'ephemeral': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4126,7 +4126,7 @@ await JimbruOffical.sendMessage(m.chat, { disappearingMessagesInChat: false }).t
 }
 }
 break
-case 'editinfo': {
+case perf+'editinfo': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4153,7 +4153,7 @@ JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 }
 break
-case 'group': {
+case perf+'group': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4180,7 +4180,7 @@ JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 }
 break
-	case 'promote': {
+	case perf+'promote': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4190,7 +4190,7 @@ let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender :
 await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
 }
 break
-case 'demote': {
+case perf+'demote': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4200,7 +4200,7 @@ let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender :
 await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
 }
 break
-case 'kick': {
+case perf+'kick': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4210,7 +4210,7 @@ let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender :
 await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'remove')
 }
 break
-case 'addxxx': {
+case perf+'addxxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4220,7 +4220,7 @@ let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsap
 await JimbruOffical.groupParticipantsUpdate(m.chat, [users], 'add')
 }
 break 
-case 'add': {
+case perf+'add': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4252,7 +4252,7 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 }
 
 break
-case 'inspect' : {
+case perf+'inspect' : {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply("Where is the link?")
@@ -4290,7 +4290,7 @@ JimbruOffical.sendFile(m.chat, pp, "", m, { caption: tekse, mentions: await Jimb
 })
 }
 break
-case 'inspect': case 'inspectgclink': {
+case perf+'inspect': case perf+'inspectgclink': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return replay("The link?")
@@ -4328,7 +4328,7 @@ JimbruOffical.sendFile(m.chat, pp, "", m, { caption: tekse, mentions: await Jimb
 })
 }
 break	
-case 'join': {
+case perf+'join': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return replay(`Where's the link?`)
@@ -4362,7 +4362,7 @@ replay("Error")
 }
 }
 break
-case 'volume': {
+case perf+'volume': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
@@ -4390,7 +4390,7 @@ reply("Send video/audio")
 }
 }
 break
-case 'tempo': {
+case perf+'tempo': {
 if (isBan) return reply(mess.ban)
 if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
 var req = args.join(' ')
@@ -4418,7 +4418,7 @@ reply("Send video/audio")
 }
 }
 break
-case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'tupai':
+case perf+'bass': case perf+'blown': case perf+'deep': case perf+'earrape': case perf+'fast': case perf+'fat': case perf+'nightcore': case perf+'reverse': case perf+'robot': case perf+'slow': case perf+'smooth': case perf+'tupai':
                 try {
                 let set
                 if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
@@ -4449,7 +4449,7 @@ case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat':
                 reply(e)
                 }
                 break
-case 'write': {
+case perf+'write': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args.length < 1) return reply(`Example :\n${prefix}nulis Aldi|91|#ff020a|Manusia terganteng adalah salman alfarizi`)
@@ -4527,7 +4527,7 @@ JimbruOffical.sendMessage(from, {image:fs.readFileSync('./storage/hasilnulis.jpg
 exec(`npm i marker`)
 }
 break
-case 'calculator': case 'cal': {
+case perf+'calculator': case perf+'cal': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args.length < 1) return reply(`*Example :*\n${prefix}calculator 2 * 5\n\n*List of Numbers :*\n•> Time : *\n•> For : /\n•> Plus : +\n•> Not enough : -`)
@@ -4539,7 +4539,7 @@ reply(`\`\`\`「 Calculator 」\`\`\`\n\n*•> Count :* ${qsd}\n*•> Results :*
 }
 }
 break
-case 'public': {
+case perf+'public': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return reply(mess.owner)
@@ -4548,14 +4548,14 @@ reply('Success In Chaing To Public Usage')
 JimbruOffical.setStatus(`Mode : Public`)
 }
 break
-case 'setbio':
+case perf+'setbio':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply('Send orders *#setbio text*')
 JimbruOffical.setStatus(`${q}`)
 reply(mess.success)
 break
-case 'self': {
+case perf+'self': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return reply(mess.owner)
@@ -4564,7 +4564,7 @@ reply('Successful Change To Self Usage')
 JimbruOffical.setStatus(`Mode : Self`)
 }
 break	
-     case 'ping': {
+     case perf+'ping': {
    if (isBan) return reply(mess.ban)	 			
    if (isBanChat) return reply(mess.banChat)
    let { performance } = require('perf_hooks')
@@ -4576,7 +4576,7 @@ break
        JimbruOffical.sendMessage(m.chat, { text : "```" + `${mi}` + " ms```" }, {quoted : false})
        }
 break
-case 'speedtest': {
+case perf+'speedtest': {
 	   if (isBan) return reply(mess.ban)	 			
            if (isBanChat) return reply(mess.banChat)
            reply('Testing Speed...')
@@ -4595,7 +4595,7 @@ case 'speedtest': {
             }
             }
             break
-case 'emojimix2': {
+case perf+'emojimix2': {
 	   if (isBan) return reply(mess.ban)	 			
            if (isBanChat) return reply(mess.banChat)
 	   if (!text) return reply(`Example : ${prefix + command} 😅`)
@@ -4606,14 +4606,14 @@ case 'emojimix2': {
 		 }
 	         }
 	    break
-case 'attp': case 'ttp': {
+case perf+'attp': case perf+'ttp': {
             if (isBan) return reply(mess.ban)	 			
             if (isBanChat) return reply(mess.banChat)
             if (!text) return reply(`Example : ${prefix + command} text`)
             await JimbruOffical.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
             }
            break	
-case 'image': case 'img': {
+case perf+'image': case perf+'img': {
             if (isBan) return reply(mess.ban)	 			
             if (isBanChat) return reply(mess.banChat)
             if (!m.quoted) return reply('Reply Image')
@@ -4630,7 +4630,7 @@ case 'image': case 'img': {
             })
             }
             break
-case 'mp4': case 'video': {
+case perf+'mp4': case perf+'video': {
            if (isBan) return reply(mess.ban)	 			
            if (isBanChat) return reply(mess.banChat)
            if (!m.quoted) return reply('Reply Image')
@@ -4643,7 +4643,7 @@ case 'mp4': case 'video': {
            await fs.unlinkSync(media)
           }
        break
-case 'audio': {
+case perf+'audio': {
       if (isBan) return reply(mess.ban)	 			
       if (isBanChat) return reply(mess.banChat)
       if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
@@ -4655,7 +4655,7 @@ case 'audio': {
       JimbruOffical.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
       }
   break
-case 'mp3': {
+case perf+'mp3': {
       if (isBan) return reply(mess.ban)	 			
       if (isBanChat) return reply(mess.banChat)
       if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -4668,7 +4668,7 @@ case 'mp3': {
       JimbruOffical.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${JimbruOffical.user.name} (${m.id}).mp3`}, { quoted : m })
       }
 break
-case 'tovn': case 'voice': {
+case perf+'tovn': case perf+'voice': {
       if (isBan) return reply(mess.ban)	 			
       if (isBanChat) return reply(mess.banChat)
       if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
@@ -4680,7 +4680,7 @@ case 'tovn': case 'voice': {
       JimbruOffical.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
       }
       break
-case 'gif': {
+case perf+'gif': {
       if (isBan) return reply(mess.ban)	 			
       if (isBanChat) return reply(mess.banChat)
       if (!m.quoted) return reply('Reply Image')
@@ -4693,7 +4693,7 @@ case 'gif': {
       await fs.unlinkSync(media)
       }
       break	
-case 'antiviewonce' : {
+case perf+'antiviewonce' : {
 	      if (isBan) return reply(mess.ban)
 	      if (isBanChat) return reply(mess.banChat)
               if (!m.key.fromMe && !isCreator) return reply(mess.owner)
@@ -4713,7 +4713,7 @@ case 'antiviewonce' : {
               await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
               }
       break	
-case 'lovesticker' :{
+case perf+'lovesticker' :{
 	         	if (isBan) return reply(mess.ban)
 	             if (isBanChat) return reply(mess.banChat)
                  var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
@@ -4723,7 +4723,7 @@ case 'lovesticker' :{
                  await fs.unlinkSync(encmedia)
                  }
            break
-case 'gurasticker' : {
+case perf+'gurasticker' : {
 	         	if (isBan) return reply(mess.ban)
 	             if (isBanChat) return reply(mess.banChat)
                  var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
@@ -4733,7 +4733,7 @@ case 'gurasticker' : {
                  await fs.unlinkSync(encmedia)
                   }
           break
-case 'dogesticker' : {
+case perf+'dogesticker' : {
 	         	if (isBan) return reply(mess.ban)
 	             if (isBanChat) return reply(mess.banChat)
                  var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
@@ -4743,7 +4743,7 @@ case 'dogesticker' : {
                  await fs.unlinkSync(encmedia)
                  }
          break 
-case 'patricksticker' : {
+case perf+'patricksticker' : {
 	         	if (isBan) return reply(mess.ban)
 	             if (isBanChat) return reply(mess.banChat)
                  var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
@@ -4753,21 +4753,21 @@ case 'patricksticker' : {
                  await fs.unlinkSync(encmedia)
                  }
          break
-case 'loveshortstory':{
+case perf+'loveshortstory':{
 	            if (isBan) return reply(mess.ban)	 			
                 if (isBanChat) return reply(mess.banChat)
                 let cerpe = await cerpen(`Cinta segitiga`)
                 reply(`${themeemoji} _*Title :*_ ${cerpe.title}\n${themeemoji} _*Author :*_ ${cerpe.author}\n${themeemoji} _*Category :*_ ${cerpe.kategori}\n${themeemoji} _*Pass Moderation :*_ ${cerpe.lolos}\n${themeemoji} _*Story :*_\n${cerpe.cerita}`)
                 }
         break
-case 'friendshipshortstory':{
+case perf+'friendshipshortstory':{
 	            if (isBan) return reply(mess.ban)	 			
                 if (isBanChat) return reply(mess.banChat)
                 let cerpe = await cerpen(`persahabatan`)
                 reply(`${themeemoji} _*Title :*_ ${cerpe.title}\n${themeemoji} _*Author :*_ ${cerpe.author}\n${themeemoji} _*Category :*_ ${cerpe.kategori}\n${themeemoji} _*Pass Moderation :*_ ${cerpe.lolos}\n${themeemoji} _*Story :*_\n${cerpe.cerita}`)
                 }
         break
-case 'url': {
+case perf+'url': {
                 if (isBan) return reply(mess.ban)	 			
                 if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
@@ -4783,7 +4783,7 @@ case 'url': {
                 await fs.unlinkSync(media)
                 }
        break
-case 'quoted': {
+case perf+'quoted': {
                 if (isBan) return reply(mess.ban)	 			
                 if (isBanChat) return reply(mess.banChat)
                 if (!m.quoted) return replay('Reply Message!!')
@@ -4792,7 +4792,7 @@ case 'quoted': {
                 await wokwol.quoted.copyNForward(m.chat, true)
                 }
         break
-case 'getname': {
+case perf+'getname': {
                 if (isBan) return reply(mess.ban)	 			
                 if (isBanChat) return reply(mess.banChat)
                 if (qtod === "true") {
@@ -4803,7 +4803,7 @@ case 'getname': {
                }
                }
        break
-case 'getpp': {
+case perf+'getpp': {
                if (isBan) return reply(mess.ban)	 			
                if (isBanChat) return reply(mess.banChat)
                if (qtod === "true") {
@@ -4823,11 +4823,11 @@ case 'getpp': {
                }
                }
        break
-case 'owner' : {
+case perf+'owner' : {
               JimbruOffical.sendContact(m.chat, global.owner, m)
                }
        break
-case 'translate': case 'trt': {
+case perf+'translate': case perf+'trt': {
                if (isBan) return reply(mess.ban)
                if (!args.join(" ")) return replay("The text?")
                tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
@@ -4836,7 +4836,7 @@ case 'translate': case 'trt': {
                replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
                }
        break
-case 'image': {
+case perf+'image': {
                if (isBan) return reply(mess.ban)	 			
                if (isBanChat) return reply(mess.banChat)
                if (!args[0]) return reply("What picture are you looking for??")
@@ -4869,7 +4869,7 @@ case 'image': {
                 })
                 }
          break
-case 'google': {
+case perf+'google': {
                if (isBan) return reply(mess.ban)	 			
                if (isBanChat) return reply(mess.banChat)
                if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} apa arti cinta`)
@@ -4885,7 +4885,7 @@ case 'google': {
               })
               }
       break
-case 'igstory' : {
+case perf+'igstory' : {
              if (isBan) return reply(mess.ban)	 			
              if (isBanChat) return reply(mess.banChat)
              if (!args[0]) return reply(`Example :\n${prefix + command} josephxeon13`)
@@ -4922,7 +4922,7 @@ case 'igstory' : {
              }
              }
 break
-case 'igs2': case 'igstory2': case 'instagramstory2': {
+case perf+'igs2': case perf+'igstory2': case perf+'instagramstory2': {
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(`Where is the username?\nExample: ${prefix}igstory josephxeon13`)
@@ -4943,7 +4943,7 @@ if (isBan) return reply(mess.ban)
             }).catch((err) => reply(`Sorry username ${text} was not found or maybe he/she has no story uploaded in her id`))
             }	
 			break
-			case 'ig2': case 'igdl2': case 'instagram2': {
+			case perf+'ig2': case perf+'igdl2': case perf+'instagram2': {
                if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(`Where is the link bro`)
@@ -4968,7 +4968,7 @@ if (isBan) return reply(mess.ban)
 	
 	
 	
-	case 'igreels': {
+	case perf+'igreels': {
           if (isBan) return reply(mess.ban)	 			
           if (isBanChat) return reply(mess.banChat)
           if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
@@ -5005,7 +5005,7 @@ if (isBan) return reply(mess.ban)
            }
            }
 break
-case 'ig': {
+case perf+'ig': {
 	   if (isBan) return reply(mess.ban)	 			
        if (isBanChat) return reply(mess.banChat)
        if (args[0] === "mp4") {
@@ -5017,7 +5017,7 @@ case 'ig': {
        }
        }
 break
-case 'mp4' : {
+case perf+'mp4' : {
 	   if (isBan) return reply(mess.ban)	 			
        if (isBanChat) return reply(mess.banChat)
        if (!args[0]) return reply(`Where's the link ?`)
@@ -5035,7 +5035,7 @@ case 'mp4' : {
        }
        }
 break
-case 'jpeg': {
+case perf+'jpeg': {
        if (isBan) return reply(mess.ban)	 			
        if (isBanChat) return reply(mess.banChat)
        if (!args[0]) return reply(`Where's the link?`)
@@ -5053,7 +5053,7 @@ case 'jpeg': {
         }
         }
 break
-case 'igtv': {	            
+case perf+'igtv': {	            
                 if (isBan) return reply(mess.ban)	 			
                 if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(`Where is the link boss?`)
@@ -5067,7 +5067,7 @@ case 'igtv': {
                 })
             }
             break
-         case 'twitter': case 'td': case 'twitterdl': {     
+         case perf+'twitter': case perf+'td': case perf+'twitterdl': {     
          if (isBan) return reply(mess.ban)	 			
          if (isBanChat) return reply(mess.banChat)	             
          if (!text) return reply(`Where is the link?`)
@@ -5091,7 +5091,7 @@ case 'igtv': {
                    })
                   }
             break
- case 'twittermp3': case 'twitteraudio': { 
+ case perf+'twittermp3': case perf+'twitteraudio': { 
                     if (isBan) return reply(mess.ban)	 			
                     if (isBanChat) return reply(mess.banChat)	             
                     if (!text) return reply(`Where is the link?`)
@@ -5103,7 +5103,7 @@ case 'igtv': {
                     })
                     }
             break
-case 'twmp4': {
+case perf+'twmp4': {
                   if (isBan) return reply(mess.ban)	 			
                   if (isBanChat) return reply(mess.banChat)
                   if (!args[0]) return reply(`Example :\n${prefix + command} https://twitter.com/cinema21/status/1517754155644821504?t=rUnbyqwh4vAE1QXMXlsVeQ&s=19`)
@@ -5142,7 +5142,7 @@ reply("Error link!")
 }
 }
 break
-case 'twdd': {
+case perf+'twdd': {
           if (isBan) return reply(mess.ban)	 			
           if (isBanChat) return reply(mess.banChat)
           let buttons = [
@@ -5166,7 +5166,7 @@ sourceUrl: args[0]
 JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
 }
 break
-case 'fb':  {     	    
+case perf+'fb':  {     	    
             if (isBan) return reply(mess.ban)	 			
             if (isBanChat) return reply(mess.banChat)
             if (!text) return reply(`Where is the link bro?\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
@@ -5189,7 +5189,7 @@ case 'fb':  {
                       })
                       }
               break
-case 'fbmp3' : {
+case perf+'fbmp3' : {
           if (isBan) return reply(mess.ban)	 			
           if (isBanChat) return reply(mess.banChat)
           if (!text) return reply(`Where is the link?\nExample: ${prefix + command} https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
@@ -5202,7 +5202,7 @@ case 'fbmp3' : {
           })
           }
             break
-case 'fbmp4' : {
+case perf+'fbmp4' : {
           if (isBan) return reply(mess.ban)	 			
           if (isBanChat) return reply(mess.banChat)
           if (!args[0]) return reply(`Example :\n${prefix + command} https://fb.watch/cAX2dep-BZ/`)
@@ -5238,7 +5238,7 @@ reply("Link invalid!")
 }
 }
 break
-case 'fbd' : {
+case perf+'fbd' : {
           if (isBan) return reply(mess.ban)	 			
           if (isBanChat) return reply(mess.banChat)
 let buttons = [
@@ -5261,7 +5261,7 @@ sourceUrl: args[0]
 }
 JimbruOffical.sendMessage(from, buttonMessage, {quoted:m})
 }
-case 'song': {
+case perf+'song': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let yts = require("yt-search")
@@ -5300,7 +5300,7 @@ sourceUrl: anu.url
 JimbruOffical.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
-case 'ytmusic': {
+case perf+'ytmusic': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(mess.linkm)
@@ -5337,7 +5337,7 @@ reply("Link error!")
 }
 }
 break	
-	case 'ytvd': {
+	case perf+'ytvd': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 JimbruOffical.sendMessage(from, {video:{url:args[0]}, mimetype:"video/mp4", caption:"Success", contextInfo:{externalAdReply:{
@@ -5350,7 +5350,7 @@ sourceUrl: `${global.website}`
 }}}, {quoted:m})
 }
 break
-case 'ytad': {
+case perf+'ytad': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 JimbruOffical.sendMessage(from, {audio:{url:args[0]}, mimetype:"audio/mp4", ptt:true, contextInfo:{externalAdReply:{
@@ -5363,7 +5363,7 @@ sourceUrl: `${global.website}`
 }}}, {quoted:m})
 }
 break
-case 'ytshorts': case 'shorts': {
+case perf+'ytshorts': case perf+'shorts': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
   if (!text) return reply(`*Use ${prefix + command} put yt shorts link*`)
@@ -5381,7 +5381,7 @@ if (isBanChat) return reply(mess.banChat)
                 })
             }
             break
-                	    case 'couplepp': {
+                	    case perf+'couplepp': {
                 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
@@ -5391,7 +5391,7 @@ if (isBanChat) return reply(mess.banChat)
                 JimbruOffical.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
             }
 	    break
-case 'ytmp3':  case 'ytmusic': {	    
+case perf+'ytmp3':  case perf+'ytmusic': {	    
 	                	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 let { yta } = require('./lib/y2mate')
@@ -5406,7 +5406,7 @@ case 'ytmp3':  case 'ytmusic': {
                 JimbruOffical.sendMessage(m.chat, {audio:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`,  quoted: m, contextInfo: { externalAdReply:{title:media.title,body:"YOUTUBE MP3",mediaType:"2",thumbnail:buf,mediaUrl:`${text}`}}}).catch((err) => reply(mess.error))
                 }
             break
-           case 'ytmp4': case 'ytvideo': {
+           case perf+'ytmp4': case perf+'ytvideo': {
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 let { ytv } = require('./lib/y2mate')
@@ -5422,7 +5422,7 @@ if (isBan) return reply(mess.ban)
             }
             break	
 	
-	case 'ytdl': {
+	case perf+'ytdl': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
@@ -5435,7 +5435,7 @@ if (isBan) return reply(mess.ban)
                 JimbruOffical.sendMessage(m.chat, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `${util.format(anu)}`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
-	case 'ytmp32':{
+	case perf+'ytmp32':{
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
    reply(mess.wait)
@@ -5456,7 +5456,7 @@ if (isBan) return reply(mess.ban)
    }
   }
   break
-  case 'ytmp42':{
+  case perf+'ytmp42':{
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
    reply(mess.wait)
@@ -5477,7 +5477,7 @@ if (isBan) return reply(mess.ban)
    }
   }
   break
-case 'img2': {
+case perf+'img2': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
@@ -5488,7 +5488,7 @@ case 'img2': {
             }
             break  
 	
-case 'take': {
+case perf+'take': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`Example :\nswm ${global.author}|${global.packname}`)
@@ -5513,7 +5513,7 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 break	
 // creater	
-case 'invert':{
+case perf+'invert':{
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -5527,14 +5527,14 @@ JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {q
 }
 }
 break
-case 'stupid':
+case perf+'stupid':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
 		anu = `http://api.lolhuman.xyz/api/toloserti?apikey=${lolkey}&name=${q}`
 		JimbruOffical.sendMessage(from, {image:{url:anu}, caption:"Here you go!"}, {quoted:m})
 		break
-case 'wasted' :{
+case perf+'wasted' :{
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -5548,7 +5548,7 @@ JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {q
 }
 }
 break
-case 'jail':{
+case perf+'jail':{
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
@@ -5562,7 +5562,7 @@ JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {q
 }
 }
 break
-case 'stickermeme' : {
+case perf+'stickermeme' : {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let { TelegraPh } = require('./lib/uploader')
@@ -5577,7 +5577,7 @@ memek = await JimbruOffical.sendImageAsSticker(m.chat, meme, m, { packname: glob
 await fs.unlinkSync(memek)
 }
 break
-case 'sticker' : {
+case perf+'sticker' : {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (/image/.test(mime)) {
@@ -5594,7 +5594,7 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 }
 break
-case 'wiki':
+case perf+'wiki':
 if (args.length < 1) return reply('What Are You Looking For?? ')
 const res2 = await wikiSearch(q).catch(e => {
 return reply('_[ ! ] Error Result Not Found_') 
@@ -5602,7 +5602,7 @@ return reply('_[ ! ] Error Result Not Found_')
 const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
 JimbruOffical.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
 break	
-case 'playstore': case 'apk':
+case perf+'playstore': case perf+'apk':
 if(!q) return reply('what are you looking for?')
 let play = await hx.playstore(q)
 let storee = '❉─────────────────────❉\n'
@@ -5615,7 +5615,7 @@ storee += `\n*「 *PLAY STORE* 」*\n
 }
 reply(storee)	
 	break
-            case 'couple': {
+            case perf+'couple': {
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -5631,7 +5631,7 @@ Cieeee, What's Going On❤️💖👀`
                     await JimbruOffical.sendButtonText(m.chat, buttons, jawab, JimbruOffical.user.name, m, {mentions: menst})
             }
             break
-                        case 'mysoulmate': {
+                        case perf+'mysoulmate': {
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -5647,7 +5647,7 @@ Cieeee, What's Going On❤️💖👀`
                     await JimbruOffical.sendButtonText(m.chat, buttons, jawab, JimbruOffical.user.name, m, {mentions: ments})
             }
             break
-            case 'is':
+            case perf+'is':
                         	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
@@ -5656,7 +5656,7 @@ Cieeee, What's Going On❤️💖👀`
 JimbruOffical.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
 
 					break
-					            case 'what':
+					            case perf+'what':
 					            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
@@ -5665,7 +5665,7 @@ JimbruOffical.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` },
 JimbruOffical.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
 
 					break
-case 'can':
+case perf+'can':
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} you fuck her lol `)
@@ -5674,7 +5674,7 @@ case 'can':
 JimbruOffical.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
 
 					break
-case 'how':
+case perf+'how':
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} is my face`)
@@ -5682,7 +5682,7 @@ case 'how':
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
 JimbruOffical.sendMessage(from, { text: `Question : How ${q}\nAnswer : How ${ya}` }, { quoted: m })
 					break
-case 'rate':
+case perf+'rate':
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} My Dp`)
@@ -5690,7 +5690,7 @@ case 'rate':
 					const te = ra[Math.floor(Math.random() * ra.length)]
 JimbruOffical.sendMessage(from, { text: `Question : Rate ${q}\nAnswer : *${te}%*` }, { quoted: m })
 					break
-  case 'handsomecheck':
+  case perf+'handsomecheck':
               	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
@@ -5698,7 +5698,7 @@ JimbruOffical.sendMessage(from, { text: `Question : Rate ${q}\nAnswer : *${te}%*
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 JimbruOffical.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
 					break
-case 'beautifulcheck':
+case perf+'beautifulcheck':
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
@@ -5706,16 +5706,16 @@ case 'beautifulcheck':
 					const tik = can[Math.floor(Math.random() * can.length)]
 JimbruOffical.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
 					break
-case 'awesomecheck':
-  case 'greatcheck':
-    case 'gaycheck':
-      case 'cutecheck':
-        case 'lesbicheck':
-          case 'lesbiancheck':
-             case 'hornycheck':
-                 case 'prettycheck':
-                    case 'lovelycheck':
-                      case 'uglycheck':
+case perf+'awesomecheck':
+  case perf+'greatcheck':
+    case perf+'gaycheck':
+      case perf+'cutecheck':
+        case perf+'lesbicheck':
+          case perf+'lesbiancheck':
+             case perf+'hornycheck':
+                 case perf+'prettycheck':
+                    case perf+'lovelycheck':
+                      case perf+'uglycheck':
                                   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
@@ -5723,7 +5723,7 @@ case 'awesomecheck':
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 JimbruOffical.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
-	case 'charactercheck':
+	case perf+'charactercheck':
 					            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				
@@ -5732,91 +5732,91 @@ JimbruOffical.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
 					JimbruOffical.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
 				     break
-	  case 'stupid':
-      case 'foolish':
-      case 'smart':
-      case 'idiot':
-      case 'gay':
-      case 'lesbi':
-      case 'bastard':
-      case 'stubble':
-      case 'dog':
-      case 'fuck':
-      case 'ape':
-      case 'noob':
-      case 'great':
-      case 'horny':
-      case 'wibu':
-      case 'asshole':
-      case 'handsome':
-      case 'beautiful':
-      case 'cute':
-      case 'kind':
-      case 'ugly':
-      case 'pretty':
-      case 'lesbian':
-      case 'randi':
-      case 'gandu':
-      case 'madarchod':
-      case 'kala':
-      case 'gora':
-      case 'chutiya':
-      case 'nibba':
-      case 'nibbi':
-      case 'bhosdiwala':
-      case 'chutmarika':
-      case 'bokachoda':
-      case 'suarerbaccha':
-      case 'bolochoda':
-      case 'muthal':
-      case 'muthbaaz':
-      case 'randibaaz':
-      case 'topibaaz':
-      case 'cunt':
-      case 'nerd':
-      case 'behenchod':
-      case 'behnchoda':
-      case 'bhosdika':
-      case 'nerd':
-      case 'mc':
-      case 'bsdk':
-      case 'bhosdk':
-      case 'nigger':
-      case 'loda':
-      case 'laund':
-      case 'nigga':
-      case 'noobra':
-      case 'tharki':
-      case 'nibba':
-      case 'nibbi':
-      case 'mumu':
-      case 'rascal':
-      case 'scumbag':
-      case 'nuts':
-      case 'comrade':
-      case 'fagot':
-      case 'scoundrel':
-      case 'ditch':
-      case 'dope':
-      case 'gucci':
-      case 'lit':
-      case 'dumbass':
-      case 'sexy':
-      case 'crackhead':
-      case 'mf':
-      case 'motherfucker':
-      case 'dogla':
-      case 'bewda':
-      case 'boka':
-      case 'khanki':
-      case 'bal':
-      case 'sucker':
-      case 'fuckboy':
-      case 'playboy':
-      case 'fuckgirl':
-      case 'playgirl':
-      case 'bc':
-      case 'hot': {
+	  case perf+'stupid':
+      case perf+'foolish':
+      case perf+'smart':
+      case perf+'idiot':
+      case perf+'gay':
+      case perf+'lesbi':
+      case perf+'bastard':
+      case perf+'stubble':
+      case perf+'dog':
+      case perf+'fuck':
+      case perf+'ape':
+      case perf+'noob':
+      case perf+'great':
+      case perf+'horny':
+      case perf+'wibu':
+      case perf+'asshole':
+      case perf+'handsome':
+      case perf+'beautiful':
+      case perf+'cute':
+      case perf+'kind':
+      case perf+'ugly':
+      case perf+'pretty':
+      case perf+'lesbian':
+      case perf+'randi':
+      case perf+'gandu':
+      case perf+'madarchod':
+      case perf+'kala':
+      case perf+'gora':
+      case perf+'chutiya':
+      case perf+'nibba':
+      case perf+'nibbi':
+      case perf+'bhosdiwala':
+      case perf+'chutmarika':
+      case perf+'bokachoda':
+      case perf+'suarerbaccha':
+      case perf+'bolochoda':
+      case perf+'muthal':
+      case perf+'muthbaaz':
+      case perf+'randibaaz':
+      case perf+'topibaaz':
+      case perf+'cunt':
+      case perf+'nerd':
+      case perf+'behenchod':
+      case perf+'behnchoda':
+      case perf+'bhosdika':
+      case perf+'nerd':
+      case perf+'mc':
+      case perf+'bsdk':
+      case perf+'bhosdk':
+      case perf+'nigger':
+      case perf+'loda':
+      case perf+'laund':
+      case perf+'nigga':
+      case perf+'noobra':
+      case perf+'tharki':
+      case perf+'nibba':
+      case perf+'nibbi':
+      case perf+'mumu':
+      case perf+'rascal':
+      case perf+'scumbag':
+      case perf+'nuts':
+      case perf+'comrade':
+      case perf+'fagot':
+      case perf+'scoundrel':
+      case perf+'ditch':
+      case perf+'dope':
+      case perf+'gucci':
+      case perf+'lit':
+      case perf+'dumbass':
+      case perf+'sexy':
+      case perf+'crackhead':
+      case perf+'mf':
+      case perf+'motherfucker':
+      case perf+'dogla':
+      case perf+'bewda':
+      case perf+'boka':
+      case perf+'khanki':
+      case perf+'bal':
+      case perf+'sucker':
+      case perf+'fuckboy':
+      case perf+'playboy':
+      case perf+'fuckgirl':
+      case perf+'playgirl':
+      case perf+'bc':
+      case perf+'hot': {
       	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -5831,7 +5831,7 @@ JimbruOffical.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *
                     await JimbruOffical.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
             break
-case 'mobile': {
+case perf+'mobile': {
 	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!text) return reply(`Example : ${prefix + command} realme`)
@@ -5855,68 +5855,68 @@ ${themeemoji} Detail: ${detail}`
             }
             break	
 //pack
-case 'xxxbj':case 'exxxro':case 'cxxxum':case 'fexxxet':case 'yuxxxri':case 'traxxxp':case 'lewxxxd':case 'fexxxed':case 'erxxxon':case 'soxxxlo':case 'gaxxxsm':case 'pxxxoke':case 'axxxnal':case 'holxxxo':case 'titxxxs':case 'kxxxuni':case 'kixxxss':case 'erxxxok':case 'smxxxug':case 'baxxxka':case 'sxxxolog':case 'feexxxxtg':case 'lexxwdk':case 'puxxxssy':case 'fexxxmdom':case 'cudxxxdle':case 'erozzzyuri':case 'cum_xxxjpg':case 'bloxxxwjob':case 'erofezzzzet':case 'holzzoero':case 'erokezzzmo':case 'fox_zzzgirl':case 'futxxxanari':case 'lewdkezzmo':case 'pussy_jpzzzg':case 'kemonozzzmimi':case 'nsfw_azzzvatar': 
+case perf+'xxxbj':case perf+'exxxro':case perf+'cxxxum':case perf+'fexxxet':case perf+'yuxxxri':case perf+'traxxxp':case perf+'lewxxxd':case perf+'fexxxed':case perf+'erxxxon':case perf+'soxxxlo':case perf+'gaxxxsm':case perf+'pxxxoke':case perf+'axxxnal':case perf+'holxxxo':case perf+'titxxxs':case perf+'kxxxuni':case perf+'kixxxss':case perf+'erxxxok':case perf+'smxxxug':case perf+'baxxxka':case perf+'sxxxolog':case perf+'feexxxxtg':case perf+'lexxwdk':case perf+'puxxxssy':case perf+'fexxxmdom':case perf+'cudxxxdle':case perf+'erozzzyuri':case perf+'cum_xxxjpg':case perf+'bloxxxwjob':case perf+'erofezzzzet':case perf+'holzzoero':case perf+'erokezzzmo':case perf+'fox_zzzgirl':case perf+'futxxxanari':case perf+'lewdkezzmo':case perf+'pussy_jpzzzg':case perf+'kemonozzzmimi':case perf+'nsfw_azzzvatar': 
 	            	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	    buffer = `http://api.lolhuman.xyz/api/random2/${command}?apikey=${lolkey}`
                     JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
     break
-case 'xxxcry':	anu = `http://api.lolhuman.xyz/api/random/cry?apikey=${lolkey}`
+case perf+'xxxcry':	anu = `http://api.lolhuman.xyz/api/random/cry?apikey=${lolkey}`
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'kisxxxs3':	
+case perf+'kisxxxs3':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 anu = `http://api.lolhuman.xyz/api/random/kiss?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'kixxxss2':	
+case perf+'kixxxss2':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 anu = `http://api.lolhuman.xyz/api/random2/kiss?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'crinxxxge':
+case perf+'crinxxxge':
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 		anu = `http://api.lolhuman.xyz/api/random/cringe?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'daxxxnce':	
+case perf+'daxxxnce':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 anu = `http://api.lolhuman.xyz/api/random/dance?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'xxxkill':	
+case perf+'xxxkill':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 anu = `http://api.lolhuman.xyz/api/random/kill?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'haxxxppy':	
+case perf+'haxxxppy':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 anu = `http://api.lolhuman.xyz/api/random/happy?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'bxxxonk':	
+case perf+'bxxxonk':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 anu = `http://api.lolhuman.xyz/api/random/bonk?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'sxxxmug2':	
+case perf+'sxxxmug2':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             	            	if (isBan) return reply(mess.ban)
@@ -5925,7 +5925,7 @@ anu = `http://api.lolhuman.xyz/api/random/smug?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'slaxxxp':	
+case perf+'slaxxxp':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             	            	if (isBan) return reply(mess.ban)
@@ -5934,7 +5934,7 @@ anu = `http://api.lolhuman.xyz/api/random/slap?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'waxxxve':	
+case perf+'waxxxve':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             	            	if (isBan) return reply(mess.ban)
@@ -5943,64 +5943,64 @@ anu = `http://api.lolhuman.xyz/api/random/wave?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'smilexxx':	
+case perf+'smilexxx':	
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 anu = `http://api.lolhuman.xyz/api/random/smile?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'bullyxxx':
+case perf+'bullyxxx':
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 		anu = `http://api.lolhuman.xyz/api/random/bully?apikey=${lolkey}`
 reply(mess.wait)
 JimbruOffical.sendImageAsSticker(m.chat, anu, m, { packname:global.packname, author: global.packname })
 break
-case 'xxart':case 'btsxx':case 'exoxx':case 'elxxxf':case 'lolxxxi':case 'nekoxxx':case 'shotxxxa':case 'sagirixxx':case 'shinxxxobu':case 'mexxxgumin':case 'wallnixxxme':   
+case perf+'xxart':case perf+'btsxx':case perf+'exoxx':case perf+'elxxxf':case perf+'lolxxxi':case perf+'nekoxxx':case perf+'shotxxxa':case perf+'sagirixxx':case perf+'shinxxxobu':case perf+'mexxxgumin':case perf+'wallnixxxme':   
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
   buffer = `http://api.lolhuman.xyz/api/random/${command}?apikey=${lolkey}`
     JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
     break
-case 'xxxblowjob':
-case 'xxxyaoi':
-case 'xxxecchi':
-case 'xxxahegao':
-case 'xxxhololewd':
-case 'xxxsideoppai':
-case 'xxxanimefeets':
-case 'xxxanimebooty':
-case 'xxxanimethighss':
-case 'xxxanimearmpits':
-case 'xxxlewdanimegirls':
-case 'xxxbiganimetiddies':
-case 'xxxanimebellybutton': 
+case perf+'xxxblowjob':
+case perf+'xxxyaoi':
+case perf+'xxxecchi':
+case perf+'xxxahegao':
+case perf+'xxxhololewd':
+case perf+'xxxsideoppai':
+case perf+'xxxanimefeets':
+case perf+'xxxanimebooty':
+case perf+'xxxanimethighss':
+case perf+'xxxanimearmpits':
+case perf+'xxxlewdanimegirls':
+case perf+'xxxbiganimetiddies':
+case perf+'xxxanimebellybutton': 
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
  buffer = `http://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${lolkey}`
 JimbruOffical.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
 break
-case 'xxxnaruto':
-case 'xxxminato':
-case 'xxxboruto':
-case 'xxxhinata':
-case 'xxxsasuke':
-case 'xxxsakura':
-case 'xxxkaneki':
-case 'xxxtoukachan':
-case 'xxxrize':
-case 'akira':
-case 'xxxitori':
-case 'xxkurumi':
-case 'xxxmiku':
+case perf+'xxxnaruto':
+case perf+'xxxminato':
+case perf+'xxxboruto':
+case perf+'xxxhinata':
+case perf+'xxxsasuke':
+case perf+'xxxsakura':
+case perf+'xxxkaneki':
+case perf+'xxxtoukachan':
+case perf+'xxxrize':
+case perf+'akira':
+case perf+'xxxitori':
+case perf+'xxkurumi':
+case perf+'xxxmiku':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
 nye = `http://api.lolhuman.xyz/api/gimage?apikey=${lolkey}&query=${command}`
 JimbruOffical.sendMessage(from, {image:{url:nye}, caption:"Here you go!"}, {quoted:m})
 break			
-case 'xxxanjing':
+case perf+'xxxanjing':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 nye = `http://api.lolhuman.xyz/api/gimage?apikey=${lolkey}&query=anjing`
@@ -6008,7 +6008,7 @@ reply(mess.wait)
 JimbruOffical.sendMessage(from, {image:{url:nye}, caption:"Here you go!"}, {quoted:m})
 break				
 	
-	case 'mediafire': {
+	case perf+'mediafire': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 if (!text) return reply(mess.linkm)
@@ -6026,7 +6026,7 @@ JimbruOffical.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName 
 }
 break
             break
-case 'trap' :
+case perf+'trap' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -6046,8 +6046,8 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'hentai-neko' :
-case 'hneko' :
+case perf+'hentai-neko' :
+case perf+'hneko' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -6066,8 +6066,8 @@ if (!AntiNsfw) return reply(mess.nsfw)
                     return('Error!')
                 })
 break
-case 'hentai-waifu' :
-case 'nwaifu' :
+case perf+'hentai-waifu' :
+case perf+'nwaifu' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -6087,7 +6087,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'gasm':
+case perf+'gasm':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (!AntiNsfw) return reply(mess.nsfw)
@@ -6107,7 +6107,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break   
-case 'wallneon': case 'wallrandom': case 'wallcode': case 'wallpubg': case 'wallml': 	
+case perf+'wallneon': case perf+'wallrandom': case perf+'wallcode': case perf+'wallpubg': case perf+'wallml': 	
 try{
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -6119,7 +6119,7 @@ JimbruOffical.sendMessage(from, {image : nyz3, caption:`By ${global.botname}`}, 
 error("Error!")
 }
 break
-case 'smug2':
+case perf+'smug2':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6138,7 +6138,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'foxgirl':
+case perf+'foxgirl':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6157,7 +6157,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break   
-case 'animenom' :
+case perf+'animenom' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -6175,7 +6175,7 @@ if (!m.isGroup) return replay(mess.group)
                     return('Error!')
                 })
 break
-case 'waifu3':
+case perf+'waifu3':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6194,7 +6194,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'neko2':
+case perf+'neko2':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6213,15 +6213,15 @@ reply(mess.wait)
                     return('Error!')
                 })               
                 break
-case 'woof':
-case '8ball':
-case 'goose':
-case 'gecg':
-case 'feed':
-case 'avatar':
-case 'lizard':
-case 'meow':
-case 'tickle':
+case perf+'woof':
+case perf+'8ball':
+case perf+'goose':
+case perf+'gecg':
+case perf+'feed':
+case perf+'avatar':
+case perf+'lizard':
+case perf+'meow':
+case perf+'tickle':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6240,7 +6240,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animecuddle':
+case perf+'animecuddle':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6259,7 +6259,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break   
-case 'animeslap':
+case perf+'animeslap':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6278,7 +6278,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animepat':
+case perf+'animepat':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6297,7 +6297,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animeneko':
+case perf+'animeneko':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6316,7 +6316,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animehug':
+case perf+'animehug':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6335,7 +6335,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animekiss':
+case perf+'animekiss':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6354,7 +6354,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animewlp':
+case perf+'animewlp':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6373,7 +6373,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animespank':
+case perf+'animespank':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6392,7 +6392,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'shinobu2':  
+case perf+'shinobu2':  
  if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6411,7 +6411,7 @@ await JimbruOffical.sendMessage(m.chat,buttonsesMessage, { quoted:m }).catch(err
      return('Error!')
     })               
 break
-case 'megumin2':
+case perf+'megumin2':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6430,7 +6430,7 @@ await JimbruOffical.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err =
      return('Error!')
     })               
 break     
-case 'awoo2':
+case perf+'awoo2':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6449,7 +6449,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animewall2': case 'animewallpaper2':
+case perf+'animewall2': case perf+'animewallpaper2':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -6477,7 +6477,7 @@ var walb = [
                 })
 //JimbruOffical.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
 break	
-case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
+case perf+'cry':case perf+'kill':case perf+'hug':case perf+'pat':case perf+'lick':case perf+'kiss':case perf+'bite':case perf+'yeet':case perf+'neko':case perf+'bully':case perf+'bonk':case perf+'wink':case perf+'poke':case perf+'nom':case perf+'slap':case perf+'smile':case perf+'wave':case perf+'awoo':case perf+'blush':case perf+'smug':case perf+'glomp':case perf+'happy':case perf+'dance':case perf+'cringe':case perf+'cuddle':case perf+'highfive':case perf+'shinobu':case perf+'megumin':case perf+'handhold':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
@@ -6485,7 +6485,7 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 						JimbruOffical.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
-case 'waifu': case 'loli':
+case perf+'waifu': case perf+'loli':
 					   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					reply(mess.wait)
@@ -6494,7 +6494,7 @@ case 'waifu': case 'loli':
 					JimbruOffical.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case 'lyrics': {
+case perf+'lyrics': {
 		            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	    if (!text) return reply(`Use example ${prefix}lyrics Despacito`)
@@ -6509,12 +6509,12 @@ ${themeemoji} Url : ${result.link}
 `.trim())
 }
 break	
-case 'react': { 
+case perf+'react': { 
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 JimbruOffical.sendMessage(m.chat, reactionMessage)} 
 break  	
-case 'leavegc': case 'leavegroup': {
+case perf+'leavegc': case perf+'leavegroup': {
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
@@ -6522,7 +6522,7 @@ if (isBan) return reply(mess.ban)
                 await JimbruOffical.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break	
-case 'bcgc': case 'bcgroup': {
+case perf+'bcgc': case perf+'bcgroup': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
@@ -6565,7 +6565,7 @@ JimbruOffical.send5ButImg(i, txt, `${global.botname}`, log0, btn, thum)
 replay(`Successfully Sent Broadcast To ${anu.length} Group`)
 }
 break	
-case 'bc': case 'broadcast': case 'bcall': {
+case perf+'bc': case perf+'broadcast': case perf+'bcall': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
@@ -6606,7 +6606,7 @@ JimbruOffical.send5ButImg(yoi, txt, `${global.botname}`, log0, btn, thum)
 replay('Broadcast Success')
 }
 break
-	case 'setmenu': {
+	case perf+'setmenu': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!isCreator) return reply(mess.owner)
@@ -6655,7 +6655,7 @@ break
                 }
             }
             break
-case 'command': {
+case perf+'command': {
     if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -6809,7 +6809,7 @@ listType: 1
 JimbruOffical.relayMessage(m.chat, template.message, { messageId: template.key.id })
 }
 break
-case 'allmenu':
+case perf+'allmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'All Menu')
@@ -7478,7 +7478,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐖𝐍𝐄𝐑
 │ ❥︎ ${prefix}report [bug]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
 break
-case 'ownermenu':
+case perf+'ownermenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Owner Menu')
@@ -7502,7 +7502,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐖𝐍𝐄𝐑
 │ ❥︎ ᴄᴏᴏᴡɴᴇʀ [ ᴀᴅᴅ / ᴅᴇʟ]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
 break
-case 'groupmenu':
+case perf+'groupmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Group Menu')
@@ -7546,7 +7546,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤  𝐆𝐑𝐎𝐔𝐏
 │ ❥︎ ᴄʜᴇᴄᴋʀᴇɴᴛ
 ╰────────────────❋ཻུ۪۪⸙` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'rpgmenu':
+case perf+'rpgmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Rpg Menu')
@@ -7564,7 +7564,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤  𝐑𝐏𝐆
 │ ❥︎ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'makermenu':
+case perf+'makermenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Maker Menu')
@@ -7674,7 +7674,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐌𝐀𝐊𝐄𝐑
 │ ❥︎ classic
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
 break
-case 'downloadmenu':
+case perf+'downloadmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Download Menu')
@@ -7696,7 +7696,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐃𝐎𝐖𝐍𝐋𝐎�
 │ ❥︎ getvideo [yt link]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'searchmenu':
+case perf+'searchmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Search Menu')
@@ -7727,7 +7727,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐒𝐄𝐀𝐑𝐂𝐇
 │ ❥︎ wattpad [query]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'convertmenu':
+case perf+'convertmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Convert Menu')
@@ -7762,7 +7762,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤  𝐂𝐎𝐍𝐕𝐄𝐑
 │ ❥︎ squirrel [reply aud]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'randomimagemenu':
+case perf+'randomimagemenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Random Image Menu')
@@ -7781,7 +7781,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐑𝐀𝐍𝐃𝐎𝐌 
 │ ❥︎ animewall2 [query]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'animemenu':
+case perf+'animemenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Anime Menu')
@@ -7813,7 +7813,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐀𝐍𝐈𝐌𝐄
 │ ❥︎ couplepp
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'stickermenu':
+case perf+'stickermenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Sticker Menu')
@@ -7827,7 +7827,7 @@ await JimbruOffical.send5ButImg(from, `╔═══════✪「 STICKER �
 │ ❥︎gura
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'animestickermenu':
+case perf+'animestickermenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Anime Sticker Menu')
@@ -7871,7 +7871,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐒𝐓𝐈𝐂𝐊𝐄�
 │ ❥︎ gura
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'nsfwmenu':
+case perf+'nsfwmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Nsfw Menu')
@@ -7903,7 +7903,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐍𝐒𝐅𝐖
 │ ❥︎ nwaifu
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'funmenu':
+case perf+'funmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Fun Menu')
@@ -7974,7 +7974,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐅𝐔𝐍
 │ ❥︎ playgirl
 ╰────────────────❋ཻུ۪۪⸙  ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case ' soundmenu':
+case perf+' soundmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+' sound Menu')
@@ -8142,7 +8142,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐒𝐎𝐔𝐍𝐃
 │ ❥︎ sound161
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'gamemenu':
+case perf+'gamemenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Game Menu')
@@ -8156,7 +8156,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤  𝐆𝐀𝐌𝐄
 │ ❥︎suitpvp [tag]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'anonymousmenu':
+case perf+'anonymousmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Anonymous Menu')
@@ -8167,7 +8167,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤  𝐀𝐍𝐎𝐍𝐘𝐌
 │ ❥︎ leave
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'toolmenu':
+case perf+'toolmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Tool Menu')
@@ -8177,7 +8177,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐓𝐎𝐎𝐋
 │ ❥︎ toletter [number]
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'databasemenu':
+case perf+'databasemenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Database Menu')
@@ -8192,7 +8192,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤  𝐃𝐀𝐓𝐀𝐁𝐀
 │ ❥︎delmsg
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'islamicmenu':
+case perf+'islamicmenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Islamic Menu')
@@ -8200,7 +8200,7 @@ await JimbruOffical.send5ButImg(from, `╔═══✪「 ISLAMIC 」
 │ ❥︎ juzamma
 ╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'indomenu':
+case perf+'indomenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Indo Menu')
@@ -8219,7 +8219,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤  𝐈𝐍𝐃𝐎
 │ ❥︎ tvschedule
 ╰────────────────❋ཻུ۪۪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'othermenu':
+case perf+'othermenu':
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Other Menu')
@@ -8241,7 +8241,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐓𝐇𝐄𝐑
 │ ❥︎ ${prefix}report [bug]
 ╰────────────────❋ཻུ۪۪⸙` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YOUTUBE","url": `${website}`}},{"urlButton": {"displayText": "SCRIPT","url": `${botscript}`}},{"quickReplyButton": {"displayText": "DONATE","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
-case 'tqtt': 
+case perf+'tqtt': 
 if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 reply(`╭➤ ᴍᴀᴅᴇ ᴡɪᴛʜ ʟᴏᴠᴇ 🥰   
@@ -8333,12 +8333,12 @@ sendNye = fs.readFileSync('./Media/theme/yourtag.webp')
 JimbruOffical.sendReadReceipt(m.chat, m.sender, [m.key.id])
 JimbruOffical.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
 }
-if (isCmd && budy.toLowerCase() != undefined) {
+if (isCmd && budy.toLowercase perf+) != undefined) {
 if (m.chat.endsWith('broadcast')) return
 if (m.isBaileys) return
 let msgs = global.db.database
-if (!(budy.toLowerCase() in msgs)) return
-JimbruOffical.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+if (!(budy.toLowercase perf+) in msgs)) return
+JimbruOffical.copyNForward(m.chat, msgs[budy.toLowercase perf+)], true)
 }
 }
 } catch (err) {
@@ -8354,4 +8354,4 @@ fs.unwatchFile(file)
 console.log(chalk.redBright(`Update ${__filename}`))
 delete require.cache[file]
 require(file)
-})	          
+})
