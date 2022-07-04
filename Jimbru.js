@@ -218,7 +218,7 @@ autoreadsw = true
 _sewa.expiredCheck(JimbruOffical, sewa)
 
 // group target
-const reply = (teks) => {
+const replay = (teks) => {
              JimbruOffical.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `Thanks For Using Jimbru`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Media/theme/Jimbru.jpg`),"sourceUrl": `${links}`}}}, { quoted: m})
         }
         
