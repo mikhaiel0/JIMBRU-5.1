@@ -2053,7 +2053,7 @@ if (isBanChat) return reply(mess.banChat)
     )  
 }    
 break
-case perf+glitch3':
+case perf'+glitch3':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if(!q) return reply(`Use ${prefix + command} text|text`)
