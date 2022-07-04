@@ -2511,7 +2511,7 @@ case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 
 case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
 case 'lava': case 'rock': case 'bloodglas': case 'halloween': case 'darkgold': case 'joker': case 'wicker':
  case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': {
-             if (!q) return reply(`Example : ${prefix + command} ${global.ownername}`) 
+                if (!q) return reply(`Example : ${prefix + command} ${global.ownername}`) 
                 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
              reply(mess.wait)
@@ -2580,7 +2580,7 @@ if (isBanChat) return reply(mess.banChat)
 case 'emojimix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!q) reply(`*Example :* ${prefix + command} 😇+😁`)
+if (!text) reply(`*Example :* ${prefix + command} 😇+😁`)
 let [emoji1, emoji2] = q.split`+`
 let kuntuh = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 for (let res of kuntuh.results) {
