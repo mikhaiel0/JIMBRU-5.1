@@ -1215,11 +1215,7 @@ message: {
 l = 1
 monospace = '```'
 const timestampe = speed();
-const latensie = speed() - timestampe
-const jumlahUser = pendaftar.length
-  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
-  if (!isInventory){ addInventori(m.sender) }
-  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }  
+const latensie = speed() - timestampe 
 
 const menulist = `╭➤ 
 │❖ Hᴇʏ👋 ❤︎
