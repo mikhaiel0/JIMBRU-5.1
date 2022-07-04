@@ -7466,7 +7466,7 @@ await JimbruOffical.send5ButImg(from, `╭───➤ 𝐎𝐖𝐍𝐄𝐑
 │ ❥︎ donate
 │ ❥︎ request
 │ ❥︎ report [bug]
-╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
+╰────────────────❋ཻུ۪۪⸙ ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${website}`}},{"urlButton": {"displayText": "Script","url": `${botscript}`}},{"quickReplyButton": {"displayText": "Donate","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}}] )
 break
 case 'ownermenu':
 if (isBan) return reply(mess.ban)
