@@ -178,7 +178,7 @@ const from = m.chat
 const quoted = m.quoted ? m.quoted : m
 const mime = (quoted.msg || quoted).mimetype || ''
 const isMedia = /image|video|sticker|audio/.test(mime)
-const messagesD = body.slice(0).trim().split(/ +/).shift().toLowercase perf+)
+const messagesD = body.slice(0).trim().split(/ +/).shift().toLowerCase()
 // Group
 const groupMetadata = m.isGroup ? await JimbruOffical.groupMetadata(m.chat).catch(e => {}) : ''
 const groupName = m.isGroup ? groupMetadata.subject : ''
