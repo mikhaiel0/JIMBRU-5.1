@@ -22,7 +22,6 @@ const primbon = new Primbon()
 const maker = require('mumaker')
 const { JSDOM } = require('jsdom')
 const xeonkey = require('xfarr-api')
-const yargs = require('yargs/yargs')
 const textpro = require('./lib/textpro')
 const speed = require('performance-now')
 const { wikiSearch } = require('./lib/wiki.js');
