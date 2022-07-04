@@ -4711,16 +4711,18 @@ case 'antiviewonce' : {
               await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
               }
             break	
-case 'lovesticker' : {
-	         	if (isBan) return reply(mess.ban)
-	                if (isBanChat) return reply(mess.banChat)
-                 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
-                 var wifegerak = ano.split('\n')
-                 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-                 encmedia = await JimbruOffical.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-                 await fs.unlinkSync(encmedia)
-                 }
-           break
+  break
+case 'lovesticker':
+case 'lovestick' :{
+	            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await JimbruOffical.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
 case 'gurasticker' : {
 	         	if (isBan) return reply(mess.ban)
 	             if (isBanChat) return reply(mess.banChat)
