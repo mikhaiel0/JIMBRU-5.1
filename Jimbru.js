@@ -1327,7 +1327,7 @@ let buttonmenu = [
             { quickReplyButton: { displayText: `List Menu`, id: 'command'} },
             { quickReplyButton: { displayText: `Owner`, id: 'owner'} }
         	]
-        	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
+        	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/doc.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
         	break
 case perf+'sc': case perf+'script': case perf+'donate': case perf+'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
@@ -4351,7 +4351,7 @@ content: [{ tag: "invite", attrs: { code: vcc } }]
 sizny = res.content[0].attrs.size
 if (sizny < 50) {
 teks = `Sorry, your group members are less than 50, at least for a bot to join you must have more than 50 members`
-sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Media/theme/cheemsthumb.jpg'), `${global.watermark}`, `${global.botname}`, "916909137213@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")
+sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Media/theme/Jimbru.jpg'), `${global.watermark}`, `${global.botname}`, "919544846609@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")
 } else if (sizny > 50) {
 await JimbruOffical.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
 replay("Succes!")
