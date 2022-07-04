@@ -4691,28 +4691,26 @@ case 'gif': {
       await fs.unlinkSync(media)
       }
       break	
-case 'antiviewonce' : {
-	      if (isBan) return reply(mess.ban)
-	      if (isBanChat) return reply(mess.banChat)
-              if (!m.key.fromMe && !isCreator) return reply(mess.owner)
-              if (args[0] === "on") {
-      	      if (global.db.data.chats[m.chat].antionce) return reply(`Already activated`)
-              global.db.data.chats[m.chat].antionce = true
-              reply(`${command} Successfully Activated !`)
-              } else if (args[0] === "off") {
-              if (!global.db.data.chats[m.chat].antionce) return reply(`Already deactivated`)
-              global.db.data.chats[m.chat].antionce = false
-              reply(`${command} Successfully Deactivated !`)
-              } else {
-              let buttonsntilink = [
-              { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
-              { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
-              ]
-              await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
-              }
-            break	
+case 'antiviewonce' :
+	            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+        if (!m.key.fromMe && !isCreator) return reply(mess.owner)
+        if (args[0] === "on") {
+      	if (global.db.data.chats[m.chat].antionce) return reply(`Already activated`)
+        global.db.data.chats[m.chat].antionce = true
+        reply(`${command} Successfully Activated !`)
+        } else if (args[0] === "off") {
+        	if (!global.db.data.chats[m.chat].antionce) return reply(`Already deactivated`)
+        global.db.data.chats[m.chat].antionce = false
+        reply(`${command} Successfully Deactivated !`)
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await JimbruOffical.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
   break
-case 'lovesticker':
 case 'lovestick' :{
 	            	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
