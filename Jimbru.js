@@ -919,7 +919,7 @@ delete this.suit[roof.id]
 // short story
 async function cerpen (category) {
     return new Promise((resolve, reject) => {
-        let title = category.toLowercase perf+).replace(/[()*]/g, "")
+        let title = category.toLowerCase().replace(/[()*]/g, "")
         let judul = title.replace(/\s/g, "-")
         let page = Math.floor(Math.random() * 5)
         axios.get('http://cerpenmu.com/category/cerpen-'+judul+'/page/'+page)
