@@ -3741,7 +3741,7 @@ replay("Error")
 }
 }
 break
-case 'online': case 'onlinelist: {
+case 'online': case 'onlinelist': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
