@@ -950,7 +950,7 @@ async function cerpen (category) {
 if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = kuismath[m.sender.split('@')[0]]
-if (budy.toLowercase perf+) == jawaban) {
+if (budy.toLowerCase() == jawaban) {
 await reply(`🎮 ᴍᴀᴛʜs ǫᴜɪᴢ 🎮\n\nCᴏʀʀᴇᴄᴛ Aɴsᴡᴇʀ 🎉\n\nWᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ᴀɢᴀɪɴ ? sᴇɴᴅ ${prefix}math mode`)
 delete kuismath[m.sender.split('@')[0]]
 } else reply('ᴡʀᴏɴɢ ᴀɴsᴡᴇʀ ⚠︎')
