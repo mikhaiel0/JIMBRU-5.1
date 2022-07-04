@@ -1317,7 +1317,7 @@ let buttonmenu = [
             { quickReplyButton: { displayText: `List Menu`, id: 'command'} },
             { quickReplyButton: { displayText: `Owner`, id: 'owner'} }
         	]
-        	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
+        	JimbruOffical.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./Media/theme/doc.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
         	break
 case 'sc': case 'script': case 'donate': case 'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
