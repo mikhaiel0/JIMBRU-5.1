@@ -5,14 +5,24 @@
   "logo": "https://telegra.ph/file/ddaca390b13a4246bf1ef.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
     "env": {
- "SESSION_ID": {
-    "description": "Type Your Session Code Here",
-    "required": true
+     "SESSION_ID": {
+     "description": "Type Here Your Session Code Here",
+     "required": true
     },
-    "OWNERNUMBER": {
-    "description": "ADD Your Number",
-    "required": false
-    }
+     "OWNERNUMBER": {
+     "description": "Add Owner Number",
+     "required": false
+    },
+     "BOT_NAME": {
+     "description": "heading for command replys",
+     "required": false,
+     "value": "Jimbru-v4.2"
+    },
+      "OWNERNAME": {
+      "description": "reply for .owner ! give your details, Use => default, to change back.",
+      "required": false,
+      "value": "default"
+        }   
     },
   "buildpacks": [
     {
