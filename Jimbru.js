@@ -1323,6 +1323,37 @@ JimbruOffical.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.k
                         }
                      }
 break
+	 case 'alive': {
+                anu = `╭➤ 𝐈 𝐀𝐌 𝐒𝐓𝐈𝐋𝐋 𝐀𝐋𝐈𝐕𝐄 🧞\n│  ${pushname} \n│\n╰────────────────❋ཻུ۪۪⸙  \n╭◪ ᴄᴏᴅᴇᴅ ʙʏ ᴍɪᴋʜᴀɪᴇʟ \n╰─────────────────❋ཻུ۪۪⸙`
+const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            hydratedContentText: anu,
+                            locationMessage: {
+                            jpegThumbnail: fs.readFileSync('./Media/theme/Jimbru.jpg')},
+                            hydratedFooterText: `JIMBRU-MD`,
+                            hydratedButtons: [{
+                                callButton: {
+                                    displayText: 'ᴏᴡɴᴇʀ',
+                                    phoneNumber: '+1 (234) 5678-901'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: `ᴀʟʟ ᴍᴇɴᴜ`,
+                                    id: 'allmenu'
+                                }
+                                }, {
+				quickReplyButton: {
+                                    displayText: `ʟɪsᴛ ᴍᴇɴᴜ`,
+                                    id: 'command'	
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat })
+                JimbruOffical.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                }
+           break
 case 'menuxxx':
 case 'helpxxx':
 if (isBan) return reply(mess.ban)	 			
