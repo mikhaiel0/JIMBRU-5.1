@@ -2649,7 +2649,7 @@ return "case"+`'${cases}'`+fs.readFileSync("Jimbru.js").toString().split('case \
 replay(`${getCase(q)}`)
 break
 
-case 'find':
+case 'find':{
           if (isBan) return reply(mess.ban)	 			
           if (isBanChat) return reply(mess.banChat)
           try{
@@ -2681,7 +2681,7 @@ case 'find':
       yt = await yta(vid.url, server)
       yt2 = await ytv(vid.url, server)
       usedServer = server
-
+break
     } catch (e) {
       JimbruOffical.sendMessage(m.chat, { text : 'sᴏɴɢ ʀᴇᴄᴏɢɴɪᴛɪᴏɴ ғᴀɪʟᴇᴅ...'})
     }
