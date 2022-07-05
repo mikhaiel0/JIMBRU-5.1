@@ -42,7 +42,7 @@ console.log(color(figlet.textSync('JIMBRU-MD', {
     console.log(color('\n🦋 YT : MIKHAIEL','silver'))
     console.log(color('🦋 GITHUB : MIKHAIEL ','silver'))
     console.log(color('🦋 WHATSAPP : +919544846609 ','silver'))
-    console.log(color('  🦋 JIMBRU OFFICAL MD. 2022 🦋','mediumseagreen'))
+    console.log(color('🦋 JIMBRU OFFICAL MD. 2022 🦋','mediumseagreen'))
     console.log(color('🦋','red'), color('I Wrote This Script By Myself!', 'yellow'))
     console.log(color('🦋','red'), color('Source Code Version: 3.0', 'aqua'))
     console.log(color('🦋','red'), color('Bug? Error? Suggestion? Talk to developer:', 'aqua'))
