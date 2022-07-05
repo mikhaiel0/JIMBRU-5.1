@@ -2649,17 +2649,15 @@ return "case"+`'${cases}'`+fs.readFileSync("Jimbru.js").toString().split('case \
 replay(`${getCase(q)}`)
 break
 
-case 'find':{
-          if (isBan) return reply(mess.ban)	 			
-          if (isBanChat) return reply(mess.banChat)
+case 'find' :{
           try{
               let yts = require("yt-search")
               let q = m.quoted ? m.quoted : m
               let mime = (q.msg || q).mimetype || ''
-              if (!/video/.test(mime) && !/audio/.test(mime)) hisoka.sendMessage(m.chat, { text : '```Reply to Video or Audio```'})
+              if (!/video/.test(mime) && !/audio/.test(mime)) JimbruOffical.sendMessage(m.chat, { text : 'ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ ᴏʀ ᴠɪᴅᴇᴏ ғɪʟᴇ'})
               if (/audio|video/.test(mime)) {
               let media = await q.download()
-       JimbruOffical.sendMessage(from, { react: { text: 'ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ' `${global.reactmoji}`, key: m.key }})
+                     JimbruOffical.sendMessage(m.chat, { text : 'ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ'})
        let ext = mime.split('/')[1]
         fs.writeFileSync(`./Media/audio/find.${ext}`, media)
         let res = await acr.identify(fs.readFileSync(`./Media/audio/find.${ext}`))
