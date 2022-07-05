@@ -236,11 +236,11 @@ const isImage = (m.type === 'imageMessage')
 _sewa.expiredCheck(JimbruOffical, sewa)
 
 // group target
-const replay = (teks) => {
+const reply = (teks) => {
              JimbruOffical.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴊɪᴍʙʀᴜ`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Media/theme/Jimbru.jpg`),"sourceUrl": `${links}`}}}, { quoted: m})
         }
         
-const rply = (teks) => {
+const replay = (teks) => {
              JimbruOffical.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴊɪᴍʙʀᴜ`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Media/theme/Jimbru.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
      //if (Autoreply) //remove forwad slashes to make it autoreply on off
              for (let anji of setik){
