@@ -2681,7 +2681,7 @@ case 'find':
       yt = await yta(vid.url, server)
       yt2 = await ytv(vid.url, server)
       usedServer = server
-      break
+
     } catch (e) {
       JimbruOffical.sendMessage(m.chat, { text : 'sᴏɴɢ ʀᴇᴄᴏɢɴɪᴛɪᴏɴ ғᴀɪʟᴇᴅ...'})
     }
