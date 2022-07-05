@@ -2648,6 +2648,69 @@ return "case"+`'${cases}'`+fs.readFileSync("Jimbru.js").toString().split('case \
 }
 replay(`${getCase(q)}`)
 break
+
+case 'find':
+          if (isBan) return reply(mess.ban)	 			
+          if (isBanChat) return reply(mess.banChat)
+          try{
+              let yts = require("yt-search")
+              let q = m.quoted ? m.quoted : m
+              let mime = (q.msg || q).mimetype || ''
+              if (!/video/.test(mime) && !/audio/.test(mime)) hisoka.sendMessage(m.chat, { text : '```Reply to Video or Audio```'})
+              if (/audio|video/.test(mime)) {
+              let media = await q.download()
+       JimbruOffical.sendMessage(from, { react: { text: 'ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ' `${global.reactmoji}`, key: m.key }})
+       let ext = mime.split('/')[1]
+        fs.writeFileSync(`./Media/audio/find.${ext}`, media)
+        let res = await acr.identify(fs.readFileSync(`./Media/audio/find.${ext}`))
+        let { code, msg } = res.status
+        if (code !== 0) throw msg
+        let { title, artists, album, genres, release_date } = res.metadata.music[0]
+        let spotify = '❤︎ sᴏɴɢ ғᴏᴜɴᴅ ❤︎ \n ❥︎ sᴏɴɢ ᴛɪᴛʟᴇ :' + '```' + `${title}` + '```' + '\n```❥︎ ᴀʀᴛɪsᴛ :```  ' + '```' + `${artists !== undefined ? artists.map(v => v.name).join(', ') : ''}` + '```' + '\n ❥︎ ᴀʟʙᴜᴍ : ' + '```' + `${album.name || ''}` + '```' + '\n❥︎ ɢᴇɴʀᴇ : ' + '```' + `${genres !== undefined ? genres.map(v => v.name).join(', ') : ''}` + '```' + '\n❥︎ ʀᴇʟᴇsᴇ ᴅᴀᴛᴇ :  ' + '```' + `${release_date}` + '```'.trim()
+        fs.unlinkSync(`./Media/audio/find.${ext}`)
+        let results = await yts(`${title}`)
+        let vid = results.all.find(video => video.seconds < 3600)
+        if (!vid) JimbruOffical.sendMessage (m.chat, { text : 'sᴏɴɢ ʀᴇᴄᴏɢɴɪᴛɪᴏɴ ғᴀɪʟᴇᴅ...'})
+  let isVideo = /2$/.test(command)
+  let yt = false
+  let yt2 = false //url
+  let usedServer = servers[0]
+  for (let i in servers) {
+      let server = servers[i]
+      try {
+      yt = await yta(vid.url, server)
+      yt2 = await ytv(vid.url, server)
+      usedServer = server
+      break
+    } catch (e) {
+      JimbruOffical.sendMessage(m.chat, { text : 'sᴏɴɢ ʀᴇᴄᴏɢɴɪᴛɪᴏɴ ғᴀɪʟᴇᴅ...'})
+    }
+    }
+              const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                         templateMessage: {
+                         hydratedTemplate: {
+                         hydratedContentText: `${spotify}`,
+                         hydratedFooterText: global.watermark ,
+                         hydratedButtons: [{
+                                    quickReplyButton: {
+                                    displayText: 'ᴀᴜᴅɪᴏ',
+                                    id: `ytad ${ytvc.mp3} ${title}`
+                                    }
+                                    }]
+                                    }
+                                    }
+                                    }), { userJid: m.chat })
+        await JimbruOffical.relayMessage(m.chat, template.message, { messageId: template.key.id })
+        } else false//m.reply('ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ ᴏʀ ᴠɪᴅᴇᴏ ғɪʟᴇ')
+              
+        } catch (err) {
+                
+           JimbruOffical.sendMessage(m.chat, { text : 'sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ' }, {quoted : true})}
+    let ext = mime.split('/')[1]
+    fs.unlinkSync(`./Media/audio/find.${ext}`)
+            } 
+            break
+
 case 'textmaker2': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
