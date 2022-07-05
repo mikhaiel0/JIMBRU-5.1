@@ -2694,7 +2694,7 @@ case 'find':
                          hydratedButtons: [{
                                     quickReplyButton: {
                                     displayText: 'ᴀᴜᴅɪᴏ',
-                                    id: `ytad ${ytvc.mp3} ${title}`
+                                    id: `ytmp3 ${title}`
                                     }
                                     }]
                                     }
