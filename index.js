@@ -5,7 +5,7 @@
 //•|════════════════════════════|•      //
 
 require('./config.js')
-const { default: JimbruOfficalConnect, WASocket, DisconnectReason, useSingleFileAuthState, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto, delay, jidNormalizedUser, makeWALegacySocket, useSingleFileLegacyAuthState, DEFAULT_CONNECTION_CONFIG, DEFAULT_LEGACY_CONNECTION_CONFIG } = require("@adiwajshing/baileys")
+const { default: JimbruOfficalConnect, WASocket, DisconnectReason, useMultiFileAuthState, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto, delay, jidNormalizedUser, makeWALegacySocket, useSingleFileLegacyAuthState, DEFAULT_CONNECTION_CONFIG, DEFAULT_LEGACY_CONNECTION_CONFIG } = require("@adiwajshing/baileys")
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
@@ -28,7 +28,7 @@ if(!fs.existsSync('./auth.json')){
     MakeSession(global.session,authFile)
     }
 setTimeout(() => {    
-const { state, saveState } = useSingleFileAuthState(`./auth.json`)
+const { state, saveState } = useMultiFileAuthState(`./auth.json`)
 // MEMORY STORE 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 async function startJimbruOffical() {
